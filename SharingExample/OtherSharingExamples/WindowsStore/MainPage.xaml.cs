@@ -25,6 +25,8 @@ namespace WindowsStore
         public MainPage()
         {
             this.InitializeComponent();
+
+            MyTextBlock.Text = new Shared.HelloWorldClass().SayHi();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

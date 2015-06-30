@@ -8,7 +8,15 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button VerticalAlignment="Top"
+                HorizontalAlignment="Center"
+                Content="Go to yellow page"
+                Click="Button_Click" />
+        <TextBlock x:Name="MyTextBlock"
+                   TextWrapping="Wrap"
+                   FontSize="35" 
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" />
     </Grid>
 </Page>

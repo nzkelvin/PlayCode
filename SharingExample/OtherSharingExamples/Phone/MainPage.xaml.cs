@@ -27,6 +27,13 @@ namespace Phone
             this.InitializeComponent();
 
             this.NavigationCacheMode = NavigationCacheMode.Required;
+
+            MyTextBlock.Text = new Shared.HelloWorldClass().SayHi();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
         /// <summary>
