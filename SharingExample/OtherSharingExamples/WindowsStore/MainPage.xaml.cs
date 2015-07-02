@@ -28,6 +28,7 @@ namespace WindowsStore
 
             MyTextBlock.Text = new Shared.HelloWorldClass().SayHi();
             MyTextBlock.Text = new PortableClassLibrary.HelloWorldClass("Windows Store App").SayHi();
+            MyTextBlock.Text = new WinRTComponent.HelloWorldClass("Windows Store App (RT)").SayHi();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

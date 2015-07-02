@@ -29,11 +29,13 @@ namespace Phone
             this.NavigationCacheMode = NavigationCacheMode.Required;
 
             MyTextBlock.Text = new Shared.HelloWorldClass().SayHi();
+            MyTextBlock.Text = new PortableClassLibrary.HelloWorldClass("Windows Phone App").SayHi();
+            MyTextBlock.Text = new WinRTComponent.HelloWorldClass("Windows Phone App (RT)").SayHi();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(PortableClassLibrary.YellowPage));
         }
 
         /// <summary>

@@ -107,6 +107,10 @@
       <Project>{67a967d3-a43c-4fd5-9785-bb7c593050ab}</Project>
       <Name>PortableClassLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WinRTComponent\WinRTComponent.csproj">
+      <Project>{46f63f82-772e-427c-836a-730bc97f67f2}</Project>
+      <Name>WinRTComponent</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\LinkedFile\HelloWorldClass.cs">
