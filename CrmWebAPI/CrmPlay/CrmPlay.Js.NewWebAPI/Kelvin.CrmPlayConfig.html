@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Kelvin Crm Play Page</title>
+    <style>
+        body 
+        {
+            font-family: 'Segoe UI';
+        }
+    </style>
+    <script>
+        document.onreadystatechange = function () {
+            if (document.readyState == "complete") {
+                document.getElementById("launchSampleWebApi").addEventListener("click", openSampleWebApi);
+            }
+        }
+        
+        function openSampleWebApi() {
+            window.open("new_SampleWebApi.html", "_blank");
+        }
+    </script>
+</head>
+<body>
+    <p>Use the <strong>Launch Example Web Api</strong> button to start the Web API sample.</p>
+    <button id="launchSampleWebApi">Launch Example Web Api</button>
+</body>
+</html>
