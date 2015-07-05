@@ -1,0 +1,3000 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=2B08C435C8251DADB8A53F8C45B39737" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:FooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=1E60E7B49899FEC4640711B64FF56FA6" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Sdk.WebAPIPreview.js Sample</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Sdk.WebAPIPreview.js Sample</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Javascript, OData v4, Microsoft Dynamics CRM 2015 Online
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Use Dynamics CRM Web API Preview with JavaScript
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Cloud, Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">6/7/2015</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p>This sample includes a helper library for the Microsoft Dynamics CRM Online Web API preview. This preview is only available for organizations using Microsoft Dynamics CRM Online 2015 Update 1. On-premise deployments or CRM Online deployments which have not
+ been upgraded to Update 1 (v7.1) do not have access to the Web API preview.</p>
+<p>For more information about the Web API Preview see <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/webapipreview">
+Microsoft Dynamics CRM Web API Preview</a>.</p>
+<p>A C#.NET helper library with the same methods can be found at <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093" >
+WebAPIPreviewService Sample </a>.</p>
+<ul>
+<li><a href="#_Description_of_contents">Description of contents </a></li><li><a href="#_Prerequisites">Prerequisites </a></li><li><a href="#_Run_the_sample">Run the sample </a></li><li><a href="#_WebAPIPreviewService_methods">Sdk.WebAPIPreview.js functions </a>
+<ul>
+<li><a href="#_Create">create</a> </li><li><a href="#_Retrieve">retrieve</a> </li><li><a href="#_RetrievePropertyValue">retrievePropertyValue </a></li><li><a href="#_Update">update</a> </li><li><a href="#_UpdatePropertyValue">updatePropertyValue </a></li><li><a href="#_Upsert">upsert</a> </li><li><a href="#_Delete">del</a> </li><li><a href="#_DeletePropertyValue">deletePropertyValue </a></li><li><a href="#_Associate">associate</a> </li><li><a href="#_Disassociate">disassociate </a></li><li><a href="#_RemoveReference">removeReference </a></li><li><a href="#_AddReference">addReference </a></li><li><a href="#_InvokeBoundFunction">invokeBoundFunction </a></li><li><a href="#_InvokeUnboundFunction">invokeUnboundFunction </a></li><li><a href="#_InvokeUnboundAction">invokeUnboundAction </a></li><li><a href="#_QueryEntitySet">queryEntitySet </a></li><li><a href="#_GetNextPage">getNextPage </a></li><li><a href="#_ExecuteBatch">executeBatch </a></li><li><a href="#_GetEntityList">getEntityList </a></li></ul>
+</li></ul>
+<h1><a name="_Description_of_contents"></a>Description of contents</h1>
+<p>This sample is a Visual Studio 2013 project that contains the following files:</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="275" valign="top">
+<p><strong>File</strong></p>
+</td>
+<td width="1032" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="275" valign="top">
+<p><strong>Sdk.WebAPIPreview.js</strong></p>
+</td>
+<td width="1032" valign="top">
+<p>Contains the functions within the Sdk.WebAPIPreview namespace.</p>
+</td>
+</tr>
+<tr>
+<td width="275" valign="top">
+<p><strong>Sample.js</strong></p>
+</td>
+<td width="1032" valign="top">
+<p>Contains sample code demonstrating the use of the functions in the Sdk.WebAPIPreview namespace.</p>
+</td>
+</tr>
+<tr>
+<td width="275" valign="top">
+<p><strong>Sample.htm</strong></p>
+</td>
+<td width="1032" valign="top">
+<p>An html page that includes links to Sdk.WebAPIPreview.js, Sample.js, and ClientGlobalContext.js.aspx so that the code in Sample.js run when the page loads.</p>
+</td>
+</tr>
+<tr>
+<td width="275" valign="top">
+<p><strong>Sdk.WebAPIPreviewSampleConfig.htm</strong></p>
+</td>
+<td width="1032" valign="top">
+<p>A html page that contains a Launch Sample button that will open the Sample.htm page an run the sample code.</p>
+</td>
+</tr>
+<tr>
+<td width="275" valign="top">
+<p><strong>SdkWebAPIPreviewjsSample_1_0_0_0_managed.zip</strong></p>
+</td>
+<td width="1032" valign="top">
+<p>A managed solution that contains the files above as web resources.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h1><a name="_Prerequisites"></a>Prerequisites</h1>
+<p>You must enable the Web API Preview for your organization before you can run this sample. See
+<a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/webapipreview">Microsoft Dynamics CRM Web API Preview</a> for instructions about how to enable the web API preview.</p>
+<h1><a name="_Run_the_sample"></a>Run the sample</h1>
+<p>1. Install the SdkWebAPIPreviewjsSample_1_0_0_0_managed.zip managed solution into your Microsoft Dynamics CRM Online 2015 Update 1 organization with web API preview enabled.</p>
+<p>2. Navigate to the <strong>Sdk.WebAPIPreview.js Sample solution</strong> and view the Configuration page.</p>
+<p><img id="138608" src="description/Sdk.WebAPIPreviewJSSampleSolution.PNG" alt="" width="684" height="519"></p>
+<p>3. Click the <strong>Launch Sample</strong> button</p>
+<p>4. When the Sample.htm page opens, open your developer tools and observe the messages written to the console window describing the operations the sample code is performing. You can also use the network tools to observe the Http requests and responses being
+ sent and received by the sample code.</p>
+<h1><a name="_WebAPIPreviewService_methods"></a>Sdk.WebAPIPreview.js functions</h1>
+<p><strong>Note</strong> : This is a sample library provided to demonstrate the operations available for the web API preview. While it does provide re-usable functions, the primary purpose is to demonstrate the patterns for each operation and how they can be
+ composed around common input parameters. This sample may be modified at any time with the goal of demonstrating best practices above backward compatibility. Like all sample code, this code and information are provided &lsquo;as is&rsquo; without warranty of
+ any kind.</p>
+<p>You have many options to use when performing operations using an OData v4 endpoint with JavaScript. The functions in this library are designed to work without dependencies on other libraries or any kind of generated proxy to provide information about entities,
+ functions, and actions exposed by the endpoint. These functions are asynchronous and use conventional callback parameters rather than promises. You need to refer to the reference documentation to understand what entity properties or parameters you can use
+ when calling these methods. See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149064.aspx">
+Web API preview types, functions, and actions </a>for information you will need to use these methods.</p>
+<p>The Sdk.WebAPIPreview.js library exposes the following public functions:</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="128" valign="top">
+<p><a href="#_Create">create </a></p>
+</td>
+<td width="128" valign="top">
+<p><a href="#_Retrieve">retrieve </a></p>
+</td>
+<td width="128" valign="top">
+<p><a href="#_RetrievePropertyValue">retrievePropertyValue </a></p>
+</td>
+<td width="128" valign="top">
+<p><a href="#_Update">update </a></p>
+</td>
+<td width="128" valign="top">
+<p><a href="#_UpdatePropertyValue">updatePropertyValue </a></p>
+</td>
+</tr>
+<tr>
+<td width="128" valign="top">
+<p><a href="#_Upsert">upsert </a></p>
+</td>
+<td width="128" valign="top">
+<p><a href="#_Del">del </a></p>
+</td>
+<td width="128" valign="top">
+<p><a href="#_DeletePropertyValue">deletePropertyValue </a></p>
+</td>
+<td width="128" valign="top">
+<p><a href="#_Associate">associate </a></p>
+</td>
+<td width="128" valign="top">
+<p><a href="#_Disassociate">disassociate </a></p>
+</td>
+</tr>
+<tr>
+<td width="128" valign="top">
+<p><a href="#_RemoveReference">removeReference </a></p>
+</td>
+<td width="128" valign="top">
+<p><a href="#_AddReference">addReference </a></p>
+</td>
+<td width="128" valign="top">
+<p><a href="#_InvokeBoundFunction">invokeBoundFunction </a></p>
+</td>
+<td width="128" valign="top">
+<p><a href="#_InvokeUnboundFunction">invokeUnboundFunction </a></p>
+</td>
+<td width="128" valign="top">
+<p><a href="#_InvokeUnboundAction">invokeUnboundAction </a></p>
+</td>
+</tr>
+<tr>
+<td width="128" valign="top">
+<p><a href="#_QueryEntitySet">queryEntitySet </a></p>
+</td>
+<td width="128" valign="top">
+<p><a href="#_GetNextPage">getNextPage </a></p>
+</td>
+<td width="128" valign="top">
+<p><a href="#_ExecuteBatch">executeBatch </a></p>
+</td>
+<td width="128" valign="top">
+<p><a href="#_GetEntityList">getEntityList </a></p>
+</td>
+<td width="128" valign="top">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="_Create"></a>create</h2>
+<p>Creates an entity.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="125" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="125" valign="top">
+<p><strong>entitySetName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the entity set. See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/dn927174">
+Microsoft Dynamics CRM Web API Preview Entity Types Reference</a> for information about the system entity sets available.</p>
+</td>
+</tr>
+<tr>
+<td width="125" valign="top">
+<p><strong>entity</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Object</p>
+</td>
+<td width="742" valign="top">
+<p>A JSON object with properties set for the entity you want to create</p>
+</td>
+</tr>
+<tr>
+<td width="125" valign="top">
+<p><strong>successCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when the entity is created. The Uri of the created entity is passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="125" valign="top">
+<p><strong>errorCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when there is an error. The error will be passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="125" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&nbsp;</strong></p>
+<p><strong>Remarks</strong></p>
+<p>See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149070.aspx">Create an entity</a>,
+<strong>&nbsp;</strong></p>
+<p><strong>Example</strong></p>
+<p>The following code will create an account as well as a task related to the account, an opportunity related to the account, and a task related to the opportunity in a single operation.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">function createAccount() {
+var account = {}
+ account.name = &quot;Test Account&quot;; //String value
+ account.creditonhold = false; //Boolean value
+ account.address1_latitude = 47.6395830; //Double value
+ account.description = &quot;This is the description of the full account&quot;; //Memo value
+ account.revenue = 5000000; //Money value
+ account.accountcategorycode = 1; //OptionSet value: Preferred Customer
+ //Create a task related to the account
+ account.Account_Tasks = [
+     { subject: &quot;Task Created with Test Account&quot; }
+ ];
+ //Create an opportunity related to the account
+ account.opportunity_customer_accounts = [
+     {
+         name: &quot;Opportunity created with Test Account&quot;,
+         //Create a task related to the opportunity
+         Opportunity_Tasks: [
+             { subject: &quot;Task Created with Opportunity&quot; }
+         ]
+     }
+ ]
+
+Sdk.WebAPIPreview.create(
+  &quot;accounts&quot;, //entitySetName
+  account, //entity
+  createAccountSuccess, //successCallback
+  function(error){ console.log(error.message)}); //errorCallback
+}
+
+function createAccountSuccess(uri) {
+ accountUri = uri;
+}
+</pre>
+<div class="preview">
+<pre class="js"><span class="js__operator">function</span>&nbsp;createAccount()&nbsp;<span class="js__brace">{</span>&nbsp;
+<span class="js__statement">var</span>&nbsp;account&nbsp;=&nbsp;<span class="js__brace">{</span><span class="js__brace">}</span>&nbsp;
+&nbsp;account.name&nbsp;=&nbsp;<span class="js__string">&quot;Test&nbsp;Account&quot;</span>;&nbsp;<span class="js__sl_comment">//String&nbsp;value</span>&nbsp;
+&nbsp;account.creditonhold&nbsp;=&nbsp;false;&nbsp;<span class="js__sl_comment">//Boolean&nbsp;value</span>&nbsp;
+&nbsp;account.address1_latitude&nbsp;=&nbsp;<span class="js__num">47.6395830</span>;&nbsp;<span class="js__sl_comment">//Double&nbsp;value</span>&nbsp;
+&nbsp;account.description&nbsp;=&nbsp;<span class="js__string">&quot;This&nbsp;is&nbsp;the&nbsp;description&nbsp;of&nbsp;the&nbsp;full&nbsp;account&quot;</span>;&nbsp;<span class="js__sl_comment">//Memo&nbsp;value</span>&nbsp;
+&nbsp;account.revenue&nbsp;=&nbsp;<span class="js__num">5000000</span>;&nbsp;<span class="js__sl_comment">//Money&nbsp;value</span>&nbsp;
+&nbsp;account.accountcategorycode&nbsp;=&nbsp;<span class="js__num">1</span>;&nbsp;<span class="js__sl_comment">//OptionSet&nbsp;value:&nbsp;Preferred&nbsp;Customer</span>&nbsp;
+&nbsp;<span class="js__sl_comment">//Create&nbsp;a&nbsp;task&nbsp;related&nbsp;to&nbsp;the&nbsp;account</span>&nbsp;
+&nbsp;account.Account_Tasks&nbsp;=&nbsp;[&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;subject:&nbsp;<span class="js__string">&quot;Task&nbsp;Created&nbsp;with&nbsp;Test&nbsp;Account&quot;</span>&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;];&nbsp;
+&nbsp;<span class="js__sl_comment">//Create&nbsp;an&nbsp;opportunity&nbsp;related&nbsp;to&nbsp;the&nbsp;account</span>&nbsp;
+&nbsp;account.opportunity_customer_accounts&nbsp;=&nbsp;[&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name:&nbsp;<span class="js__string">&quot;Opportunity&nbsp;created&nbsp;with&nbsp;Test&nbsp;Account&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//Create&nbsp;a&nbsp;task&nbsp;related&nbsp;to&nbsp;the&nbsp;opportunity</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Opportunity_Tasks:&nbsp;[&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">{</span>&nbsp;subject:&nbsp;<span class="js__string">&quot;Task&nbsp;Created&nbsp;with&nbsp;Opportunity&quot;</span>&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;]&nbsp;
+&nbsp;
+Sdk.WebAPIPreview.create(&nbsp;
+&nbsp;&nbsp;<span class="js__string">&quot;accounts&quot;</span>,&nbsp;<span class="js__sl_comment">//entitySetName</span>&nbsp;
+&nbsp;&nbsp;account,&nbsp;<span class="js__sl_comment">//entity</span>&nbsp;
+&nbsp;&nbsp;createAccountSuccess,&nbsp;<span class="js__sl_comment">//successCallback</span>&nbsp;
+&nbsp;&nbsp;<span class="js__operator">function</span>(error)<span class="js__brace">{</span>&nbsp;console.log(error.message)<span class="js__brace">}</span>);&nbsp;<span class="js__sl_comment">//errorCallback</span>&nbsp;
+<span class="js__brace">}</span>&nbsp;
+&nbsp;
+<span class="js__operator">function</span>&nbsp;createAccountSuccess(uri)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;accountUri&nbsp;=&nbsp;uri;&nbsp;
+<span class="js__brace">}</span>&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+<h2><a name="_retrieve"></a>retrieve</h2>
+<p>Retrieves an entity.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="166" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>uri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the entity to retrieve</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>properties</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Array of String</p>
+</td>
+<td width="742" valign="top">
+<p>The properties of the entity to return. If no properties are included, all non-null properties will be returned. Including the specific properties you require is a best practice.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>navigationProperties</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Array of Strings</p>
+</td>
+<td width="742" valign="top">
+<p>The navigation properties of the related entities you want to return. These navigation properties may also include system query options in parentheses following the name of the navigation property. See
+<a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149058#_Expand_related_entities">
+Retrieve an entity: Expand related entities </a>.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>successCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when the operation is successful. The JSON object with the entity data is passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>errorCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when there is an error. The error will be passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>includeFormattedValues</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Boolean</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. Whether to include formatted values. See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149061#_Include_formatted_values">
+Query entity sets : Include formatted values </a></p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>eTag</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. When provided and the entity has not been modified since the eTag value was retrieved, the
+<strong>unmodifiedCallback</strong> will be called.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>unmodifiedCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The function to call when the entity has not been modified since last retrieved based on the eTag value. No entity data will be passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&nbsp;</strong></p>
+<p><strong>Remarks</strong></p>
+<p>By including a value for the <strong>eTag</strong> parameter you are requesting that data only be returned if it has changed since the eTag value was returned previously. The unmodified callback will be called when the data has not changed.</p>
+<p>See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149058.aspx">Retrieve an entity</a> .<strong>&nbsp;</strong></p>
+<p><strong>Example</strong></p>
+<p>The following sample retrieves an account entity with data from the related parent account and related tasks.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">function retrieveAccount(accountUri) {
+ console.log(&quot;retrieveAccount function starting.&quot;);
+
+ // set entity properties to retrieve
+ var properties = [
+     &quot;accountcategorycode&quot;,
+     &quot;accountclassificationcode&quot;,
+     &quot;accountnumber&quot;,
+     &quot;accountratingcode&quot;,
+     &quot;businesstypecode&quot;,
+     &quot;creditonhold&quot;,
+     &quot;createdon&quot;,
+     &quot;lastusedincampaign&quot;,
+     &quot;address1_latitude&quot;,
+     &quot;address1_longitude&quot;,
+     &quot;numberofemployees&quot;,
+     &quot;parentaccountid&quot;,
+     &quot;description&quot;,
+     &quot;name&quot;,
+     &quot;revenue&quot;
+ ];
+ //Set navigation properties to retrieve
+ var navigationProperties = [
+     &quot;Referencingaccount_parent_account($select=createdon,name)&quot;,//Data from parent account   
+     &quot;Account_Tasks($select=subject,scheduledstart)&quot; //Data from related tasks 
+ ];
+
+    
+ Sdk.WebAPIPreview.retrieve(accountUri,//uri for record to update
+  properties, //properties
+  navigationProperties, //navigationproperties
+  function(retrievedAccount){
+   retrieveAccountSuccess(retrievedAccount,accountUri)
+  },  //successCallback 
+  function(error){ console.log(error.message)},//errorCallback
+  true, //includeFormattedValues
+  null, //eTag
+  null, //unmodifiedCallback
+  null); //callerId
+}
+function retrieveAccountSuccess(retrievedAccount, accountUri) {
+ console.log(&quot;retrieveAccountSuccess function starting.&quot;);
+ console.log(&quot;    Account Retrieved&quot;);
+ console.log(&quot;        Account accountcategorycode value: &quot; &#43; retrievedAccount.accountcategorycode);
+ //Account accountcategorycode value: 1
+ console.log(&quot;        Account accountcategorycode formatted value: &quot; &#43; retrievedAccount[&quot;accountcategorycode@mscrm.formattedvalue&quot;]);
+ //Account accountcategorycode formatted value: Preferred Customer
+ console.log(&quot;        Parent Account name: &quot; &#43; retrievedAccount.Referencingaccount_parent_account.name);
+ //Parent Account name: Parent Account
+ console.log(&quot;        Related tasks subject values: &quot;);
+
+ //Loop through the array of related tasks returned
+ retrievedAccount.Account_Tasks.forEach(function (task) {
+  console.log(&quot;           &quot; &#43; task.subject);
+ })
+ // console output:
+ //Task 1 
+ //Task 2
+ //Task 3
+ //Task 1 in batch
+ //Task 2 in batch
+
+ //Next Sample
+ queryEntitySet(retrievedAccount.accountid);
+}
+</pre>
+<div class="preview">
+<pre class="js"><span class="js__operator">function</span>&nbsp;retrieveAccount(accountUri)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;console.log(<span class="js__string">&quot;retrieveAccount&nbsp;function&nbsp;starting.&quot;</span>);&nbsp;
+&nbsp;
+&nbsp;<span class="js__sl_comment">//&nbsp;set&nbsp;entity&nbsp;properties&nbsp;to&nbsp;retrieve</span>&nbsp;
+&nbsp;<span class="js__statement">var</span>&nbsp;properties&nbsp;=&nbsp;[&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;accountcategorycode&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;accountclassificationcode&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;accountnumber&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;accountratingcode&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;businesstypecode&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;creditonhold&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;createdon&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;lastusedincampaign&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;address1_latitude&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;address1_longitude&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;numberofemployees&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;parentaccountid&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;description&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;name&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;revenue&quot;</span>&nbsp;
+&nbsp;];&nbsp;
+&nbsp;<span class="js__sl_comment">//Set&nbsp;navigation&nbsp;properties&nbsp;to&nbsp;retrieve</span>&nbsp;
+&nbsp;<span class="js__statement">var</span>&nbsp;navigationProperties&nbsp;=&nbsp;[&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;Referencingaccount_parent_account($select=createdon,name)&quot;</span>,<span class="js__sl_comment">//Data&nbsp;from&nbsp;parent&nbsp;account&nbsp;&nbsp;&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;Account_Tasks($select=subject,scheduledstart)&quot;</span>&nbsp;<span class="js__sl_comment">//Data&nbsp;from&nbsp;related&nbsp;tasks&nbsp;</span>&nbsp;
+&nbsp;];&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;Sdk.WebAPIPreview.retrieve(accountUri,<span class="js__sl_comment">//uri&nbsp;for&nbsp;record&nbsp;to&nbsp;update</span>&nbsp;
+&nbsp;&nbsp;properties,&nbsp;<span class="js__sl_comment">//properties</span>&nbsp;
+&nbsp;&nbsp;navigationProperties,&nbsp;<span class="js__sl_comment">//navigationproperties</span>&nbsp;
+&nbsp;&nbsp;<span class="js__operator">function</span>(retrievedAccount)<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;retrieveAccountSuccess(retrievedAccount,accountUri)&nbsp;
+&nbsp;&nbsp;<span class="js__brace">}</span>,&nbsp;&nbsp;<span class="js__sl_comment">//successCallback&nbsp;</span>&nbsp;
+&nbsp;&nbsp;<span class="js__operator">function</span>(error)<span class="js__brace">{</span>&nbsp;console.log(error.message)<span class="js__brace">}</span>,<span class="js__sl_comment">//errorCallback</span>&nbsp;
+&nbsp;&nbsp;true,&nbsp;<span class="js__sl_comment">//includeFormattedValues</span>&nbsp;
+&nbsp;&nbsp;null,&nbsp;<span class="js__sl_comment">//eTag</span>&nbsp;
+&nbsp;&nbsp;null,&nbsp;<span class="js__sl_comment">//unmodifiedCallback</span>&nbsp;
+&nbsp;&nbsp;null);&nbsp;<span class="js__sl_comment">//callerId</span>&nbsp;
+<span class="js__brace">}</span>&nbsp;
+<span class="js__operator">function</span>&nbsp;retrieveAccountSuccess(retrievedAccount,&nbsp;accountUri)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;console.log(<span class="js__string">&quot;retrieveAccountSuccess&nbsp;function&nbsp;starting.&quot;</span>);&nbsp;
+&nbsp;console.log(<span class="js__string">&quot;&nbsp;&nbsp;&nbsp;&nbsp;Account&nbsp;Retrieved&quot;</span>);&nbsp;
+&nbsp;console.log(<span class="js__string">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account&nbsp;accountcategorycode&nbsp;value:&nbsp;&quot;</span>&nbsp;&#43;&nbsp;retrievedAccount.accountcategorycode);&nbsp;
+&nbsp;<span class="js__sl_comment">//Account&nbsp;accountcategorycode&nbsp;value:&nbsp;1</span>&nbsp;
+&nbsp;console.log(<span class="js__string">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account&nbsp;accountcategorycode&nbsp;formatted&nbsp;value:&nbsp;&quot;</span>&nbsp;&#43;&nbsp;retrievedAccount[<span class="js__string">&quot;accountcategorycode@mscrm.formattedvalue&quot;</span>]);&nbsp;
+&nbsp;<span class="js__sl_comment">//Account&nbsp;accountcategorycode&nbsp;formatted&nbsp;value:&nbsp;Preferred&nbsp;Customer</span>&nbsp;
+&nbsp;console.log(<span class="js__string">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parent&nbsp;Account&nbsp;name:&nbsp;&quot;</span>&nbsp;&#43;&nbsp;retrievedAccount.Referencingaccount_parent_account.name);&nbsp;
+&nbsp;<span class="js__sl_comment">//Parent&nbsp;Account&nbsp;name:&nbsp;Parent&nbsp;Account</span>&nbsp;
+&nbsp;console.log(<span class="js__string">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Related&nbsp;tasks&nbsp;subject&nbsp;values:&nbsp;&quot;</span>);&nbsp;
+&nbsp;
+&nbsp;<span class="js__sl_comment">//Loop&nbsp;through&nbsp;the&nbsp;array&nbsp;of&nbsp;related&nbsp;tasks&nbsp;returned</span>&nbsp;
+&nbsp;retrievedAccount.Account_Tasks.forEach(<span class="js__operator">function</span>&nbsp;(task)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;console.log(<span class="js__string">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;</span>&nbsp;&#43;&nbsp;task.subject);&nbsp;
+&nbsp;<span class="js__brace">}</span>)&nbsp;
+&nbsp;<span class="js__sl_comment">//&nbsp;console&nbsp;output:</span>&nbsp;
+&nbsp;<span class="js__sl_comment">//Task&nbsp;1&nbsp;</span>&nbsp;
+&nbsp;<span class="js__sl_comment">//Task&nbsp;2</span>&nbsp;
+&nbsp;<span class="js__sl_comment">//Task&nbsp;3</span>&nbsp;
+&nbsp;<span class="js__sl_comment">//Task&nbsp;1&nbsp;in&nbsp;batch</span>&nbsp;
+&nbsp;<span class="js__sl_comment">//Task&nbsp;2&nbsp;in&nbsp;batch</span>&nbsp;
+&nbsp;
+&nbsp;<span class="js__sl_comment">//Next&nbsp;Sample</span>&nbsp;
+&nbsp;queryEntitySet(retrievedAccount.accountid);&nbsp;
+<span class="js__brace">}</span>&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode"></div>
+<h2><a name="_retrievePropertyValue"></a>retrievePropertyValue</h2>
+<p>Retrieves the value of a single property of an entity.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="166" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>uri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the entity with the property to retrieve</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>propertyName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the property to return</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>successCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when the operation is successful. The value of the property requested will be passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>errorCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when there is an error. The error will be passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149058.aspx#_Retrieve_a_single">
+Retrieve an entity: Retrieve a single property value </a>.</p>
+<p>This method does not support retrieving the primitive value.</p>
+<p><strong>Example</strong></p>
+<p>The following example retrieves the createdon property from the account represented with the value of accountUri.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">Sdk.WebAPIPreview.retrievePropertyValue(accountUri, 
+ &quot;createdon&quot;, 
+  function (value) {
+     console.log(value);
+ }, 
+function(error){ console.log(error.message)}
+);
+</pre>
+<div class="preview">
+<pre class="js">Sdk.WebAPIPreview.retrievePropertyValue(accountUri,&nbsp;&nbsp;
+&nbsp;<span class="js__string">&quot;createdon&quot;</span>,&nbsp;&nbsp;
+&nbsp;&nbsp;<span class="js__operator">function</span>&nbsp;(value)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(value);&nbsp;
+&nbsp;<span class="js__brace">}</span>,&nbsp;&nbsp;
+<span class="js__operator">function</span>(error)<span class="js__brace">{</span>&nbsp;console.log(error.message)<span class="js__brace">}</span>&nbsp;
+);&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode"></div>
+<h2><a name="_Update"></a>update</h2>
+<p>Updates an entity.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="166" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>uri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the entity to update</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>updatedEntity</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Object</p>
+</td>
+<td width="742" valign="top">
+<p>A JSON object with properties set that you want to update.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>successCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when the update is successful.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>errorCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when there is an error. The error will be passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149067#_Basic_Update">Update, upsert, or delete entities: Basic update
+</a></p>
+<p><strong>Example</strong></p>
+<p>The following sample updates the name and description properties of an account represented by the accountUri variable.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">function updateAccount(accountUri) {
+ var updatedAccount = {};
+ updatedAccount.name = &quot;Updated Account Name&quot;;
+ updatedAccount.description = &quot;Sample Account Description Updated.&quot;;
+ Sdk.WebAPIPreview.update(accountUri, //uri for record to update
+  updatedAccount, //updatedEntity
+  function(){ console.log(&quot;Update successfull&quot;)}, //successCallback 
+  function(error){ console.log(error.message)}); //errorCallback
+}
+</pre>
+<div class="preview">
+<pre class="js"><span class="js__operator">function</span>&nbsp;updateAccount(accountUri)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;<span class="js__statement">var</span>&nbsp;updatedAccount&nbsp;=&nbsp;<span class="js__brace">{</span><span class="js__brace">}</span>;&nbsp;
+&nbsp;updatedAccount.name&nbsp;=&nbsp;<span class="js__string">&quot;Updated&nbsp;Account&nbsp;Name&quot;</span>;&nbsp;
+&nbsp;updatedAccount.description&nbsp;=&nbsp;<span class="js__string">&quot;Sample&nbsp;Account&nbsp;Description&nbsp;Updated.&quot;</span>;&nbsp;
+&nbsp;Sdk.WebAPIPreview.update(accountUri,&nbsp;<span class="js__sl_comment">//uri&nbsp;for&nbsp;record&nbsp;to&nbsp;update</span>&nbsp;
+&nbsp;&nbsp;updatedAccount,&nbsp;<span class="js__sl_comment">//updatedEntity</span>&nbsp;
+&nbsp;&nbsp;<span class="js__operator">function</span>()<span class="js__brace">{</span>&nbsp;console.log(<span class="js__string">&quot;Update&nbsp;successfull&quot;</span>)<span class="js__brace">}</span>,&nbsp;<span class="js__sl_comment">//successCallback&nbsp;</span>&nbsp;
+&nbsp;&nbsp;<span class="js__operator">function</span>(error)<span class="js__brace">{</span>&nbsp;console.log(error.message)<span class="js__brace">}</span>);&nbsp;<span class="js__sl_comment">//errorCallback</span>&nbsp;
+<span class="js__brace">}</span>&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode"></div>
+<h2><a name="_updatePropertyValue"></a>updatePropertyValue</h2>
+<p>Updates a single property of an entity</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="166" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>uri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the entity to update</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>propertyName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the property you want to update.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>value</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Object</p>
+</td>
+<td width="742" valign="top">
+<p>The value of the property you want to change</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>successCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when the update is successful.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>errorCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when there is an error. The error will be passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Guid</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149067#_Update_A_Single_Property_Value">
+Update, upsert, or delete entities: Update a single property value </a></p>
+<p><strong>Example</strong></p>
+<p>The following sample updates the name property of an account represented by the accountUri variable.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">Sdk.WebAPIPreview.updatePropertyValue(accountUri,
+ &quot;name&quot;,
+ &quot;AA Updated Account name&quot;,
+ function () {
+  console.log(&quot;Account Name Updated&quot;);
+ },
+ function(error){ console.log(error.message)}
+);
+</pre>
+<div class="preview">
+<pre class="js">Sdk.WebAPIPreview.updatePropertyValue(accountUri,&nbsp;
+&nbsp;<span class="js__string">&quot;name&quot;</span>,&nbsp;
+&nbsp;<span class="js__string">&quot;AA&nbsp;Updated&nbsp;Account&nbsp;name&quot;</span>,&nbsp;
+&nbsp;<span class="js__operator">function</span>&nbsp;()&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;console.log(<span class="js__string">&quot;Account&nbsp;Name&nbsp;Updated&quot;</span>);&nbsp;
+&nbsp;<span class="js__brace">}</span>,&nbsp;
+&nbsp;<span class="js__operator">function</span>(error)<span class="js__brace">{</span>&nbsp;console.log(error.message)<span class="js__brace">}</span>&nbsp;
+);&nbsp;</pre>
+</div>
+</div>
+</div>
+<h2><a name="_Upsert"></a>upsert</h2>
+<p>Updates an existing entity if found, otherwise creates a new one.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="166" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>uri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the entity to create or update</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>entity</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Object</p>
+</td>
+<td width="742" valign="top">
+<p>The JSON object with properties set that should be created or updated</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>preventCreate</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Boolean</p>
+</td>
+<td width="742" valign="top">
+<p>Do not create the entity if it doesn't already exist. See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149067#_Prevent_Create_In_Upsert">
+Update, upsert, or delete entities: Prevent create in upsert </a></p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>preventUpdate</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Boolean</p>
+</td>
+<td width="742" valign="top">
+<p>Do not update the entity if it already exists. See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149067#_Prevent_Update_In_Insert">
+Update, upsert, or delete entities: Prevent update in upsert </a></p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>successCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when the operation is successful. If an entity is created the Uri for the entity will be passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>errorCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when there is an error. The error will be passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Guid</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&nbsp;</strong></p>
+<p><strong>Remarks</strong></p>
+<p>An upsert is essentially the same as an Update, except this method provides some additional parameters to control whether or not an update or create should occur.</p>
+<p>See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149067.aspx">Update, upsert, or delete entities
+</a></p>
+<p><strong>Example</strong></p>
+<p>The sample below will create a new contact if an existing contact entity with contactid aa3293fa-c7a2-4ad3-9c1b-975325b19a17 does not already exist. Otherwise it will update the contact with that contactid.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">    var contact = { firstname: &quot;Joe&quot;, lastname: &quot;Jones&quot; };
+    Sdk.WebAPIPreview.upsert(
+        Xrm.Page.context.getClientUrl() &#43; &quot;/api/data/contacts(aa3293fa-c7a2-4ad3-9c1b-975325b19a17)&quot;,
+        contact,
+        false, //preventCreate
+        false, //preventUpdate
+        function (uri) {
+            //uri returned when create occurs, not update.
+        },
+        function(error){ console.log(error.message)});
+</pre>
+<div class="preview">
+<pre class="js">&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;contact&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;firstname:&nbsp;<span class="js__string">&quot;Joe&quot;</span>,&nbsp;lastname:&nbsp;<span class="js__string">&quot;Jones&quot;</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Sdk.WebAPIPreview.upsert(&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Xrm.Page.context.getClientUrl()&nbsp;&#43;&nbsp;<span class="js__string">&quot;/api/data/contacts(aa3293fa-c7a2-4ad3-9c1b-975325b19a17)&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contact,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;false,&nbsp;<span class="js__sl_comment">//preventCreate</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;false,&nbsp;<span class="js__sl_comment">//preventUpdate</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__operator">function</span>&nbsp;(uri)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//uri&nbsp;returned&nbsp;when&nbsp;create&nbsp;occurs,&nbsp;not&nbsp;update.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__operator">function</span>(error)<span class="js__brace">{</span>&nbsp;console.log(error.message)<span class="js__brace">}</span>);&nbsp;</pre>
+</div>
+</div>
+</div>
+<h2><a name="_del"></a>del</h2>
+<p>Deletes an entity</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="166" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>uri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the entity to delete</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>successCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when the operation is successful.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>errorCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when there is an error. The error will be passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>&lsquo;delete&rsquo; is a JavaScript key word and should not be used as a function name, so &lsquo;del&rsquo; is used instead.</p>
+<p>See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149067#_Basic_Delete">Update, upsert, or delete entities: Basic delete
+</a></p>
+<p><strong>Example</strong></p>
+<p>The following sample will delete a contact with contactid value of aa3293fa-c7a2-4ad3-9c1b-975325b19a17.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">Sdk.WebAPIPreview.del(Xrm.Page.context.getClientUrl() &#43; &quot;/api/data/contacts(aa3293fa-c7a2-4ad3-9c1b-975325b19a17)&quot;,
+ function () {
+ //success
+ },
+ function (error) { console.log(error.message) }
+);
+</pre>
+<div class="preview">
+<pre class="js">Sdk.WebAPIPreview.del(Xrm.Page.context.getClientUrl()&nbsp;&#43;&nbsp;<span class="js__string">&quot;/api/data/contacts(aa3293fa-c7a2-4ad3-9c1b-975325b19a17)&quot;</span>,&nbsp;
+&nbsp;<span class="js__operator">function</span>&nbsp;()&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;<span class="js__sl_comment">//success</span>&nbsp;
+&nbsp;<span class="js__brace">}</span>,&nbsp;
+&nbsp;<span class="js__operator">function</span>&nbsp;(error)&nbsp;<span class="js__brace">{</span>&nbsp;console.log(error.message)&nbsp;<span class="js__brace">}</span>&nbsp;
+);&nbsp;</pre>
+</div>
+</div>
+</div>
+<h2><a name="_DeletePropertyValue"></a>deletePropertyValue</h2>
+<p>Deletes the value of a specific property of an entity.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="166" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>uri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the entity.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>propertyName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the property to delete.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>successCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when the operation is successful.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>errorCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when there is an error. The error will be passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149067#_Delete_A_Single_Property_Value">
+Update, upsert, or delete entities: Delete a single property value </a></p>
+<p><strong>Example</strong></p>
+<p>The following sample deletes the value of the revenue property for the account specified by the accountUri variable.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">Sdk.WebAPIPreview.deletePropertyValue(accountUri, 
+ &quot;revenue&quot;,
+ function () {
+       //Success
+ },
+ function (error) { console.log(error.message) }
+);
+</pre>
+<div class="preview">
+<pre class="js">Sdk.WebAPIPreview.deletePropertyValue(accountUri,&nbsp;&nbsp;
+&nbsp;<span class="js__string">&quot;revenue&quot;</span>,&nbsp;
+&nbsp;<span class="js__operator">function</span>&nbsp;()&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//Success</span>&nbsp;
+&nbsp;<span class="js__brace">}</span>,&nbsp;
+&nbsp;<span class="js__operator">function</span>&nbsp;(error)&nbsp;<span class="js__brace">{</span>&nbsp;console.log(error.message)&nbsp;<span class="js__brace">}</span>&nbsp;
+);&nbsp;</pre>
+</div>
+</div>
+</div>
+<h2><a name="_Associate"></a>associate</h2>
+<p>Associates two entities according to a specific relationship based on the collection-valued navigation property.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="172" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>parentUri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the parent entity</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>navigationPropertyName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the collection-valued navigation property to use for the relationship.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>childUri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the child entity.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>successCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when the operation is successful.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>errorCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when there is an error. The error will be passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>Although this method refers to &lsquo;parent&rsquo; and &lsquo;child&rsquo; it can be used for N:N relationships where their isn&rsquo;t a clear hierarchy between the entities.</p>
+<p><strong>Example</strong></p>
+<p>The following sample associates an account with a parent account using the <strong>
+Referencedaccount_parent_account</strong> collection-valued navigation property.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">Sdk.WebAPIPreview.associate(parentAccountUri, //parentUri
+ &quot;Referencedaccount_parent_account&quot;, //navigationPropertyName : Collection Navigation property
+ accountUri, //childUri
+ function () {
+       //Success
+      },
+ function (error) { console.log(error.message) }
+);
+</pre>
+<div class="preview">
+<pre class="js">Sdk.WebAPIPreview.associate(parentAccountUri,&nbsp;<span class="js__sl_comment">//parentUri</span>&nbsp;
+&nbsp;<span class="js__string">&quot;Referencedaccount_parent_account&quot;</span>,&nbsp;<span class="js__sl_comment">//navigationPropertyName&nbsp;:&nbsp;Collection&nbsp;Navigation&nbsp;property</span>&nbsp;
+&nbsp;accountUri,&nbsp;<span class="js__sl_comment">//childUri</span>&nbsp;
+&nbsp;<span class="js__operator">function</span>&nbsp;()&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//Success</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>,&nbsp;
+&nbsp;<span class="js__operator">function</span>&nbsp;(error)&nbsp;<span class="js__brace">{</span>&nbsp;console.log(error.message)&nbsp;<span class="js__brace">}</span>&nbsp;
+);&nbsp;</pre>
+</div>
+</div>
+</div>
+<h2><a name="_disassociate"></a>disassociate</h2>
+<p>Removes an association between two entities based on the collection-valued navigation property.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="172" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>parentUri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the parent entity</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>navigationPropertyName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the collection-valued navigation property to use for the relationship.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>childUri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the child entity.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>successCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when the operation is successful.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>errorCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when there is an error. The error will be passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>Although this method refers to &lsquo;parent&rsquo; and &lsquo;child&rsquo; it can be used for N:N relationships where their isn&rsquo;t a clear hierarchy between the entities.</p>
+<p><strong>Example</strong></p>
+<p>The following sample disassociates and account and parent account using the <strong>
+Referencedaccount_parent_account</strong> collection-valued navigation property.<strong>&nbsp;</strong></p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">Sdk.WebAPIPreview.disassociate(parentAccountUri,
+ &quot;Referencedaccount_parent_account&quot;, accountUri,
+ function () {
+ //Success
+ },
+ function (error) { console.log(error.message); });
+</pre>
+<div class="preview">
+<pre class="js">Sdk.WebAPIPreview.disassociate(parentAccountUri,&nbsp;
+&nbsp;<span class="js__string">&quot;Referencedaccount_parent_account&quot;</span>,&nbsp;accountUri,&nbsp;
+&nbsp;<span class="js__operator">function</span>&nbsp;()&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;<span class="js__sl_comment">//Success</span>&nbsp;
+&nbsp;<span class="js__brace">}</span>,&nbsp;
+&nbsp;<span class="js__operator">function</span>&nbsp;(error)&nbsp;<span class="js__brace">{</span>&nbsp;console.log(error.message);&nbsp;<span class="js__brace">}</span>);&nbsp;</pre>
+</div>
+</div>
+</div>
+<h2><a name="_removeReference"></a>removeReference</h2>
+<p>Removes an association between two entities by deleting the value of the single-valued navigation property of the entity.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="172" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>entityUri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the entity</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>navigationPropertyName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the single-valued navigation property to use for the relationship.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>successCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when the operation is successful.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>errorCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when there is an error. The error will be passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&nbsp;</strong></p>
+<p><strong>Remarks</strong></p>
+<p>This method cannot be used for N:N entity relationships.</p>
+<p><strong>Example</strong></p>
+<p>The following example removes the reference for the primary contact for an account represented by the accountUri variable.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">Sdk.WebAPIPreview.removeReference(accountUri, 
+ &quot;account_primary_contact&quot;,
+ function () {
+  //success
+ },
+ function (error) { console.log(error.message) });
+</pre>
+<div class="preview">
+<pre class="js">Sdk.WebAPIPreview.removeReference(accountUri,&nbsp;&nbsp;
+&nbsp;<span class="js__string">&quot;account_primary_contact&quot;</span>,&nbsp;
+&nbsp;<span class="js__operator">function</span>&nbsp;()&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//success</span>&nbsp;
+&nbsp;<span class="js__brace">}</span>,&nbsp;
+&nbsp;<span class="js__operator">function</span>&nbsp;(error)&nbsp;<span class="js__brace">{</span>&nbsp;console.log(error.message)&nbsp;<span class="js__brace">}</span>);&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode"></div>
+<h2><a name="_addReference"></a>addReference</h2>
+<p>Removes an association between two entities by deleting the value of the single-valued navigation property of the child entity.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="172" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>entityUri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the entity.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>navigationPropertyName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the single-valued navigation property to use for the relationship.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>referencedEntityUri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the entity to relate to the entity.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>successCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when the operation is successful.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>errorCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when there is an error. The error will be passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Guid</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&nbsp;</strong></p>
+<p><strong>Remarks</strong></p>
+<p>This method cannot be used for N:N entity relationships.</p>
+<p><strong>Example</strong></p>
+<p>The following example adds the reference for the primary contact represented by the
+<strong>primaryContactUri</strong> variable for an account represented by the <strong>
+accountUri</strong> variable.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">Sdk.WebAPIPreview.addReference(accountUri,
+ &quot;account_primary_contact&quot;,
+ primaryContactUri,
+ function () {
+  //Success
+ },
+ function (error) { console.log(error.message) });
+</pre>
+<div class="preview">
+<pre class="js">Sdk.WebAPIPreview.addReference(accountUri,&nbsp;
+&nbsp;<span class="js__string">&quot;account_primary_contact&quot;</span>,&nbsp;
+&nbsp;primaryContactUri,&nbsp;
+&nbsp;<span class="js__operator">function</span>&nbsp;()&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//Success</span>&nbsp;
+&nbsp;<span class="js__brace">}</span>,&nbsp;
+&nbsp;<span class="js__operator">function</span>&nbsp;(error)&nbsp;<span class="js__brace">{</span>&nbsp;console.log(error.message)&nbsp;<span class="js__brace">}</span>);&nbsp;</pre>
+</div>
+</div>
+</div>
+<h2><a name="_InvokeBoundFunction"></a>invokeBoundFunction</h2>
+<p>Invokes a function bound to an entity.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="172" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>entitySetName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the entity set</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>functionName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the function. The function name <strong><span style="text-decoration:underline">must</span></strong> include the namepace prefix &lsquo;mscrm.&rsquo;</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>successCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when the operation is successful. The result will be passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>errorCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when there is an error. The error will be passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>In the web API preview the only bound functions are <strong>mscrm.GetSavedQueries</strong> and
+<strong>mscrm.GetUserQueries</strong>. Neither of these functions require parameters so this method does not provide for including them.</p>
+<p>See the following resources for more information:</p>
+<ul>
+<li><a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149060.aspx">Retrieve and execute predefined queries
+</a></li><li><a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/dn927174">Microsoft Dynamics CRM Web API Preview Entity Types Reference</a>
+</li></ul>
+<p><strong>Example</strong></p>
+<p>The following sample uses the mscrm.GetSavedQueries function bound to the <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/dn927174#account">
+account entity</a> to retrieve information about saved queries.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">function AccountGetSavedQueries() {
+ 
+ Sdk.WebAPIPreview.invokeBoundFunction(&quot;accounts&quot;, //entitySetName
+  &quot;mscrm.GetSavedQueries&quot;, //functionName
+  AccountGetSavedQueriesSuccess, //successCallback
+  function (error) { console.log(error.message) });); //errorCallback
+}
+
+function AccountGetSavedQueriesSuccess(GetSavedQueriesResponse) {
+
+ if (GetSavedQueriesResponse.length &gt; 0) {
+  GetSavedQueriesResponse.forEach(function (item) {
+   console.log(&quot;name:&quot; &#43; item.name &#43; &quot; id: &quot; &#43; item.savedqueryid);
+  })
+  // console output:
+  //name:Account Advanced Find View id: 00000000-0000-0000-00aa-000000666000
+  //name:My Active Accounts id: 00000000-0000-0000-00aa-000010001001
+  //name:Active Accounts id: 00000000-0000-0000-00aa-000010001002
+  //name:Inactive Accounts id: 00000000-0000-0000-00aa-000010001031
+  //name:Account Associated View id: 00000000-0000-0000-00aa-000010001200
+  //name:Accounts I Follow id: 61273827-328e-e011-95ae-00155d9cfa02
+  //name:Accounts Being Followed id: 61273827-328e-e011-95ae-00155d9cfa03
+  //name:Accounts: Responded to Campaigns in Last 6 Months id: 49fb9771-09e1-4e70-b193-198752493577
+  //name:All Members id: 51de84dd-732f-440f-a506-26123a19ab50
+  //name:My Accounts id: 31089fd8-596a-47be-9c9c-3ff82c7a8f8c
+  //name:Quick Find Marketing List Members id: 4d149ed9-12f1-4cd3-8427-418674f21bed
+  //name:Quick Find Active Accounts id: 2d1187c4-23fe-4bb5-9647-43bb1c6ddbd1
+  //name:Active Members id: a424ac61-bec9-48b0-a3e0-4bb903bd186e
+  //name:Inactive Members id: d9c57fee-71ad-48e2-a17b-4ebbd01ec328
+  //name:My Connections id: d234426e-1f37-4944-9255-50e19b541c4c
+  //name:Account De-dup lookup display id: f9e54d49-0c76-4cbd-979b-5fe94b496be0
+  //name:Account multi-line lookup display id: f9e54d49-0c76-4cbd-979b-5fe94b496beb
+  //name:Accounts: Influenced Deals That We Won id: 15c63745-0a6e-4322-8416-a62c84d90279
+  //name:Accounts: No Campaign Activities in Last 3 Months id: cfbcd7af-aee5-4e45-8ecc-c040d4020581
+  //name:Account Lookup View id: a9af0ab8-861d-4cfa-92a5-c6281fed7fab
+ }
+ else {
+  console.log(&quot;There are no saved queries for this entity.&quot;)
+ }
+
+}
+</pre>
+<div class="preview">
+<pre class="js"><span class="js__operator">function</span>&nbsp;AccountGetSavedQueries()&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;
+&nbsp;Sdk.WebAPIPreview.invokeBoundFunction(<span class="js__string">&quot;accounts&quot;</span>,&nbsp;<span class="js__sl_comment">//entitySetName</span>&nbsp;
+&nbsp;&nbsp;<span class="js__string">&quot;mscrm.GetSavedQueries&quot;</span>,&nbsp;<span class="js__sl_comment">//functionName</span>&nbsp;
+&nbsp;&nbsp;AccountGetSavedQueriesSuccess,&nbsp;<span class="js__sl_comment">//successCallback</span>&nbsp;
+&nbsp;&nbsp;<span class="js__operator">function</span>&nbsp;(error)&nbsp;<span class="js__brace">{</span>&nbsp;console.log(error.message)&nbsp;<span class="js__brace">}</span>););&nbsp;<span class="js__sl_comment">//errorCallback</span>&nbsp;
+<span class="js__brace">}</span>&nbsp;
+&nbsp;
+<span class="js__operator">function</span>&nbsp;AccountGetSavedQueriesSuccess(GetSavedQueriesResponse)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;
+&nbsp;<span class="js__statement">if</span>&nbsp;(GetSavedQueriesResponse.length&nbsp;&gt;&nbsp;<span class="js__num">0</span>)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;GetSavedQueriesResponse.forEach(<span class="js__operator">function</span>&nbsp;(item)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;console.log(<span class="js__string">&quot;name:&quot;</span>&nbsp;&#43;&nbsp;item.name&nbsp;&#43;&nbsp;<span class="js__string">&quot;&nbsp;id:&nbsp;&quot;</span>&nbsp;&#43;&nbsp;item.savedqueryid);&nbsp;
+&nbsp;&nbsp;<span class="js__brace">}</span>)&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//&nbsp;console&nbsp;output:</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//name:Account&nbsp;Advanced&nbsp;Find&nbsp;View&nbsp;id:&nbsp;00000000-0000-0000-00aa-000000666000</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//name:My&nbsp;Active&nbsp;Accounts&nbsp;id:&nbsp;00000000-0000-0000-00aa-000010001001</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//name:Active&nbsp;Accounts&nbsp;id:&nbsp;00000000-0000-0000-00aa-000010001002</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//name:Inactive&nbsp;Accounts&nbsp;id:&nbsp;00000000-0000-0000-00aa-000010001031</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//name:Account&nbsp;Associated&nbsp;View&nbsp;id:&nbsp;00000000-0000-0000-00aa-000010001200</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//name:Accounts&nbsp;I&nbsp;Follow&nbsp;id:&nbsp;61273827-328e-e011-95ae-00155d9cfa02</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//name:Accounts&nbsp;Being&nbsp;Followed&nbsp;id:&nbsp;61273827-328e-e011-95ae-00155d9cfa03</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//name:Accounts:&nbsp;Responded&nbsp;to&nbsp;Campaigns&nbsp;in&nbsp;Last&nbsp;6&nbsp;Months&nbsp;id:&nbsp;49fb9771-09e1-4e70-b193-198752493577</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//name:All&nbsp;Members&nbsp;id:&nbsp;51de84dd-732f-440f-a506-26123a19ab50</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//name:My&nbsp;Accounts&nbsp;id:&nbsp;31089fd8-596a-47be-9c9c-3ff82c7a8f8c</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//name:Quick&nbsp;Find&nbsp;Marketing&nbsp;List&nbsp;Members&nbsp;id:&nbsp;4d149ed9-12f1-4cd3-8427-418674f21bed</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//name:Quick&nbsp;Find&nbsp;Active&nbsp;Accounts&nbsp;id:&nbsp;2d1187c4-23fe-4bb5-9647-43bb1c6ddbd1</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//name:Active&nbsp;Members&nbsp;id:&nbsp;a424ac61-bec9-48b0-a3e0-4bb903bd186e</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//name:Inactive&nbsp;Members&nbsp;id:&nbsp;d9c57fee-71ad-48e2-a17b-4ebbd01ec328</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//name:My&nbsp;Connections&nbsp;id:&nbsp;d234426e-1f37-4944-9255-50e19b541c4c</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//name:Account&nbsp;De-dup&nbsp;lookup&nbsp;display&nbsp;id:&nbsp;f9e54d49-0c76-4cbd-979b-5fe94b496be0</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//name:Account&nbsp;multi-line&nbsp;lookup&nbsp;display&nbsp;id:&nbsp;f9e54d49-0c76-4cbd-979b-5fe94b496beb</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//name:Accounts:&nbsp;Influenced&nbsp;Deals&nbsp;That&nbsp;We&nbsp;Won&nbsp;id:&nbsp;15c63745-0a6e-4322-8416-a62c84d90279</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//name:Accounts:&nbsp;No&nbsp;Campaign&nbsp;Activities&nbsp;in&nbsp;Last&nbsp;3&nbsp;Months&nbsp;id:&nbsp;cfbcd7af-aee5-4e45-8ecc-c040d4020581</span>&nbsp;
+&nbsp;&nbsp;<span class="js__sl_comment">//name:Account&nbsp;Lookup&nbsp;View&nbsp;id:&nbsp;a9af0ab8-861d-4cfa-92a5-c6281fed7fab</span>&nbsp;
+&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;<span class="js__statement">else</span>&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;console.log(<span class="js__string">&quot;There&nbsp;are&nbsp;no&nbsp;saved&nbsp;queries&nbsp;for&nbsp;this&nbsp;entity.&quot;</span>)&nbsp;
+&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;
+<span class="js__brace">}</span>&nbsp;</pre>
+</div>
+</div>
+</div>
+<h2><a name="_InvokeUnboundFunction"></a>invokeUnboundFunction</h2>
+<p>Invokes an unbound function.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="172" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>functionName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the function. The function name must <strong><span style="text-decoration:underline">not</span></strong> include the namespace prefix.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Array</p>
+</td>
+<td width="742" valign="top">
+<p>An array of string values that represent a name and a value separated by &lsquo;=&rsquo; for each parameter.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>successCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when the operation is successful. The result will be passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>errorCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when there is an error. The error will be passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Guid</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>See the following resources for more information:</p>
+<ul>
+<li><a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/dn927172">Microsoft Dynamics CRM Web API Preview Unbound Functions Reference</a>
+</li><li><a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149063.aspx">Call unbound functions
+</a></li></ul>
+<p><strong>Example</strong></p>
+<p>The following sample shows the use of the <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/dn927172#RetrieveUserQueues">
+RetrieveUserQueues</a> unbound function where the <strong>UserId</strong> parameter
+<strong>represents</strong> the systemuserid of a systemuser in the organization.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">function retrieveUserQueues(UserId) {
+ 
+ var parameters = [];
+ parameters.push(&quot;UserId=&quot; &#43; UserId);
+ parameters.push(&quot;IncludePublic=true&quot;);
+
+ Sdk.WebAPIPreview.invokeUnboundFunction(&quot;RetrieveUserQueues&quot;, 
+parameters, 
+retrieveUserQueuesSuccess, 
+  function (error) { console.log(error.message) });
+}
+
+function retrieveUserQueuesSuccess(response) { 
+ console.log(&quot;Returned &quot; &#43; response.value.length &#43; &quot; user queues.&quot;);
+}
+</pre>
+<div class="preview">
+<pre class="js"><span class="js__operator">function</span>&nbsp;retrieveUserQueues(UserId)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;
+&nbsp;<span class="js__statement">var</span>&nbsp;parameters&nbsp;=&nbsp;[];&nbsp;
+&nbsp;parameters.push(<span class="js__string">&quot;UserId=&quot;</span>&nbsp;&#43;&nbsp;UserId);&nbsp;
+&nbsp;parameters.push(<span class="js__string">&quot;IncludePublic=true&quot;</span>);&nbsp;
+&nbsp;
+&nbsp;Sdk.WebAPIPreview.invokeUnboundFunction(<span class="js__string">&quot;RetrieveUserQueues&quot;</span>,&nbsp;&nbsp;
+parameters,&nbsp;&nbsp;
+retrieveUserQueuesSuccess,&nbsp;&nbsp;
+&nbsp;&nbsp;<span class="js__operator">function</span>&nbsp;(error)&nbsp;<span class="js__brace">{</span>&nbsp;console.log(error.message)&nbsp;<span class="js__brace">}</span>);&nbsp;
+<span class="js__brace">}</span>&nbsp;
+&nbsp;
+<span class="js__operator">function</span>&nbsp;retrieveUserQueuesSuccess(response)&nbsp;<span class="js__brace">{</span>&nbsp;&nbsp;
+&nbsp;console.log(<span class="js__string">&quot;Returned&nbsp;&quot;</span>&nbsp;&#43;&nbsp;response.value.length&nbsp;&#43;&nbsp;<span class="js__string">&quot;&nbsp;user&nbsp;queues.&quot;</span>);&nbsp;
+<span class="js__brace">}</span>&nbsp;</pre>
+</div>
+</div>
+</div>
+<h2><a name="_InvokeUnboundAction"></a>invokeUnboundAction</h2>
+<p>Invokes an unbound action.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="172" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>actionName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the function. The function name must <strong><span style="text-decoration:underline">not</span></strong> include the namespace prefix.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>parameterObj</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Object</p>
+</td>
+<td width="742" valign="top">
+<p>A JSON object with values assigned to properties which correspond to the parameters for the action.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>successCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when the operation is successful. The result will be passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>errorCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when there is an error. The error will be passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Guid</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>See the following resources for more information:</p>
+<ul>
+<li><a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/en-us/dn927171.aspx">Microsoft Dynamics CRM Web API Preview Unbound Actions Reference</a>
+</li><li><a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149066.aspx">Call unbound actions
+</a></li></ul>
+<p><strong>Example</strong></p>
+<p>The following sample creates an account, then creates an opportunity associated with the account. Then it prepares the parameters to close the opportunity as won and calls the
+<a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/dn927171#WinOpportunity">WinOpportunity</a> action. Finally it deletes the account and all associated records with it.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">function WinOpportunityAction() {
+var winOppAccountUri, winOppUri;
+
+ //Create an account to own the opportunity
+ var winOppAccount = { name: &quot;Win Opp Account&quot; };
+ Sdk.WebAPIPreview.create(&quot;accounts&quot;, winOppAccount,
+  function (uri) { //successcallback
+   winOppAccountUri = uri;
+
+   //Create an opportunity to Win
+   var winOpp = {
+    name: &quot;Opportunity to Win&quot;,
+    &quot;opportunity_parent_account@odata.bind&quot;: winOppAccountUri
+   };
+   Sdk.WebAPIPreview.create(&quot;opportunities&quot;, winOpp,
+    function (uri) { //successcallback
+     winOppUri = uri;
+
+     //Prepare parameters to close the opportunity as Won
+     WinOppParams = {
+      Status: 3,
+      OpportunityClose: {
+       &quot;@odata.type&quot;: &quot;#mscrm.opportunityclose&quot;,
+       subject: &quot;Won Opp Activity&quot;,
+       description: &quot;We won this opportunity.&quot;,
+       &quot;Opportunity_OpportunityClose@odata.bind&quot;: winOppUri
+      }
+     }
+
+     //Call the WinOpportunity action
+     Sdk.WebAPIPreview.invokeUnboundAction(&quot;WinOpportunity&quot;, WinOppParams,
+      function () { //successcallback
+       console.log(&quot;    Opportunity closed as won&quot;);
+
+       //Cleanup records created by this sample
+       Sdk.WebAPIPreview.del(winOppAccountUri,
+        function () {  //successcallback
+         console.log(&quot;    Account deleted and all related records with it.&quot;)
+        }, function (error) { console.log(error.message) });
+      }, function (error) { console.log(error.message) });
+    }, function (error) { console.log(error.message) });
+  }, function (error) { console.log(error.message) })
+</pre>
+<div class="preview">
+<pre class="js"><span class="js__operator">function</span>&nbsp;WinOpportunityAction()&nbsp;<span class="js__brace">{</span>&nbsp;
+<span class="js__statement">var</span>&nbsp;winOppAccountUri,&nbsp;winOppUri;&nbsp;
+&nbsp;
+&nbsp;<span class="js__sl_comment">//Create&nbsp;an&nbsp;account&nbsp;to&nbsp;own&nbsp;the&nbsp;opportunity</span>&nbsp;
+&nbsp;<span class="js__statement">var</span>&nbsp;winOppAccount&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;name:&nbsp;<span class="js__string">&quot;Win&nbsp;Opp&nbsp;Account&quot;</span>&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;Sdk.WebAPIPreview.create(<span class="js__string">&quot;accounts&quot;</span>,&nbsp;winOppAccount,&nbsp;
+&nbsp;&nbsp;<span class="js__operator">function</span>&nbsp;(uri)&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__sl_comment">//successcallback</span>&nbsp;
+&nbsp;&nbsp;&nbsp;winOppAccountUri&nbsp;=&nbsp;uri;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//Create&nbsp;an&nbsp;opportunity&nbsp;to&nbsp;Win</span>&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__statement">var</span>&nbsp;winOpp&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;name:&nbsp;<span class="js__string">&quot;Opportunity&nbsp;to&nbsp;Win&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;opportunity_parent_account@odata.bind&quot;</span>:&nbsp;winOppAccountUri&nbsp;
+&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;Sdk.WebAPIPreview.create(<span class="js__string">&quot;opportunities&quot;</span>,&nbsp;winOpp,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__operator">function</span>&nbsp;(uri)&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__sl_comment">//successcallback</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;winOppUri&nbsp;=&nbsp;uri;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//Prepare&nbsp;parameters&nbsp;to&nbsp;close&nbsp;the&nbsp;opportunity&nbsp;as&nbsp;Won</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WinOppParams&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Status:&nbsp;<span class="js__num">3</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OpportunityClose:&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;@odata.type&quot;</span>:&nbsp;<span class="js__string">&quot;#mscrm.opportunityclose&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subject:&nbsp;<span class="js__string">&quot;Won&nbsp;Opp&nbsp;Activity&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description:&nbsp;<span class="js__string">&quot;We&nbsp;won&nbsp;this&nbsp;opportunity.&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__string">&quot;Opportunity_OpportunityClose@odata.bind&quot;</span>:&nbsp;winOppUri&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//Call&nbsp;the&nbsp;WinOpportunity&nbsp;action</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sdk.WebAPIPreview.invokeUnboundAction(<span class="js__string">&quot;WinOpportunity&quot;</span>,&nbsp;WinOppParams,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__operator">function</span>&nbsp;()&nbsp;<span class="js__brace">{</span>&nbsp;<span class="js__sl_comment">//successcallback</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(<span class="js__string">&quot;&nbsp;&nbsp;&nbsp;&nbsp;Opportunity&nbsp;closed&nbsp;as&nbsp;won&quot;</span>);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__sl_comment">//Cleanup&nbsp;records&nbsp;created&nbsp;by&nbsp;this&nbsp;sample</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sdk.WebAPIPreview.del(winOppAccountUri,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__operator">function</span>&nbsp;()&nbsp;<span class="js__brace">{</span>&nbsp;&nbsp;<span class="js__sl_comment">//successcallback</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(<span class="js__string">&quot;&nbsp;&nbsp;&nbsp;&nbsp;Account&nbsp;deleted&nbsp;and&nbsp;all&nbsp;related&nbsp;records&nbsp;with&nbsp;it.&quot;</span>)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>,&nbsp;<span class="js__operator">function</span>&nbsp;(error)&nbsp;<span class="js__brace">{</span>&nbsp;console.log(error.message)&nbsp;<span class="js__brace">}</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>,&nbsp;<span class="js__operator">function</span>&nbsp;(error)&nbsp;<span class="js__brace">{</span>&nbsp;console.log(error.message)&nbsp;<span class="js__brace">}</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="js__brace">}</span>,&nbsp;<span class="js__operator">function</span>&nbsp;(error)&nbsp;<span class="js__brace">{</span>&nbsp;console.log(error.message)&nbsp;<span class="js__brace">}</span>);&nbsp;
+&nbsp;&nbsp;<span class="js__brace">}</span>,&nbsp;<span class="js__operator">function</span>&nbsp;(error)&nbsp;<span class="js__brace">{</span>&nbsp;console.log(error.message)&nbsp;<span class="js__brace">}</span>)&nbsp;</pre>
+</div>
+</div>
+</div>
+<h2><a name="_QueryEntitySet"></a>queryEntitySet</h2>
+<p>Returns an object which includes an array entities that match any filter criteria and include any properties requested.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="172" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>entitySetName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the entity set</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>query</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The system query parameters</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>includeFormattedValues</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Boolean</p>
+</td>
+<td width="742" valign="top">
+<p>Whether to include formatted values</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>maxPageSize</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Number</p>
+</td>
+<td width="742" valign="top">
+<p>If not null, the maximum number of entities to include in a page. The default is 5000.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>successCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when the operation is successful. The result of the query is passed to this function. See
+<strong>Remarks</strong>.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>errorCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when there is an error. The error will be passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks </strong></p>
+<p>The result passed to the <strong>successCallback</strong> is an object with the following properties:</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="161" valign="top">
+<p><strong>Properties</strong></p>
+</td>
+<td width="840" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="161" valign="top">
+<p><strong>value</strong></p>
+</td>
+<td width="840" valign="top">
+<p>The array of entities that match any filter criteria in the query.</p>
+</td>
+</tr>
+<tr>
+<td width="161" valign="top">
+<p><strong>@odata.nextLink</strong></p>
+</td>
+<td width="840" valign="top">
+<p>The Uri of the next page of entities. This property is not present if there are no additional pages. This property value is URI encoded. Encoding it again will break the XML included in the Url.</p>
+</td>
+</tr>
+<tr>
+<td width="161" valign="top">
+<p><strong>@odata.count</strong></p>
+</td>
+<td width="840" valign="top">
+<p>The number of entities in the current page. This property is only present when the
+<strong>$count</strong> system query option is included in the query.</p>
+</td>
+</tr>
+<tr>
+<td width="161" valign="top">
+<p><strong>@odata.context</strong></p>
+</td>
+<td width="840" valign="top">
+<p>A value which describes the structure of the data returned. This property can be used to compare whether two results were from the same query.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&nbsp;</strong></p>
+<p>No object model is provided to compose the query in a structured way.</p>
+<p>See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149061.aspx">Query entity sets</a> for more information.</p>
+<p><strong>Example</strong></p>
+<p>The following example retrieves activities associated with an account where the accountid matches the
+<strong>newAccountId</strong> variable in pages of two entities, then retrieves additional pages.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">var includeFormattedValues = true;
+var maxPageSize = 2;
+
+function queryEntitySet(newAccountId) { 
+ var query = &quot;$filter=regardingobjectid eq &quot; &#43; newAccountId &#43; &quot;&amp;$select=subject&quot;;
+ Sdk.WebAPIPreview.queryEntitySet(&quot;activitypointers&quot;,
+  query,// query
+  includeFormattedValues,// includeFormattedValues
+  maxPageSize, // maxPageSize 
+  queryEntitySetSuccess,//successCallback
+  function (error) { console.log(error.message) })//errorCallback
+
+}
+
+function queryEntitySetSuccess(response) {
+ console.log(&quot;Sample function: queryEntitySetSuccess&quot;);
+ var activities = response.value;
+ var nextLink = response[&quot;@odata.nextLink&quot;];
+ //First page of activities retrieved using QueryEntitySet:
+ activities.forEach(function (activity) {
+  console.log(&quot;   Activity Subject:&quot; &#43; activity.subject);
+ });
+
+ //Get the next page of results
+ Sdk.WebAPIPreview.getNextPage(nextLink,
+  includeFormattedValues, // includeFormattedValues same value used with queryEntitySet
+  maxPageSize,// maxPageSize same value used with queryEntitySet
+  getNextPageSuccess, //successCallback
+  function (error) { console.log(error.message) })//errorCallback
+}
+
+function getNextPageSuccess(response) {
+
+ //Second page of activities retrieved using QueryEntitySet:
+ response.value.forEach(function (activity) {
+  console.log(&quot;Activity Subject:&quot; &#43; activity.subject);
+ });
+
+}
+</pre>
+<div class="preview">
+<pre class="js"><span class="js__statement">var</span>&nbsp;includeFormattedValues&nbsp;=&nbsp;true;&nbsp;
+<span class="js__statement">var</span>&nbsp;maxPageSize&nbsp;=&nbsp;<span class="js__num">2</span>;&nbsp;
+&nbsp;
+<span class="js__operator">function</span>&nbsp;queryEntitySet(newAccountId)&nbsp;<span class="js__brace">{</span>&nbsp;&nbsp;
+&nbsp;<span class="js__statement">var</span>&nbsp;query&nbsp;=&nbsp;<span class="js__string">&quot;$filter=regardingobjectid&nbsp;eq&nbsp;&quot;</span>&nbsp;&#43;&nbsp;newAccountId&nbsp;&#43;&nbsp;<span class="js__string">&quot;&amp;$select=subject&quot;</span>;&nbsp;
+&nbsp;Sdk.WebAPIPreview.queryEntitySet(<span class="js__string">&quot;activitypointers&quot;</span>,&nbsp;
+&nbsp;&nbsp;query,<span class="js__sl_comment">//&nbsp;query</span>&nbsp;
+&nbsp;&nbsp;includeFormattedValues,<span class="js__sl_comment">//&nbsp;includeFormattedValues</span>&nbsp;
+&nbsp;&nbsp;maxPageSize,&nbsp;<span class="js__sl_comment">//&nbsp;maxPageSize&nbsp;</span>&nbsp;
+&nbsp;&nbsp;queryEntitySetSuccess,<span class="js__sl_comment">//successCallback</span>&nbsp;
+&nbsp;&nbsp;<span class="js__operator">function</span>&nbsp;(error)&nbsp;<span class="js__brace">{</span>&nbsp;console.log(error.message)&nbsp;<span class="js__brace">}</span>)<span class="js__sl_comment">//errorCallback</span>&nbsp;
+&nbsp;
+<span class="js__brace">}</span>&nbsp;
+&nbsp;
+<span class="js__operator">function</span>&nbsp;queryEntitySetSuccess(response)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;console.log(<span class="js__string">&quot;Sample&nbsp;function:&nbsp;queryEntitySetSuccess&quot;</span>);&nbsp;
+&nbsp;<span class="js__statement">var</span>&nbsp;activities&nbsp;=&nbsp;response.value;&nbsp;
+&nbsp;<span class="js__statement">var</span>&nbsp;nextLink&nbsp;=&nbsp;response[<span class="js__string">&quot;@odata.nextLink&quot;</span>];&nbsp;
+&nbsp;<span class="js__sl_comment">//First&nbsp;page&nbsp;of&nbsp;activities&nbsp;retrieved&nbsp;using&nbsp;QueryEntitySet:</span>&nbsp;
+&nbsp;activities.forEach(<span class="js__operator">function</span>&nbsp;(activity)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;console.log(<span class="js__string">&quot;&nbsp;&nbsp;&nbsp;Activity&nbsp;Subject:&quot;</span>&nbsp;&#43;&nbsp;activity.subject);&nbsp;
+&nbsp;<span class="js__brace">}</span>);&nbsp;
+&nbsp;
+&nbsp;<span class="js__sl_comment">//Get&nbsp;the&nbsp;next&nbsp;page&nbsp;of&nbsp;results</span>&nbsp;
+&nbsp;Sdk.WebAPIPreview.getNextPage(nextLink,&nbsp;
+&nbsp;&nbsp;includeFormattedValues,&nbsp;<span class="js__sl_comment">//&nbsp;includeFormattedValues&nbsp;same&nbsp;value&nbsp;used&nbsp;with&nbsp;queryEntitySet</span>&nbsp;
+&nbsp;&nbsp;maxPageSize,<span class="js__sl_comment">//&nbsp;maxPageSize&nbsp;same&nbsp;value&nbsp;used&nbsp;with&nbsp;queryEntitySet</span>&nbsp;
+&nbsp;&nbsp;getNextPageSuccess,&nbsp;<span class="js__sl_comment">//successCallback</span>&nbsp;
+&nbsp;&nbsp;<span class="js__operator">function</span>&nbsp;(error)&nbsp;<span class="js__brace">{</span>&nbsp;console.log(error.message)&nbsp;<span class="js__brace">}</span>)<span class="js__sl_comment">//errorCallback</span>&nbsp;
+<span class="js__brace">}</span>&nbsp;
+&nbsp;
+<span class="js__operator">function</span>&nbsp;getNextPageSuccess(response)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;
+&nbsp;<span class="js__sl_comment">//Second&nbsp;page&nbsp;of&nbsp;activities&nbsp;retrieved&nbsp;using&nbsp;QueryEntitySet:</span>&nbsp;
+&nbsp;response.value.forEach(<span class="js__operator">function</span>&nbsp;(activity)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;console.log(<span class="js__string">&quot;Activity&nbsp;Subject:&quot;</span>&nbsp;&#43;&nbsp;activity.subject);&nbsp;
+&nbsp;<span class="js__brace">}</span>);&nbsp;
+&nbsp;
+<span class="js__brace">}</span>&nbsp;</pre>
+</div>
+</div>
+</div>
+<h2><a name="_GetNextPage"></a>getNextPage</h2>
+<p>Retrieves the next page when the number of entities returned using <a href="#_QueryEntitySet">
+QueryEntitySet </a>exceeds the <strong>maxPageSize</strong>.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="172" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>query</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The <strong>@odata.nextLink</strong> property value of a collection returned from
+<a href="#_QueryEntitySet">QueryEntitySet </a></p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>includeFormattedValues</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Boolean</p>
+</td>
+<td width="742" valign="top">
+<p>Whether to include formatted values</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>maxPageSize</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Number</p>
+</td>
+<td width="742" valign="top">
+<p>Use the same <strong>maxPageSize</strong> value used by the call to <a href="#_QueryEntitySet">
+QueryEntitySet </a>which provided the <strong>@odata.nextLink </strong>value</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>successCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when the operation is successful. The result of the query is passed to this function. See
+<strong>Remarks</strong>.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>errorCallback</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Function</p>
+</td>
+<td width="742" valign="top">
+<p>The function to call when there is an error. The error will be passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks </strong></p>
+<p>The result is the same as returned to <a href="#_QueryEntitySet">queryEntitySet
+</a>.<strong>&nbsp;</strong></p>
+<p>See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149061.aspx">Query entity sets</a> for more information.</p>
+<h2><a name="_ExecuteBatch"></a>executeBatch</h2>
+<p>Executes a batch operation</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="172" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="120" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="709" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>payload</strong></p>
+</td>
+<td width="120" valign="top">
+<p>String</p>
+</td>
+<td width="709" valign="top">
+<p>A string describing the operations to perform in the batch</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>batchId</strong></p>
+</td>
+<td width="120" valign="top">
+<p>String</p>
+</td>
+<td width="709" valign="top">
+<p>A unique identifier to use for the batch</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>successCallback</strong></p>
+</td>
+<td width="120" valign="top">
+<p>Function</p>
+</td>
+<td width="709" valign="top">
+<p>The function to call when the operation is successful. The response returned will be passed too this function. See
+<strong>Remarks</strong> .</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>errorCallback</strong></p>
+</td>
+<td width="120" valign="top">
+<p>Function</p>
+</td>
+<td width="709" valign="top">
+<p>The function to call when there is an error. The error will be passed to this function.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="120" valign="top">
+<p>String</p>
+</td>
+<td width="709" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks </strong></p>
+<p>The result of a successful operation is a string containing the raw body of the response<strong>&nbsp;</strong></p>
+<p>The <strong>batchId</strong> is should be unique. The <strong>getRandomId</strong> function can be used to generate a random 10 character string to use for this value.</p>
+<p>See the following resources for more information</p>
+<ul>
+<li><a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149059.aspx">Execute batch operations
+</a></li><li><a href="http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html%23_Toc406398359">OData Version 4.0 Part 1: Protocol Plus Errata 02: 11.7 Batch Requests
+</a></li></ul>
+<p><strong>Example</strong></p>
+<p>The following sample will create two tasks associated with an account represented by the
+<strong>accounturi</strong> variable. The tasks will be created as part of a change set. Then, a GET request is used to return all the tasks associated with the account. The entire response is written to the console.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">function createTwoAssociatedTasksInBatch(accounturi) {
+
+ //Generate a random set of 10 characters to serve as the batchId value
+ var batchId = Sdk.WebAPIPreview.getRandomId();
+ //Generate a random set of 10 characters to serve as the changeSetId value
+ var changeSetId = Sdk.WebAPIPreview.getRandomId();
+
+ //Define tasks to be created:
+ var firstTask = {
+  subject: &quot;Task 1 in batch&quot;,
+  &quot;Account_Tasks@odata.bind&quot;: accountUri
+ };
+ var secondTask = {
+  subject: &quot;Task 2 in batch&quot;,
+  &quot;Account_Tasks@odata.bind&quot;: accountUri
+ };
+
+ //Prepare the payload:
+
+ //Start of ChangeSet
+ payload = [&quot;--batch_&quot; &#43; batchId]
+ payload.push(&quot;Content-Type: multipart/mixed;boundary=changeset_&quot; &#43; changeSetId);
+ payload.push(&quot;&quot;);
+ //First item in ChangeSet
+ payload.push(&quot;--changeset_&quot; &#43; changeSetId);
+ payload.push(&quot;Content-Type: application/http&quot;);
+ payload.push(&quot;Content-Transfer-Encoding:binary&quot;);
+ payload.push(&quot;Content-ID: 1&quot;);
+ payload.push(&quot;&quot;);
+ payload.push(&quot;POST &quot; &#43; Xrm.Page.context.getClientUrl() &#43; &quot;/api/data/tasks HTTP/1.1&quot;);
+ payload.push(&quot;Content-Type: application/json;type=entry&quot;);
+ payload.push(&quot;&quot;);
+ payload.push(JSON.stringify(firstTask));
+ //Second item in ChangeSet
+ payload.push(&quot;--changeset_&quot; &#43; changeSetId);
+ payload.push(&quot;Content-Type: application/http&quot;);
+ payload.push(&quot;Content-Transfer-Encoding:binary&quot;);
+ payload.push(&quot;Content-ID: 2&quot;);
+ payload.push(&quot;&quot;);
+ payload.push(&quot;POST &quot; &#43; Xrm.Page.context.getClientUrl() &#43; &quot;/api/data/tasks HTTP/1.1&quot;);
+ payload.push(&quot;Content-Type: application/json;type=entry&quot;);
+ payload.push(&quot;&quot;);
+ payload.push(JSON.stringify(secondTask));
+ //End of ChangeSet
+ payload.push(&quot;--changeset_&quot; &#43; changeSetId &#43; &quot;--&quot;);
+ payload.push(&quot;&quot;);
+ //Adding a GET request outside of the ChangeSet
+ payload.push(&quot;--batch_&quot; &#43; batchId);
+ payload.push(&quot;Content-Type: application/http&quot;);
+ payload.push(&quot;Content-Transfer-Encoding:binary&quot;);
+ payload.push(&quot;&quot;);
+ //Retrieve all the tasks related to the account
+ payload.push(&quot;GET &quot; &#43; accounturi &#43; &quot;/Account_Tasks?$select=subject HTTP/1.1&quot;);
+ payload.push(&quot;Accept: application/json&quot;);
+ payload.push(&quot;&quot;);
+ payload.push(&quot;--batch_&quot; &#43; batchId &#43; &quot;--&quot;);
+
+
+ Sdk.WebAPIPreview.executeBatch(payload.join(&quot;\r\n&quot;), //payload
+    batchId, //batchId
+  function (response) {  //successCallback
+   console.log(response);
+
+
+  }, function (error) { console.log(error.message) });
+
+}
+</pre>
+<div class="preview">
+<pre class="js"><span class="js__operator">function</span>&nbsp;createTwoAssociatedTasksInBatch(accounturi)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;
+&nbsp;<span class="js__sl_comment">//Generate&nbsp;a&nbsp;random&nbsp;set&nbsp;of&nbsp;10&nbsp;characters&nbsp;to&nbsp;serve&nbsp;as&nbsp;the&nbsp;batchId&nbsp;value</span>&nbsp;
+&nbsp;<span class="js__statement">var</span>&nbsp;batchId&nbsp;=&nbsp;Sdk.WebAPIPreview.getRandomId();&nbsp;
+&nbsp;<span class="js__sl_comment">//Generate&nbsp;a&nbsp;random&nbsp;set&nbsp;of&nbsp;10&nbsp;characters&nbsp;to&nbsp;serve&nbsp;as&nbsp;the&nbsp;changeSetId&nbsp;value</span>&nbsp;
+&nbsp;<span class="js__statement">var</span>&nbsp;changeSetId&nbsp;=&nbsp;Sdk.WebAPIPreview.getRandomId();&nbsp;
+&nbsp;
+&nbsp;<span class="js__sl_comment">//Define&nbsp;tasks&nbsp;to&nbsp;be&nbsp;created:</span>&nbsp;
+&nbsp;<span class="js__statement">var</span>&nbsp;firstTask&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;subject:&nbsp;<span class="js__string">&quot;Task&nbsp;1&nbsp;in&nbsp;batch&quot;</span>,&nbsp;
+&nbsp;&nbsp;<span class="js__string">&quot;Account_Tasks@odata.bind&quot;</span>:&nbsp;accountUri&nbsp;
+&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;<span class="js__statement">var</span>&nbsp;secondTask&nbsp;=&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;subject:&nbsp;<span class="js__string">&quot;Task&nbsp;2&nbsp;in&nbsp;batch&quot;</span>,&nbsp;
+&nbsp;&nbsp;<span class="js__string">&quot;Account_Tasks@odata.bind&quot;</span>:&nbsp;accountUri&nbsp;
+&nbsp;<span class="js__brace">}</span>;&nbsp;
+&nbsp;
+&nbsp;<span class="js__sl_comment">//Prepare&nbsp;the&nbsp;payload:</span>&nbsp;
+&nbsp;
+&nbsp;<span class="js__sl_comment">//Start&nbsp;of&nbsp;ChangeSet</span>&nbsp;
+&nbsp;payload&nbsp;=&nbsp;[<span class="js__string">&quot;--batch_&quot;</span>&nbsp;&#43;&nbsp;batchId]&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;Content-Type:&nbsp;multipart/mixed;boundary=changeset_&quot;</span>&nbsp;&#43;&nbsp;changeSetId);&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;&quot;</span>);&nbsp;
+&nbsp;<span class="js__sl_comment">//First&nbsp;item&nbsp;in&nbsp;ChangeSet</span>&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;--changeset_&quot;</span>&nbsp;&#43;&nbsp;changeSetId);&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;Content-Type:&nbsp;application/http&quot;</span>);&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;Content-Transfer-Encoding:binary&quot;</span>);&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;Content-ID:&nbsp;1&quot;</span>);&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;&quot;</span>);&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;POST&nbsp;&quot;</span>&nbsp;&#43;&nbsp;Xrm.Page.context.getClientUrl()&nbsp;&#43;&nbsp;<span class="js__string">&quot;/api/data/tasks&nbsp;HTTP/1.1&quot;</span>);&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;Content-Type:&nbsp;application/json;type=entry&quot;</span>);&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;&quot;</span>);&nbsp;
+&nbsp;payload.push(JSON.stringify(firstTask));&nbsp;
+&nbsp;<span class="js__sl_comment">//Second&nbsp;item&nbsp;in&nbsp;ChangeSet</span>&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;--changeset_&quot;</span>&nbsp;&#43;&nbsp;changeSetId);&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;Content-Type:&nbsp;application/http&quot;</span>);&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;Content-Transfer-Encoding:binary&quot;</span>);&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;Content-ID:&nbsp;2&quot;</span>);&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;&quot;</span>);&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;POST&nbsp;&quot;</span>&nbsp;&#43;&nbsp;Xrm.Page.context.getClientUrl()&nbsp;&#43;&nbsp;<span class="js__string">&quot;/api/data/tasks&nbsp;HTTP/1.1&quot;</span>);&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;Content-Type:&nbsp;application/json;type=entry&quot;</span>);&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;&quot;</span>);&nbsp;
+&nbsp;payload.push(JSON.stringify(secondTask));&nbsp;
+&nbsp;<span class="js__sl_comment">//End&nbsp;of&nbsp;ChangeSet</span>&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;--changeset_&quot;</span>&nbsp;&#43;&nbsp;changeSetId&nbsp;&#43;&nbsp;<span class="js__string">&quot;--&quot;</span>);&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;&quot;</span>);&nbsp;
+&nbsp;<span class="js__sl_comment">//Adding&nbsp;a&nbsp;GET&nbsp;request&nbsp;outside&nbsp;of&nbsp;the&nbsp;ChangeSet</span>&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;--batch_&quot;</span>&nbsp;&#43;&nbsp;batchId);&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;Content-Type:&nbsp;application/http&quot;</span>);&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;Content-Transfer-Encoding:binary&quot;</span>);&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;&quot;</span>);&nbsp;
+&nbsp;<span class="js__sl_comment">//Retrieve&nbsp;all&nbsp;the&nbsp;tasks&nbsp;related&nbsp;to&nbsp;the&nbsp;account</span>&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;GET&nbsp;&quot;</span>&nbsp;&#43;&nbsp;accounturi&nbsp;&#43;&nbsp;<span class="js__string">&quot;/Account_Tasks?$select=subject&nbsp;HTTP/1.1&quot;</span>);&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;Accept:&nbsp;application/json&quot;</span>);&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;&quot;</span>);&nbsp;
+&nbsp;payload.push(<span class="js__string">&quot;--batch_&quot;</span>&nbsp;&#43;&nbsp;batchId&nbsp;&#43;&nbsp;<span class="js__string">&quot;--&quot;</span>);&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;Sdk.WebAPIPreview.executeBatch(payload.join(<span class="js__string">&quot;\r\n&quot;</span>),&nbsp;<span class="js__sl_comment">//payload</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;batchId,&nbsp;<span class="js__sl_comment">//batchId</span>&nbsp;
+&nbsp;&nbsp;<span class="js__operator">function</span>&nbsp;(response)&nbsp;<span class="js__brace">{</span>&nbsp;&nbsp;<span class="js__sl_comment">//successCallback</span>&nbsp;
+&nbsp;&nbsp;&nbsp;console.log(response);&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;&nbsp;<span class="js__brace">}</span>,&nbsp;<span class="js__operator">function</span>&nbsp;(error)&nbsp;<span class="js__brace">{</span>&nbsp;console.log(error.message)&nbsp;<span class="js__brace">}</span>);&nbsp;
+&nbsp;
+<span class="js__brace">}</span>&nbsp;</pre>
+</div>
+</div>
+</div>
+<h2><a name="_GetEntityList"></a>getEntityList</h2>
+<p>Returns an array of entities available for the web API.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="172" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="120" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="709" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>successCallback</strong></p>
+</td>
+<td width="120" valign="top">
+<p>Function</p>
+</td>
+<td width="709" valign="top">
+<p>The function to call when the operation is successful.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>errorCallback</strong></p>
+</td>
+<td width="120" valign="top">
+<p>Function</p>
+</td>
+<td width="709" valign="top">
+<p>The function to call when there is an error. The error will be passed to this function.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>This is simply a GET request to <strong><em>[Organization Uri]</em></strong>/api/data/</p>
+<p>Each item returned has the following properties:</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="119" valign="top">
+<p><strong>Property</strong></p>
+</td>
+<td width="882" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="119" valign="top">
+<p><strong>name</strong></p>
+</td>
+<td width="882" valign="top">
+<p>This is the name of the entity set. It is the same as the <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/en-us/library/microsoft.xrm.sdk.metadata.entitymetadata.logicalcollectionname.aspx">
+EntityMetadata.LogicalCollectionName Property </a>defined in the metadata for each entity type.</p>
+</td>
+</tr>
+<tr>
+<td width="119" valign="top">
+<p><strong>kind</strong></p>
+</td>
+<td width="882" valign="top">
+<p>For the web API preview every item is an EntitySet.</p>
+</td>
+</tr>
+<tr>
+<td width="119" valign="top">
+<p><strong>url</strong></p>
+</td>
+<td width="882" valign="top">
+<p>This value is the same as the name property and it represents the part of the resource path to retrieve data for the entity.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>See <a href="https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b/https://msdn.microsoft.com/dynamics/crm/mt149064#_Service_documents">
+Web API preview types, functions and actions: Service documents </a>for more information.</p>
+<p><strong>Example</strong></p>
+<p>The following sample retrieves a list of entities and writes the name property to the console.</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">Sdk.WebAPIPreview.getEntityList(function (result) {
+  result.forEach(function (entity) {
+   console.log( entity.name);
+  })
+ },
+  function (error) { console.log(error.message) }) 
+}
+</pre>
+<div class="preview">
+<pre class="js">Sdk.WebAPIPreview.getEntityList(<span class="js__operator">function</span>&nbsp;(result)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;result.forEach(<span class="js__operator">function</span>&nbsp;(entity)&nbsp;<span class="js__brace">{</span>&nbsp;
+&nbsp;&nbsp;&nbsp;console.log(&nbsp;entity.name);&nbsp;
+&nbsp;&nbsp;<span class="js__brace">}</span>)&nbsp;
+&nbsp;<span class="js__brace">}</span>,&nbsp;
+&nbsp;&nbsp;<span class="js__operator">function</span>&nbsp;(error)&nbsp;<span class="js__brace">{</span>&nbsp;console.log(error.message)&nbsp;<span class="js__brace">}</span>)&nbsp;&nbsp;
+<span class="js__brace">}</span>&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

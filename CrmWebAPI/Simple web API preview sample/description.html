@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=2B08C435C8251DADB8A53F8C45B39737" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:FooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=1E60E7B49899FEC4640711B64FF56FA6" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Simple web API preview sample</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Simple web API preview sample</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            C#, OData v4, Microsoft Dynamics CRM 2015 Online
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Introduction to Dynamics CRM Web API Preview
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Cloud, Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">6/7/2015</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/Simple-web-API-preview-987a9491">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p>This simplest example introducing the web API preview available with Microsoft Dynamics CRM Online 2015 Update 1.</p>
+<p>This sample cannot be run using an on-premises environment. See <a href="https://code.msdn.microsoft.com/Simple-web-API-preview-987a9491/https://code.msdn.microsoft.com/Simple-web-API-preview-987a9491/https://msdn.microsoft.com/dynamics/crm/webapipreview.aspx">
+Microsoft Dynamics CRM Web API Preview</a> for more information.</p>
+<p>Pre-requisite: Before you can run this sample you must obtain a <strong>client ID</strong> and
+<strong>redirect URL</strong> as described in <a href="https://code.msdn.microsoft.com/Simple-web-API-preview-987a9491/https://code.msdn.microsoft.com/Simple-web-API-preview-987a9491/https://msdn.microsoft.com/dynamics/crm/mt149065.aspx">
+Register Application</a>.</p>
+<ul>
+<li><a href="#_Demonstrates">Demonstrates</a> </li><li><a href="#_Build_and_Run">Build and run the WhoAmI program</a> </li></ul>
+<h1 id="_Demonstrates">Demonstrates</h1>
+<p>The WhoAmI program is one example of the least amount of code to call a web service method of Dynamics CRM Online and get a response. The sample performs these basic operations.</p>
+<ul>
+<li>Authenticates the logged on user with the organization web service. </li><li>Invokes a web method to send a WhoAmI message to the service. The WhoAmI message obtains information about the logged on user (you).
+</li><li>Reads the response and checks for an error in the response. </li><li>Does something with the response from the web service. </li></ul>
+<p>Let&rsquo;s review the code and see what it is doing.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">   class Program
+    {
+        static public void Main(string[] args)
+        {
+            // TODO Substitute your correct CRM service address, 
+            string serviceUrl = &quot;https://mydomain.crm.dynamics.com&quot;;
+
+            // TODO Substitute your app registration values that can be obtained after you
+            // register the app in Active Directory on the Microsoft Azure portal.
+            string clientId = &quot;e5cf0024-a66a-4f16-85ce-99ba97a24bb2&quot;;
+            string redirectUrl = &quot;http://localhost/SdkSample&quot;;
+</pre>
+<div class="preview">
+<pre class="csharp">&nbsp;&nbsp;&nbsp;<span class="cs__keyword">class</span>&nbsp;Program&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">static</span>&nbsp;<span class="cs__keyword">public</span>&nbsp;<span class="cs__keyword">void</span>&nbsp;Main(<span class="cs__keyword">string</span>[]&nbsp;args)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;TODO&nbsp;Substitute&nbsp;your&nbsp;correct&nbsp;CRM&nbsp;service&nbsp;address,&nbsp;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">string</span>&nbsp;serviceUrl&nbsp;=&nbsp;<span class="cs__string">&quot;https://mydomain.crm.dynamics.com&quot;</span>;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;TODO&nbsp;Substitute&nbsp;your&nbsp;app&nbsp;registration&nbsp;values&nbsp;that&nbsp;can&nbsp;be&nbsp;obtained&nbsp;after&nbsp;you</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;register&nbsp;the&nbsp;app&nbsp;in&nbsp;Active&nbsp;Directory&nbsp;on&nbsp;the&nbsp;Microsoft&nbsp;Azure&nbsp;portal.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">string</span>&nbsp;clientId&nbsp;=&nbsp;<span class="cs__string">&quot;e5cf0024-a66a-4f16-85ce-99ba97a24bb2&quot;</span>;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">string</span>&nbsp;redirectUrl&nbsp;=&nbsp;<span class="cs__string">&quot;http://localhost/SdkSample&quot;</span>;&nbsp;</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>We are defining some important string values that will be required when authenticating the logged on user and the application. The serviceUrl is the root address of your CRM organization. Your actual address will have a different value than show here. If
+ you do not know your organization&rsquo;s address, you can obtain it from the CRM web application by navigating to
+<strong>Settings</strong> &gt; <strong>Customizations</strong> &gt; <strong>Developer Resources</strong>.</p>
+<p>For the clientId and redirectUrl values, use the values you obtain from the app registration process described in
+<a href="https://code.msdn.microsoft.com/Simple-web-API-preview-987a9491/https://code.msdn.microsoft.com/Simple-web-API-preview-987a9491/https://msdn.microsoft.com/dynamics/crm/mt149065.aspx">Register Application</a>. You can reuse these values in multiple apps as long as it is for development and testing purposes. Once you are ready to publish an app to a store, you will need to obtain
+ unique client ID and redirect URL values for your app. In a real world app, you would probably not want to hardcode these values into the app.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">           // Authenticate the registered application with Azure Active Directory.
+            AuthenticationContext authContext = 
+                new AuthenticationContext(&quot;https://login.windows.net/common&quot;, false);
+
+            AuthenticationResult result = 
+                 authContext.AcquireToken(serviceUrl, clientId, new Uri(redirectUrl));
+</pre>
+<div class="preview">
+<pre class="csharp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Authenticate&nbsp;the&nbsp;registered&nbsp;application&nbsp;with&nbsp;Azure&nbsp;Active&nbsp;Directory.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AuthenticationContext&nbsp;authContext&nbsp;=&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">new</span>&nbsp;AuthenticationContext(<span class="cs__string">&quot;https://login.windows.net/common&quot;</span>,&nbsp;<span class="cs__keyword">false</span>);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AuthenticationResult&nbsp;result&nbsp;=&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;authContext.AcquireToken(serviceUrl,&nbsp;clientId,&nbsp;<span class="cs__keyword">new</span>&nbsp;Uri(redirectUrl));&nbsp;</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>These two lines of code authenticate the logged on user and app registration. When executed, the user will be prompted to enter their credentials for Dynamics CRM and may be presented with a security prompt to accept allowing the app to access the user&rsquo;s
+ organization. The first line of code acquires the authentication context from a well-known authentication provider address. The second line performs the authentication and returns the result. Note that this authentication API is part of the
+<a href="https://code.msdn.microsoft.com/Simple-web-API-preview-987a9491/https://msdn.microsoft.com/en-us/library/azure/dn151135.aspx">Azure Active Directory Authentication Library</a> (ADAL), which is available for a wide variety of platforms and programming languages.</p>
+<p>In a more real world application, you would check the result to see if authentication passed or failed. For this simplistic sample, we will just assume it passed and ignore any possible exception (for now).</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">            // Create an HTTP client to send a request message to the CRM Web service.
+            using (HttpClient httpClient = new HttpClient())
+            {
+                // Define the Web API address of the service and the period of time each
+                // request has to execute.
+                httpClient.BaseAddress = new Uri(serviceUrl);
+                httpClient.Timeout = new TimeSpan(0, 2, 0);  // 2 minutes
+
+                // Set the authorization header.
+                httpClient.DefaultRequestHeaders.Authorization = 
+                    new AuthenticationHeaderValue(&quot;Bearer&quot;, result.AccessToken);
+
+                // Send the WhoAmI request to the Web API.
+                // GET api/data/WhoAmI
+                var response = httpClient.GetAsync(&quot;api/data/WhoAmI&quot;, 
+                    HttpCompletionOption.ResponseHeadersRead).Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    // Get the response content and parse it.
+                    JObject jresponse = 
+                        JObject.Parse(response.Content.ReadAsStringAsync().Result);
+
+                    Guid userId = (Guid)jresponse[&quot;UserId&quot;];
+                    Console.WriteLine(&quot;Your system user ID is {0}&quot;, userId);
+                }
+                else
+                    Console.WriteLine(&quot;The request failed with a status of '{0}'&quot;,
+                        response.ReasonPhrase);
+            }
+</pre>
+<div class="preview">
+<pre class="csharp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Create&nbsp;an&nbsp;HTTP&nbsp;client&nbsp;to&nbsp;send&nbsp;a&nbsp;request&nbsp;message&nbsp;to&nbsp;the&nbsp;CRM&nbsp;Web&nbsp;service.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">using</span>&nbsp;(HttpClient&nbsp;httpClient&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;HttpClient())&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Define&nbsp;the&nbsp;Web&nbsp;API&nbsp;address&nbsp;of&nbsp;the&nbsp;service&nbsp;and&nbsp;the&nbsp;period&nbsp;of&nbsp;time&nbsp;each</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;request&nbsp;has&nbsp;to&nbsp;execute.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;httpClient.BaseAddress&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;Uri(serviceUrl);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;httpClient.Timeout&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;TimeSpan(<span class="cs__number">0</span>,&nbsp;<span class="cs__number">2</span>,&nbsp;<span class="cs__number">0</span>);&nbsp;&nbsp;<span class="cs__com">//&nbsp;2&nbsp;minutes</span>&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Set&nbsp;the&nbsp;authorization&nbsp;header.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;httpClient.DefaultRequestHeaders.Authorization&nbsp;=&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">new</span>&nbsp;AuthenticationHeaderValue(<span class="cs__string">&quot;Bearer&quot;</span>,&nbsp;result.AccessToken);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Send&nbsp;the&nbsp;WhoAmI&nbsp;request&nbsp;to&nbsp;the&nbsp;Web&nbsp;API.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;GET&nbsp;api/data/WhoAmI</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;response&nbsp;=&nbsp;httpClient.GetAsync(<span class="cs__string">&quot;api/data/WhoAmI&quot;</span>,&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HttpCompletionOption.ResponseHeadersRead).Result;&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(response.IsSuccessStatusCode)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__com">//&nbsp;Get&nbsp;the&nbsp;response&nbsp;content&nbsp;and&nbsp;parse&nbsp;it.</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JObject&nbsp;jresponse&nbsp;=&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JObject.Parse(response.Content.ReadAsStringAsync().Result);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Guid&nbsp;userId&nbsp;=&nbsp;(Guid)jresponse[<span class="cs__string">&quot;UserId&quot;</span>];&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="cs__string">&quot;Your&nbsp;system&nbsp;user&nbsp;ID&nbsp;is&nbsp;{0}&quot;</span>,&nbsp;userId);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">else</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="cs__string">&quot;The&nbsp;request&nbsp;failed&nbsp;with&nbsp;a&nbsp;status&nbsp;of&nbsp;'{0}'&quot;</span>,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response.ReasonPhrase);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>In the above code, we will use the <a href="https://code.msdn.microsoft.com/Simple-web-API-preview-987a9491/https://msdn.microsoft.com/en-us/library/system.net.http.httpclient(v=vs.110).aspx">
+HttpClient</a> class to send the <a href="https://code.msdn.microsoft.com/Simple-web-API-preview-987a9491/https://msdn.microsoft.com/dynamics/crm/dn927172#WhoAmI">
+WhoAmI</a> unbound function message to the organization web service and receive a response. The two minute timeout value represents a reasonable time limit for those periods when the service is busy.</p>
+<p>The program then sets the authorization header to authorize the logged on user&rsquo;s access to the web service. Method parameters include the word &ldquo;Bearer&rdquo; to indicate the kind of access token being passed and the token itself.</p>
+<p>The next line of code sends an HTTP GET command passing the relative address (from the base address) of the WhoAmI unbound function. Access to all functions, actions, and entity sets of the Web API organization endpoint is through the service URL &#43; /api/data
+ address. For more information about what messages are supported on this endpoint, see the online
+<a href="https://code.msdn.microsoft.com/Simple-web-API-preview-987a9491/https://msdn.microsoft.com/dynamics/crm/webapipreview">documentation</a>.</p>
+<p>After checking for a successful response, the code reads the response data into a JSON object and extracts the logged on user&rsquo;s identifier.</p>
+<h1 id="_Build_and_Run">Build and run the WhoAmI program</h1>
+<p>To build and run the sample, follow these steps.</p>
+<ol>
+<li>Download the sample, and then load the provided solution file in the C# folder into Visual Studio.
+</li><li>Change the <strong>serviceUrl</strong>, <strong>clientId</strong> and <strong>
+redirectUrl</strong> string values in the Program.cs file to the correct values for your Azure Active Directory app registration and CRM organization service.
+</li><li>Press F5 to build and run the program. During the build, the <a href="https://code.msdn.microsoft.com/Simple-web-API-preview-987a9491/https://code.msdn.microsoft.com/Simple-web-API-preview-987a9491/https://www.nuget.org/packages/Newtonsoft.Json">
+Json.NET</a> <a href="https://code.msdn.microsoft.com/Simple-web-API-preview-987a9491/https://www.nuget.org/">NuGet</a> package will be automatically installed into your project. This requires that your development computer be connected to the internet at the time of the build.
+</li><li>You will be prompted by ADAL to enter your CRM username and password. For a CRM Online tenant provisioned through Office 365, your username would be something similar to someone@mydomain.crm.dynamics.com.
+</li><li>You may be prompted to accept app access to your CRM organization&rsquo;s data.
+</li></ol>
+<p>When run, the console output looks like this with a different value for the ID.</p>
+<p><img id="138659" src="description/WebAPIPreviewSimpleSample.png" alt="" width="484" height="98"></p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

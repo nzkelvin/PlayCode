@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EnumTypes Version="2">
+ <EnumType Name="AccessRights"
+           Status="Complete"
+           Writer="crmSdk">
+  <Description>Contains the possible access rights for a user.</Description>
+  <Members>
+   <Member Name="None">No access. </Member>
+   <Member Name="ReadAccess">The right to read the specified type of record. </Member>
+   <Member Name="WriteAccess">The right to update the specified record.</Member>
+   <Member Name="AppendAccess">The right to append the specified record to another object.</Member>
+   <Member Name="AppendToAccess">The right to append another record to the specified object.</Member>
+   <Member Name="CreateAccess">The right to create a record. </Member>
+   <Member Name="DeleteAccess">The right to delete the specified record.</Member>
+   <Member Name="ShareAccess">The right to share the specified record. </Member>
+   <Member Name="AssignAccess">The right to assign the specified record to another user or team.</Member>
+  </Members>
+  <Remarks />
+  <Samples />
+  <Links />
+ </EnumType>
+ <EnumType Name="BusinessNotificationSeverity"
+           Status="Complete"
+           Writer="crmSdk">
+  <Description>For internal use only.</Description>
+  <Members>
+   <Member Name="None">For internal use only.</Member>
+   <Member Name="Error">For internal use only.</Member>
+   <Member Name="Warning">For internal use only.</Member>
+   <Member Name="Information">For internal use only.</Member>
+   <Member Name="UserDefined">For internal use only.</Member>
+  </Members>
+  <Remarks />
+  <Samples />
+  <Links />
+ </EnumType>
+ <EnumType Name="ConditionOperator"
+           Status="Complete"
+           Writer="crmSdk">
+  <Description>Describes the type of comparison for two values (or expressions) in a condition expression. </Description>
+  <Members>
+   <Member Name="Equal">The values are compared for equality.</Member>
+   <Member Name="NotEqual">The two values are not equal.</Member>
+   <Member Name="GreaterThan">The value is greater than the compared value.</Member>
+   <Member Name="LessThan">The value is less than the compared value.</Member>
+   <Member Name="GreaterEqual">The value is greater than or equal to the compared value.</Member>
+   <Member Name="LessEqual">The value is less than or equal to the compared value.</Member>
+   <Member Name="Like">The character string is matched to the specified pattern.</Member>
+   <Member Name="NotLike">The character string does not match the specified pattern.</Member>
+   <Member Name="In">The value exists in a list of values.</Member>
+   <Member Name="NotIn">The given value is not matched to a value in a subquery or a list.</Member>
+   <Member Name="Between">The value is between two values. </Member>
+   <Member Name="NotBetween">The value is not between two values.</Member>
+   <Member Name="Null">The value is null.</Member>
+   <Member Name="NotNull">The value is not null.</Member>
+   <Member Name="Yesterday">The value equals yesterday’s date.</Member>
+   <Member Name="Today">The value equals today’s date.</Member>
+   <Member Name="Tomorrow">The value equals tomorrow’s date.</Member>
+   <Member Name="Last7Days">The value is within the last seven days including today.</Member>
+   <Member Name="Next7Days">The value is within the next seven days.</Member>
+   <Member Name="LastWeek">The value is within the previous week including Sunday through Saturday.</Member>
+   <Member Name="ThisWeek">The value is within the current week.</Member>
+   <Member Name="NextWeek">The value is within the current week.</Member>
+   <Member Name="LastMonth">The value is within the last month including first day of the last month and last day of the last month.</Member>
+   <Member Name="ThisMonth">The value is within the current month.</Member>
+   <Member Name="NextMonth">The value is within the next month.</Member>
+   <Member Name="On">The value is on a specified date.</Member>
+   <Member Name="OnOrBefore">The value is on or before a specified date. </Member>
+   <Member Name="OnOrAfter">The value is on or after a specified date.</Member>
+   <Member Name="LastYear">The value is within the previous year.</Member>
+   <Member Name="ThisYear">The value is within the current year.</Member>
+   <Member Name="NextYear">The value is within the next year.</Member>
+   <Member Name="LastXHours">The value is within the last X hours.</Member>
+   <Member Name="NextXHours">The value is within the next X (specified value) hours.</Member>
+   <Member Name="LastXDays">The value is within last X days.</Member>
+   <Member Name="NextXDays">The value is within the next X (specified value) days.</Member>
+   <Member Name="LastXWeeks">The value is within the last X (specified value) weeks.</Member>
+   <Member Name="NextXWeeks">The value is within the next X (specified value) weeks.</Member>
+   <Member Name="LastXMonths">The value is within the last X (specified value) months.</Member>
+   <Member Name="NextXMonths">The value is within the next X (specified value) months.</Member>
+   <Member Name="LastXYears">The value is within the last X years.</Member>
+   <Member Name="NextXYears">The value is within the next X years.</Member>
+   <Member Name="EqualUserId">The value is equal to the specified user ID. </Member>
+   <Member Name="NotEqualUserId">The value is not equal to the specified user ID.</Member>
+   <Member Name="EqualBusinessId">The value is equal to the specified business ID.</Member>
+   <Member Name="NotEqualBusinessId">The value is not equal to the specified business ID.</Member>
+   <Member Name="ChildOf">For internal use only.</Member>
+   <Member Name="Mask">The value is found in the specified bit-mask value.</Member>
+   <Member Name="NotMask">The value is not found in the specified bit-mask value.</Member>
+   <Member Name="MasksSelect">For internal use only. </Member>
+   <Member Name="Contains">The string contains another string.</Member>
+   <Member Name="DoesNotContain">The string does not contain another string.</Member>
+   <Member Name="EqualUserLanguage">The value is equal to the language for the user.</Member>
+   <Member Name="NotOn">The value is not on the specified date. </Member>
+   <Member Name="OlderThanXMonths">The value is older than the specified number of months.</Member>
+   <Member Name="BeginsWith">The string occurs at the beginning of another string. </Member>
+   <Member Name="DoesNotBeginWith">The string does not begin with another string.</Member>
+   <Member Name="EndsWith">The string ends with another string.</Member>
+   <Member Name="DoesNotEndWith">The string does not end with another string.</Member>
+   <Member Name="ThisFiscalYear">The value is within the current fiscal year. </Member>
+   <Member Name="ThisFiscalPeriod">The value is within the current fiscal period. </Member>
+   <Member Name="NextFiscalYear">The value is within the next fiscal year.</Member>
+   <Member Name="NextFiscalPeriod">The value is within the next fiscal periodr.</Member>
+   <Member Name="LastFiscalYear">The value is within the last fiscal year.</Member>
+   <Member Name="LastFiscalPeriod">The value is within the last fiscal period.</Member>
+   <Member Name="LastXFiscalYears">The value is within the last X (specified value) fiscal years.</Member>
+   <Member Name="LastXFiscalPeriods">The value is within the last X (specified value) fiscal periods. </Member>
+   <Member Name="NextXFiscalYears">The value is within the next X (specified value) fiscal years. </Member>
+   <Member Name="NextXFiscalPeriods">The value is within the next X (specified value) fiscal periods. </Member>
+   <Member Name="InFiscalYear">The value is within the specified year.</Member>
+   <Member Name="InFiscalPeriod">The value is within the specified fiscal period. </Member>
+   <Member Name="InFiscalPeriodAndYear">The value is within the specified fiscal period and year.</Member>
+   <Member Name="InOrBeforeFiscalPeriodAndYear">The value is within or before the specified fiscal period and year.</Member>
+   <Member Name="InOrAfterFiscalPeriodAndYear">The value is within or after the specified fiscal period and year. </Member>
+   <Member Name="EqualUserTeams">The record is owned by teams that the user is a member of.</Member>
+   <Member Name="EqualUserOrUserTeams">The record is owned by a user or teams that the user is a member of.</Member>
+   <Member Name="Under">Returns all child records below the referenced record in the hierarchy. </Member>
+   <Member Name="NotUnder">Returns all records not below the referenced record in the hierarchy.</Member>
+   <Member Name="UnderOrEqual">Returns the referenced record and all child records below it in the hierarchy.</Member>
+   <Member Name="Above">Returns all records in referenced record's hierarchical ancestry line.</Member>
+   <Member Name="AboveOrEqual">Returns the referenced record and all records above it in the hierarchy. </Member>
+   <Member Name="EqualUserOrUserHierarchy">When hierarchical security models are used, Equals current user or their reporting hierarchy. </Member>
+   <Member Name="EqualUserOrUserHierarchyAndTeams">When hierarchical security models are used, Equals current user and his teams or their reporting hierarchy and their teams.</Member>
+   <Member Name="OlderThanXYears">The value more than X (specified value) years ago.</Member>
+   <Member Name="OlderThanXWeeks">The value more than X (specified value) weeks ago.</Member>
+   <Member Name="OlderThanXDays">The value more than X (specified value) days ago.</Member>
+   <Member Name="OlderThanXHours">The value more than X (specified value) hours ago.</Member>
+   <Member Name="OlderThanXMinutes">The value more than X (specified value) minutes ago.</Member>
+  </Members>
+  <Remarks />
+  <Samples />
+  <Links />
+ </EnumType>
+ <EnumType Name="EndpointAccessType"
+           Status="Complete"
+           Writer="crmSdk">
+  <Description>Indicates the type of network access an endpoint has.</Description>
+  <Members>
+   <Member Name="Default">The actual access is determined by the endpoint URL.</Member>
+   <Member Name="Internet">Internet access.</Member>
+   <Member Name="Intranet">Intranet access.</Member>
+  </Members>
+  <Remarks />
+  <Samples />
+  <Links />
+ </EnumType>
+ <EnumType Name="EndpointType"
+           Status="Complete"
+           Writer="crmSdk">
+  <Description>Identifies the type of service available at an endpoint. </Description>
+  <Members>
+   <Member Name="OrganizationService">The organization service.</Member>
+   <Member Name="OrganizationDataService">The organization data service.</Member>
+   <Member Name="WebApplication">Web application service.</Member>
+  </Members>
+  <Remarks />
+  <Samples />
+  <Links />
+ </EnumType>
+ <EnumType Name="JoinOperator"
+           Status="Complete"
+           Writer="crmSdk">
+  <Description>Contains the possible values for a join operator in a LinkEntity. </Description>
+  <Members>
+   <Member Name="Inner">The values in the attributes being joined are compared using a comparison operator.</Member>
+   <Member Name="LeftOuter">All instances of the entity in the FROM clause are returned if they meet WHERE or HAVING search conditions.</Member>
+   <Member Name="Natural">Only one value of the two joined attributes is returned if an equal-join operation is performed and the two values are identical.</Member>
+  </Members>
+  <Remarks />
+  <Samples />
+  <Links />
+ </EnumType>
+ <EnumType Name="LogicalOperator"
+           Status="Complete"
+           Writer="crmSdk">
+  <Description>Contains the possible values for an operator in a FilterExpression.</Description>
+  <Members>
+   <Member Name="And">A logical AND operation is performed.</Member>
+   <Member Name="Or">A logical OR operation is performed.</Member>
+  </Members>
+  <Remarks />
+  <Samples />
+  <Links />
+ </EnumType>
+ <EnumType Name="OrganizationState"
+           Status="Complete"
+           Writer="crmSdk">
+  <Description>Describes the state of the organization.</Description>
+  <Members>
+   <Member Name="Enabled">Organization is enabled.</Member>
+   <Member Name="Disabled">Organization is disabled.</Member>
+  </Members>
+  <Remarks />
+  <Samples />
+  <Links />
+ </EnumType>
+ <EnumType Name="PrivilegeDepth"
+           Status="Complete"
+           Writer="crmSdk">
+  <Description>Contains the possible values for the depth of a privilege within a role. </Description>
+  <Members>
+   <Member Name="Basic">Indicates basic privileges. Users who have basic privileges can only use privileges to perform actions on objects that are owned by, or shared with, the user.</Member>
+   <Member Name="Local">Indicates local privileges. Users who have local privileges can only use privileges to perform actions on data and objects that are in the user's current business unit.</Member>
+   <Member Name="Deep">Indicates deep privileges. Users who have deep privileges can perform actions on all objects in the user's current business units and all objects down the hierarchy of business units.</Member>
+   <Member Name="Global">Indicates global privileges. Users who have global privileges can perform actions on data and objects anywhere within the organization regardless of the business unit or user to which it belongs.</Member>
+  </Members>
+  <Remarks />
+  <Samples />
+  <Links />
+ </EnumType>
+ <EnumType Name="PropagationOwnershipOptions"
+           Status="Complete"
+           Writer="crmSdk">
+  <Description>Contains the possible values for propagation ownership options.</Description>
+  <Members>
+   <Member Name="None">There is no change in ownership for the created activities.</Member>
+   <Member Name="Caller">All created activities are assigned to the caller of the API.</Member>
+   <Member Name="ListMemberOwner">Created activities are assigned to respective owners of target members.</Member>
+  </Members>
+  <Remarks />
+  <Samples />
+  <Links />
+ </EnumType>
+ <EnumType Name="RollupType"
+           Status="Complete"
+           Writer="crmSdk">
+  <Description>Contains values which can be used to retrieve all the entity records for a specified record.</Description>
+  <Members>
+   <Member Name="None">A rollup record is not requested. This member only retrieves the records that are directly related to a parent record. </Member>
+   <Member Name="Related">A rollup record that is directly related to a parent record and to any direct child of a parent record.</Member>
+   <Member Name="Extended">A rollup record that is directly related to a parent record and to any descendent record of a parent record, for example, children, grandchildren, and great-grandchildren records.</Member>
+  </Members>
+  <Remarks />
+  <Samples />
+  <Links />
+ </EnumType>
+ <EnumType Name="SearchDirection"
+           Status="Complete"
+           Writer="crmSdk">
+  <Description>Contains the possible values for the search direction in an appointment request. </Description>
+  <Members>
+   <Member Name="Forward">Search forward in the calendar.</Member>
+   <Member Name="Backward">Search backward in the calendar.</Member>
+  </Members>
+  <Remarks />
+  <Samples />
+  <Links />
+ </EnumType>
+ <EnumType Name="SubCode"
+           Status="Complete"
+           Writer="crmSdk">
+  <Description>Contains the possible values for a subcode, used in scheduling appointments. </Description>
+  <Members>
+   <Member Name="Unspecified">Specifies free time with no specified restrictions.</Member>
+   <Member Name="Schedulable">A schedulable block of time.</Member>
+   <Member Name="Committed">A block of time that is committed to perform an action.</Member>
+   <Member Name="Uncommitted">A block of time that is tentatively scheduled but not committed.</Member>
+   <Member Name="Break">A block of time that cannot be committed due to a scheduled break.</Member>
+   <Member Name="Holiday">A block of time that cannot be scheduled due to a scheduled holiday. </Member>
+   <Member Name="Vacation">A block of time that cannot be scheduled due to a scheduled vacation.</Member>
+   <Member Name="Appointment">A block of time that is already scheduled for an appointment.</Member>
+   <Member Name="ResourceStartTime">Specifies to filter a resource start time.</Member>
+   <Member Name="ResourceServiceRestriction">A restriction for a resource for the specified service. </Member>
+   <Member Name="ResourceCapacity">Specifies the capacity of a resource for the specified time interval. </Member>
+   <Member Name="ServiceRestriction">Specifies that a service is restricted during the specified block of time.</Member>
+   <Member Name="ServiceCost">An override to the service cost for the specified time block.</Member>
+  </Members>
+  <Remarks />
+  <Samples />
+  <Links />
+ </EnumType>
+ <EnumType Name="TargetFieldType"
+           Status="Copmplete"
+           Writer="crmSdk">
+  <Description>Indicates the attribute type for the target</Description>
+  <Members>
+   <Member Name="All">Initialize all possible attribute values.</Member>
+   <Member Name="ValidForCreate">Initialize the attribute values that are valid for create.</Member>
+   <Member Name="ValidForUpdate">initialize the attribute values that are valid for update. Value </Member>
+   <Member Name="ValidForRead">Initialize the attribute values that are valid for read. </Member>
+  </Members>
+  <Remarks />
+  <Samples />
+  <Links />
+ </EnumType>
+ <EnumType Name="TimeCode"
+           Status="Complete"
+           Writer="crmSdk">
+  <Description>Contains the possible values for a time code, used when querying a schedule. </Description>
+  <Members>
+   <Member Name="Available">The time is available within the working hours of the resource.</Member>
+   <Member Name="Busy">The time is committed to an activity.</Member>
+   <Member Name="Unavailable">The time is unavailable.</Member>
+   <Member Name="Filter">Use additional filters for the time block such as service cost or service start time. </Member>
+  </Members>
+  <Remarks />
+  <Samples />
+  <Links />
+ </EnumType>
+ <EnumType Name="BusinessNotificationParameterType"
+           Status="Complete"
+           Writer="crmSdk">
+  <Description>For internal use only.</Description>
+  <Members>
+   <Member Name="None">For internal use only.</Member>
+   <Member Name="String">For internal use only.</Member>
+   <Member Name="Attribute">For internal use only.</Member>
+  </Members>
+  <Remarks />
+  <Samples />
+  <Links />
+ </EnumType>
+ <EnumTypesToDocument>
+ </EnumTypesToDocument>
+</EnumTypes>

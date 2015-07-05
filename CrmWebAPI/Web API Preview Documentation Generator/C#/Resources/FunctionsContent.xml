@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Functions Version="3">
+  <Function Name="GetAllTimeZonesWithDisplayName" Status="Complete" Writer="crmSdk">
+    <Description>Adds an item to a campaign activity.</Description>
+    <Parameters>
+      <Parameter Name="LocaleId">The LocaleId</Parameter>
+    </Parameters>
+    <ReturnType>The collection of the timezonedefinition records.</ReturnType>
+    <Remarks />
+    <Samples />
+    <Links />
+  </Function>
+  <Function Name="LocalTimeFromUtcTime" Status="Complete" Writer="crmSdk">
+    <Description>Retrieves the local time for the specified Coordinated Universal Time (UTC). </Description>
+    <Parameters>
+      <Parameter Name="TimeZoneCode">The time zone code.</Parameter>
+      <Parameter Name="UtcTime">The Coordinated Universal Time (UTC).</Parameter>
+    </Parameters>
+    <ReturnType>The time that is represented as local time. </ReturnType>
+    <Remarks />
+    <Samples />
+    <Links />
+  </Function>
+  <Function Name="RetrieveAuditPartitionList" Status="Complete" Writer="crmSdk">
+    <Description>Retrieves the list of database partitions that are used to store audited history data.</Description>
+    <Parameters />
+    <ReturnType>Collection of audit partition details.</ReturnType>
+    <Remarks />
+    <Samples />
+    <Links />
+  </Function>
+  <Function Name="RetrieveByTopIncidentProductKbArticle" Status="Complete" Writer="crmSdk">
+    <Description>Retrieves the top-ten articles about a specified product from the knowledge base of articles for your organization.</Description>
+    <Parameters>
+      <Parameter Name="ProductId">The ID of the product.Required.</Parameter>
+    </Parameters>
+    <ReturnType>Collection of articles about the specified product from the knowledge base of articles for your organization.</ReturnType>
+    <Remarks />
+    <Samples />
+    <Links />
+  </Function>
+  <Function Name="RetrieveByTopIncidentSubjectKbArticle" Status="Complete" Writer="crmSdk">
+    <Description>Retrieves the top-ten articles about a specified subject from the knowledge base of articles for your organization. </Description>
+    <Parameters>
+      <Parameter Name="SubjectId">ID of the subject. Required.</Parameter>
+    </Parameters>
+    <ReturnType>Collection of knowledge base articles about the specified subject. </ReturnType>
+    <Remarks />
+    <Samples />
+    <Links />
+  </Function>
+  <Function Name="RetrieveExchangeRate" Status="Complete" Writer="crmSdk">
+    <Description>Retrieves the exchange rate. </Description>
+    <Parameters>
+      <Parameter Name="TransactionCurrencyId">ID of the currency. Required.</Parameter>
+    </Parameters>
+    <ReturnType>The exchange rate for the currency.</ReturnType>
+    <Remarks />
+    <Samples />
+    <Links />
+  </Function>
+  <Function Name="RetrieveFormattedImportJobResults" Status="Complete" Writer="crmSdk">
+    <Description>Retrieves the formatted results from an import job. </Description>
+    <Parameters>
+      <Parameter Name="ImportJobId">GUID of an import job. Required.</Parameter>
+    </Parameters>
+    <ReturnType>The formatted results of the import job.</ReturnType>
+    <Remarks />
+    <Samples />
+    <Links />
+  </Function>
+  <Function Name="RetrieveOrganizationResources" Status="Complete" Writer="crmSdk">
+    <Description>Retrieves the resources that are used by an organization. </Description>
+    <Parameters />
+    <ReturnType>The resources used by an organization. </ReturnType>
+    <Remarks />
+    <Samples />
+    <Links />
+  </Function>
+  <Function Name="RetrieveTeamPrivileges" Status="Complete" Writer="crmSdk">
+    <Description>Retrieves the privileges for a team. </Description>
+    <Parameters>
+      <Parameter Name="TeamId">The team Id</Parameter>
+    </Parameters>
+    <ReturnType>List of privileges that the team holds for a record. </ReturnType>
+    <Remarks />
+    <Samples />
+    <Links />
+  </Function>
+  <Function Name="RetrieveUserPrivileges" Status="Complete" Writer="crmSdk">
+    <Description>Retrieves the privileges a system user (user) has through his or her roles in the specified business unit. </Description>
+    <Parameters>
+      <Parameter Name="UserId">Id of the user</Parameter>
+    </Parameters>
+    <ReturnType>Array of privileges that the user holds.</ReturnType>
+    <Remarks />
+    <Samples />
+    <Links />
+  </Function>
+  <Function Name="RetrieveUserQueues" Status="Complete" Writer="crmSdk">
+    <Description>Retrieves all private queues of a specified user and optionally all public queues.</Description>
+    <Parameters>
+      <Parameter Name="UserId">Id of the user.</Parameter>
+      <Parameter Name="IncludePublic">Specifies whether public queues should be included.</Parameter>
+    </Parameters>
+    <ReturnType>Collection of queues.</ReturnType>
+    <Remarks />
+    <Samples />
+    <Links />
+  </Function>
+  <Function Name="RetrieveVersion" Status="Complete" Writer="crmSdk">
+    <Description>Retrieves the version number of the Microsoft Dynamics CRM Server. </Description>
+    <Parameters />
+    <ReturnType>The version number of the Microsoft Dynamics CRM Server.</ReturnType>
+    <Remarks />
+    <Samples />
+    <Links />
+  </Function>
+  <Function Name="UtcTimeFromLocalTime" Status="Complete" Writer="crmSdk">
+    <Description>Retrieves the Coordinated Universal Time (UTC) for the specified local time.</Description>
+    <Parameters>
+      <Parameter Name="LocalTime">The local time. Required.</Parameter>
+      <Parameter Name="TimeZoneCode">The timezone code. Required.</Parameter>
+    </Parameters>
+    <ReturnType>The Coordinated Universal Time (UTC)</ReturnType>
+    <Remarks />
+    <Samples />
+    <Links />
+  </Function>
+  <Function Name="WhoAmI" Status="Complete" Writer="crmSdk">
+    <Description>Retrieves the system user ID for the currently logged on user or the user under whose context the code is running. </Description>
+    <Parameters />
+    <ReturnType>A complex type that contains the UserId, BusinessUnitId and OrganizationId. </ReturnType>
+    <Remarks />
+    <Samples />
+    <Links />
+  </Function>
+ <Function Name="CalculateTotalTimeIncident"
+           Status="Complete"
+           Writer="crmSdk">
+  <Description>Calculates the total time, in minutes, that you used while you worked on an incident (case). </Description>
+  <Parameters>
+   <Parameter Name="IncidentId">The ID of the incident (case).</Parameter>
+  </Parameters>
+  <ReturnType>The total time, in minutes that you use when you work on an incident (case). </ReturnType>
+  <Remarks />
+  <Samples />
+  <Links />
+ </Function>
+
+ <Function Name="CheckPromoteEmail"
+           Status="Complete"
+           Writer="crmSdk">
+  <Description>Checks whether the incoming email message should be promoted to the Microsoft Dynamics CRM system. </Description>
+  <Parameters>
+   <Parameter Name="MessageId">The message ID that is contained in the email header.</Parameter>
+   <Parameter Name="DirectionCode">Provides the direction of a mail checked for promotion for uniqueness.</Parameter>
+   <Parameter Name="Subject">The subject of the message</Parameter>
+  </Parameters>
+  <ReturnType>
+   Provides a <b>ShouldPromote</b> value and <b>ReasonCode</b> to explain why the email should be promoted.
+  </ReturnType>
+  <Remarks />
+  <Samples />
+  <Links />
+ </Function>
+
+ <Function Name="ExpandCalendar"
+           Status="Complete"
+           Writer="crmSdk">
+  <Description>Converts the calendar rules to an array of available time blocks for the specified period. </Description>
+  <Parameters>
+   <Parameter Name="Start">The start of the period to expand.</Parameter>
+   <Parameter Name="CalendarId">The ID of the calendar.</Parameter>
+   <Parameter Name="End">The end of the time period to expand.</Parameter>
+  </Parameters>
+  <ReturnType>A set of time blocks with appointment information. </ReturnType>
+  <Remarks />
+  <Samples />
+  <Links />
+ </Function>
+
+ <Function Name="ExportFieldTranslation"
+           Status="Complete"
+           Writer="crmSdk">
+  <Description>Exports localizable fields values to a compressed file. </Description>
+  <Parameters />
+  <ReturnType>The compressed file that represents the exported translation file.</ReturnType>
+  <Remarks />
+  <Samples />
+  <Links />
+ </Function>
+
+ <Function Name="GetTimeZoneCodeByLocalizedName"
+           Status="Complete"
+           Writer="crmSdk">
+  <Description>Retrieve the time zone code for the specified localized time zone name. </Description>
+  <Parameters>
+   <Parameter Name="LocalizedStandardName">The localized name to search for. </Parameter>
+   <Parameter Name="LocaleId">The locale ID.</Parameter>
+  </Parameters>
+  <ReturnType>The time zone code that has the requested localized name.</ReturnType>
+  <Remarks />
+  <Samples />
+  <Links />
+ </Function>
+
+ <Function Name="RetrievePersonalWall"
+           Status="Complete"
+           Writer="crmSdk">
+  <Description>Retrieves pages of posts, including comments for each post, for all records that the calling user is following. </Description>
+  <Parameters>
+   <Parameter Name="PageSize">The number of posts per page</Parameter>
+   <Parameter Name="CommentsPerPost">The number of comments per post.</Parameter>
+   <Parameter Name="StartDate">The start date and time of the posts that you want to retrieve</Parameter>
+   <Parameter Name="EndDate">The end date and time of the posts that you want to retrieve</Parameter>
+   <Parameter Name="Source">A value that specifies the source of the post</Parameter>
+   <Parameter Name="Type">Reserved for future use.</Parameter>
+   <Parameter Name="PageNumber">A specific page of posts that is designated by its page number.</Parameter>
+  </Parameters>
+  <ReturnType>The collection of posts with their associated comments and the calculated attribute values. </ReturnType>
+  <Remarks />
+  <Samples />
+  <Links />
+ </Function>
+
+ <Function Name="RetrievePrivilegeSet"
+           Status="Complete"
+           Writer="crmSdk">
+  <Description>Retrieve the set of privileges defined in the system. </Description>
+  <Parameters />
+  <ReturnType>The resulting collection of privileges. </ReturnType>
+  <Remarks />
+  <Samples />
+  <Links />
+ </Function>
+  
+  <Function Name="RetrieveMailboxTrackingFolders" Status="Complete" Writer="crmSdk">
+    <Description>Retrieves folder-based tracking rules for a user.</Description>
+    <Parameters>
+      <Parameter Name="MailboxId">The mailbox ID of the user for which you want to retrieve the folder-based rules.</Parameter>
+    </Parameters>
+    <ReturnType>The folder-based rule mapping for a user.</ReturnType>
+    <Remarks />
+    <Samples />
+    <Links />
+  </Function>
+  <FunctionsToDocument>
+
+
+
+
+  </FunctionsToDocument>
+</Functions>

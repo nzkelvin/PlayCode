@@ -1,0 +1,2407 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=2B08C435C8251DADB8A53F8C45B39737" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:FooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=1E60E7B49899FEC4640711B64FF56FA6" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>WebAPIPreviewService Sample</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>WebAPIPreviewService Sample</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            C#, OData v4, Microsoft Dynamics CRM 2015 Online
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Use Dynamics CRM Web API Preview with C#
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Cloud, Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">6/7/2015</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p>This sample includes a helper library for the Microsoft Dynamics CRM Online Web API preview. This preview is only available for organizations using Microsoft Dynamics CRM Online 2015 Update 1. On-premise deployments or CRM Online deployments which have not
+ been upgraded to Update 1 (v7.1) do not have access to the Web API preview.</p>
+<p>For more information about the Web API Preview see <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/webapipreview">
+Microsoft Dynamics CRM Web API Preview</a>.</p>
+<p>A JavaScript helper library with the same methods can be found at <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/SdkWebAPIPreviewjs-Sample-2ed65c1b">
+Sdk.WebAPIPreview.js Sample</a>.</p>
+<ul>
+<li><a href="#_Description_of_contents">Description of contents</a> </li><li><a href="#_Dependencies">Dependencies</a> </li><li><a href="#_Prerequisites">Prerequisites</a> </li><li><a href="#_Run_the_sample">Run the sample</a> </li><li><a href="#_WebAPIPreviewService_methods">WebAPIPreviewService methods</a>
+<ul>
+<li><a href="#_Create">Create</a> </li><li><a href="#_Retrieve">Retrieve</a> </li><li><a href="#_RetrievePropertyValue">RetrievePropertyValue</a> </li><li><a href="#_Update">Update</a> </li><li><a href="#_UpdatePropertyValue">UpdatePropertyValue</a> </li><li><a href="#_Upsert">Upsert</a> </li><li><a href="#_Delete">Delete</a> </li><li><a href="#_DeletePropertyValue">DeletePropertyValue</a> </li><li><a href="#_Associate">Associate</a> </li><li><a href="#_Disassociate">Disassociate</a> </li><li><a href="#_RemoveReference">RemoveReference</a> </li><li><a href="#_AddReference">AddReference</a> </li><li><a href="#_InvokeBoundFunction">InvokeBoundFunction</a> </li><li><a href="#_InvokeUnboundFunction">InvokeUnboundFunction</a> </li><li><a href="#_InvokeUnboundAction">InvokeUnboundAction</a> </li><li><a href="#_QueryEntitySet">QueryEntitySet</a> </li><li><a href="#_GetNextPage">GetNextPage</a> </li><li><a href="#_ExecuteBatch">ExecuteBatch</a> </li><li><a href="#_GetEntityList">GetEntityList</a> </li></ul>
+</li></ul>
+<h1><a name="_Description_of_contents"></a>Description of contents</h1>
+<p>This sample is a Visual Studio 2013 project that contains the following files:</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="275" valign="top">
+<p><strong>File</strong></p>
+</td>
+<td width="1032" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="275" valign="top">
+<p><strong>WebAPIPreviewServiceSample.cs</strong></p>
+</td>
+<td width="1032" valign="top">
+<p>Contains examples using the methods of the WebAPIPreviewService class.</p>
+</td>
+</tr>
+<tr>
+<td width="275" valign="top">
+<p><strong>HelperCode/WebAPIPreviewService.cs</strong></p>
+</td>
+<td width="1032" valign="top">
+<p>Contains the WebAPIPreviewService class. This is a re-usable class you can use to perform operations using the web API preview.</p>
+</td>
+</tr>
+<tr>
+<td width="275" valign="top">
+<p><strong>HelperCode/Authentication.cs</strong></p>
+</td>
+<td width="1032" valign="top">
+<p>Contains the Authentication class used to manage authentication using OAuth2 with the Active Directory Authentication Library (ADAL).</p>
+<p>This class is used by all C# web API preview samples.</p>
+</td>
+</tr>
+<tr>
+<td width="275" valign="top">
+<p><strong>HelperCode/Configuration.cs</strong></p>
+</td>
+<td width="1032" valign="top">
+<p>Contains the Configuration class used to manage connection strings in the app.config so you don&rsquo;t need to manually enter application registration and credential information each time you run the sample.</p>
+<p>This class is used by all C# web API preview samples.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h1><a name="_Dependencies"></a>Dependencies</h1>
+<p>This Visual Studio project is configured to use NuGet to load <a href="http://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/2.16.204221202">
+Active Directory Authentication Library version 2.16.204221202 </a>&nbsp;and <a href="http://www.nuget.org/packages/Newtonsoft.Json/6.0.8%20">
+Json.NET version 6.0.8</a>. References to these libraries will be added when you build the sample.</p>
+<h1><a name="_Prerequisites"></a>Prerequisites</h1>
+<p>You must get a <strong>ClientId </strong>and <strong>RedirectUrl </strong>from Azure before you can run this sample. See
+<a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149065.aspx">Register Application</a> for information about how to get a ClientId<strong>
+</strong>and RedirectUrl. Once you have a ClientId and RedirectUrl you can re-use them when you run other samples.</p>
+<p>After you download the sample solution, you must then update the App.config file to replace the
+<strong>ClientId</strong> and <strong>RedirectUrl</strong> values with your own. You must also edit the
+<strong>connectionString</strong> values to include the <strong>Url</strong> to your Microsoft CRM Online organization as well as your
+<strong>Username</strong> and <strong>Password</strong>.</p>
+<h1><a name="_Run_the_sample"></a>Run the sample</h1>
+<p>After you have downloaded the sample solution and completed the <a href="#_Prerequisites">
+Prerequisites</a>, press F5 to run the sample.</p>
+<p>This is a console application which will invoke the <strong>Main</strong> method of the
+<strong>WebAPIPreviewServiceSample</strong> class defined in WebAPIPreviewServiceSample.cs. The Main method will instantiate the Configuration and Authentication classes which will authenticate you and these instances are passed to the
+<strong>Run</strong> method.</p>
+<p>The <strong>Run</strong> method will instantiate an instance of the WebAPIPreviewService and use it to perform a series of operations using the methods of that class within a using statement. The operations performed and the results are displayed in the
+ console. Any new entities created by the sample will be deleted by the sample.</p>
+<h1><a name="_WebAPIPreviewService_methods"></a>WebAPIPreviewService methods</h1>
+<p><strong>Note</strong> : This is a sample library provided to demonstrate the operations available for the web API preview. While it does provide re-usable methods, the primary purpose is to demonstrate the patterns for each operation and how they can be
+ composed around common input parameters using <a href="http://www.newtonsoft.com/json">
+Json.NET</a> with <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/en-us/library/system.net.http.httpclient(v=vs.110).aspx">
+HttpClient</a> and <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/en-us/library/hh873175(v=vs.110).aspx">
+Task-based Asynchronous Pattern (TAP)</a>. This sample may be modified at any time with the goal of demonstrating best practices above backward compatibility. Like all sample code, this code and information are provided &lsquo;as is&rsquo; without warranty
+ of any kind.</p>
+<p>The WebAPIPreviewService class provides methods intended to demonstrate the core operations possible using the web API preview. You have many options to use when performing operations using an OData v4 endpoint. The methods in this class are designed to
+ work with Json.NET without any kind of generated proxy to provide information about entities, functions, and actions exposed by the endpoint. You need to refer to the reference documentation to understand what entity properties or parameters you can use when
+ calling these methods. See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149064.aspx">
+Web API preview types, functions, and actions </a>for information you will need to use these methods.</p>
+<p>The WebAPIPreviewService class exposes the following public methods:</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="125" valign="top">
+<p><a href="#_Create">Create</a></p>
+</td>
+<td width="125" valign="top">
+<p><a href="#_Retrieve">Retrieve</a></p>
+</td>
+<td width="125" valign="top">
+<p><a href="#_RetrievePropertyValue">RetrievePropertyValue&lt;T&gt; </a></p>
+</td>
+<td width="125" valign="top">
+<p><a href="#_Update">Update</a></p>
+</td>
+<td width="125" valign="top">
+<p><a href="#_UpdatePropertyValue">UpdatePropertyValue</a></p>
+</td>
+</tr>
+<tr>
+<td width="125" valign="top">
+<p><a href="#_Upsert">Upsert</a></p>
+</td>
+<td width="125" valign="top">
+<p><a href="#_Delete">Delete</a></p>
+</td>
+<td width="125" valign="top">
+<p><a href="#_DeletePropertyValue">DeletePropertyValue</a></p>
+</td>
+<td width="125" valign="top">
+<p><a href="#_Associate">Associate</a></p>
+</td>
+<td width="125" valign="top">
+<p><a href="#_Disassociate">Disassociate</a></p>
+</td>
+</tr>
+<tr>
+<td width="125" valign="top">
+<p><a href="#_RemoveReference">RemoveReference</a></p>
+</td>
+<td width="125" valign="top">
+<p><a href="#_AddReference">AddReference</a></p>
+</td>
+<td width="125" valign="top">
+<p><a href="#_InvokeBoundFunction">InvokeBoundFunction</a></p>
+</td>
+<td width="125" valign="top">
+<p><a href="#_InvokeUnboundFunction">InvokeUnboundFunction</a></p>
+</td>
+<td width="125" valign="top">
+<p><a href="#_InvokeUnboundAction">InvokeUnboundAction</a></p>
+</td>
+</tr>
+<tr>
+<td width="125" valign="top">
+<p><a href="#_QueryEntitySet">QueryEntitySet</a></p>
+</td>
+<td width="125" valign="top">
+<p><a href="#_GetNextPage">GetNextPage</a></p>
+</td>
+<td width="125" valign="top">
+<p><a href="#_ExecuteBatch">ExecuteBatch</a></p>
+</td>
+<td width="125" valign="top">
+<p><a href="#_GetEntityList">GetEntityList</a></p>
+</td>
+<td width="125" valign="top">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<h2><a name="_Create"></a>Create</h2>
+<p>Creates an entity.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="125" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="125" valign="top">
+<p><strong>entitySetName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the entity set. See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/dn927174">
+Microsoft Dynamics CRM Web API Preview Entity Types Reference</a> for information about the system entity sets available.</p>
+</td>
+</tr>
+<tr>
+<td width="125" valign="top">
+<p><strong>JSONObject</strong></p>
+</td>
+<td width="90" valign="top">
+<p><a href="http://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JObject.htm">JObject</a></p>
+</td>
+<td width="742" valign="top">
+<p>An object with properties set for the entity you want to create.</p>
+</td>
+</tr>
+<tr>
+<td width="125" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Guid</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns</strong></p>
+<p>The Uri of the entity created.</p>
+<p><strong>Remarks</strong></p>
+<p>See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149070.aspx">Create an entity</a>.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">Uri newAccountUri = null;
+String newAccountId = null;
+
+JObject account = new JObject();
+
+//Application Required String
+account.Add(&quot;name&quot;, &quot;Sample Account&quot;);
+//Boolean
+account.Add(&quot;creditonhold&quot;, false);
+// Double
+account.Add(&quot;address1_latitude&quot;, 47.6395830);
+//Memo
+account.Add(&quot;description&quot;, &quot;This is the description of the full account&quot;);
+//Money
+account.Add(&quot;revenue&quot;, 5000000);
+//Picklist
+account.Add(&quot;accountcategorycode&quot;, 1); //Preferred Customer
+
+newAccountUri = await webAPIPreviewService.Create(&quot;accounts&quot;, account);
+Console.WriteLine(&quot;New account created with Uri = {0}&quot;, newAccountUri);
+</pre>
+<div class="preview">
+<pre class="csharp">Uri&nbsp;newAccountUri&nbsp;=&nbsp;<span class="cs__keyword">null</span>;&nbsp;
+String&nbsp;newAccountId&nbsp;=&nbsp;<span class="cs__keyword">null</span>;&nbsp;
+&nbsp;
+JObject&nbsp;account&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;JObject();&nbsp;
+&nbsp;
+<span class="cs__com">//Application&nbsp;Required&nbsp;String</span>&nbsp;
+account.Add(<span class="cs__string">&quot;name&quot;</span>,&nbsp;<span class="cs__string">&quot;Sample&nbsp;Account&quot;</span>);&nbsp;
+<span class="cs__com">//Boolean</span>&nbsp;
+account.Add(<span class="cs__string">&quot;creditonhold&quot;</span>,&nbsp;<span class="cs__keyword">false</span>);&nbsp;
+<span class="cs__com">//&nbsp;Double</span>&nbsp;
+account.Add(<span class="cs__string">&quot;address1_latitude&quot;</span>,&nbsp;<span class="cs__number">47.6395830</span>);&nbsp;
+<span class="cs__com">//Memo</span>&nbsp;
+account.Add(<span class="cs__string">&quot;description&quot;</span>,&nbsp;<span class="cs__string">&quot;This&nbsp;is&nbsp;the&nbsp;description&nbsp;of&nbsp;the&nbsp;full&nbsp;account&quot;</span>);&nbsp;
+<span class="cs__com">//Money</span>&nbsp;
+account.Add(<span class="cs__string">&quot;revenue&quot;</span>,&nbsp;<span class="cs__number">5000000</span>);&nbsp;
+<span class="cs__com">//Picklist</span>&nbsp;
+account.Add(<span class="cs__string">&quot;accountcategorycode&quot;</span>,&nbsp;<span class="cs__number">1</span>);&nbsp;<span class="cs__com">//Preferred&nbsp;Customer</span>&nbsp;
+&nbsp;
+newAccountUri&nbsp;=&nbsp;await&nbsp;webAPIPreviewService.Create(<span class="cs__string">&quot;accounts&quot;</span>,&nbsp;account);&nbsp;
+Console.WriteLine(<span class="cs__string">&quot;New&nbsp;account&nbsp;created&nbsp;with&nbsp;Uri&nbsp;=&nbsp;{0}&quot;</span>,&nbsp;newAccountUri);&nbsp;</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<h2><a name="_Retrieve"></a>Retrieve</h2>
+<p>Retrieves an entity.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="166" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>entityUri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Uri</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the entity to retrieve</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>properties</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String[]</p>
+</td>
+<td width="742" valign="top">
+<p>The properties of the entity to return. If no properties are included, all non-null properties will be returned. Including the specific properties you require is a best practice.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>navigationProperties</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String[]</p>
+</td>
+<td width="742" valign="top">
+<p>The navigation properties of the related entities you want to return. These navigation properties may also include system query options in parentheses following the name of the navigation property. See</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>includeFormattedValues</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Boolean</p>
+</td>
+<td width="742" valign="top">
+<p>Whether to include formatted values. See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149061#_Include_formatted_values">
+Query entity sets : Include formatted values </a></p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>eTag</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The previously retrieved ETag value for the entity. When included data will be returned only when it has changed. See
+<a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149058#_Detect_if_an">Retrieve and entity: Detect if an entity has changed since it was previously retrieved
+</a>.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Guid</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns</strong></p>
+<p>JObject with the properties and related entities based on the properties and navigation properties set in the request.</p>
+<p><strong>Remarks</strong></p>
+<p>See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149058.aspx">Retrieve an entity</a> .<strong>&nbsp;</strong></p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">String[] properties = {
+&quot;accountcategorycode&quot;,
+&quot;accountclassificationcode&quot;,
+&quot;accountid&quot;,
+&quot;accountnumber&quot;,
+&quot;accountratingcode&quot;,
+&quot;businesstypecode&quot;,
+&quot;creditonhold&quot;,
+&quot;createdon&quot;,
+&quot;lastusedincampaign&quot;,
+&quot;address1_latitude&quot;,
+&quot;address1_longitude&quot;,
+&quot;numberofemployees&quot;,
+&quot;parentaccountid&quot;,
+&quot;description&quot;,
+&quot;name&quot;,
+&quot;revenue&quot;};
+
+String[] navigationProperties = { 
+&quot;Referencingaccount_parent_account($select=createdon,name)&quot;, //Data from parent account   
+&quot;Account_Tasks($select=subject,scheduledstart)&quot;  //Data from related tasks                                   
+};
+
+JObject retrievedAccount = await webAPIPreviewService.Retrieve(newAccountUri, properties, navigationProperties, true);
+
+Console.WriteLine(&quot;Account retrieved&quot;);
+Console.WriteLine(&quot;Account accountcategorycode value: {0}&quot;, retrievedAccount.GetValue(&quot;accountcategorycode&quot;));
+//Access formatted value
+String formattedAccountCategoryCodeValue = (String)retrievedAccount.GetValue(&quot;accountcategorycode@mscrm.formattedvalue&quot;);
+Console.WriteLine(&quot;Account accountcategorycode formatted value: {0}&quot;, formattedAccountCategoryCodeValue);
+
+Console.WriteLine(&quot;Parent Account name: {0}&quot;, retrievedAccount.GetValue(&quot;Referencingaccount_parent_account&quot;)[&quot;name&quot;]);
+
+
+//Access related tasks
+Console.WriteLine(&quot;Related tasks subject values:&quot;);
+retrievedAccount.GetValue(&quot;Account_Tasks&quot;).ToList().ForEach(delegate(JToken relatedTask)
+{
+    Console.WriteLine(&quot;    Task Subject: {0}&quot;, relatedTask.ToObject&lt;JObject&gt;().GetValue(&quot;subject&quot;));
+});
+</pre>
+<div class="preview">
+<pre class="csharp">String[]&nbsp;properties&nbsp;=&nbsp;{&nbsp;
+<span class="cs__string">&quot;accountcategorycode&quot;</span>,&nbsp;
+<span class="cs__string">&quot;accountclassificationcode&quot;</span>,&nbsp;
+<span class="cs__string">&quot;accountid&quot;</span>,&nbsp;
+<span class="cs__string">&quot;accountnumber&quot;</span>,&nbsp;
+<span class="cs__string">&quot;accountratingcode&quot;</span>,&nbsp;
+<span class="cs__string">&quot;businesstypecode&quot;</span>,&nbsp;
+<span class="cs__string">&quot;creditonhold&quot;</span>,&nbsp;
+<span class="cs__string">&quot;createdon&quot;</span>,&nbsp;
+<span class="cs__string">&quot;lastusedincampaign&quot;</span>,&nbsp;
+<span class="cs__string">&quot;address1_latitude&quot;</span>,&nbsp;
+<span class="cs__string">&quot;address1_longitude&quot;</span>,&nbsp;
+<span class="cs__string">&quot;numberofemployees&quot;</span>,&nbsp;
+<span class="cs__string">&quot;parentaccountid&quot;</span>,&nbsp;
+<span class="cs__string">&quot;description&quot;</span>,&nbsp;
+<span class="cs__string">&quot;name&quot;</span>,&nbsp;
+<span class="cs__string">&quot;revenue&quot;</span>};&nbsp;
+&nbsp;
+String[]&nbsp;navigationProperties&nbsp;=&nbsp;{&nbsp;&nbsp;
+<span class="cs__string">&quot;Referencingaccount_parent_account($select=createdon,name)&quot;</span>,&nbsp;<span class="cs__com">//Data&nbsp;from&nbsp;parent&nbsp;account&nbsp;&nbsp;&nbsp;</span>&nbsp;
+<span class="cs__string">&quot;Account_Tasks($select=subject,scheduledstart)&quot;</span>&nbsp;&nbsp;<span class="cs__com">//Data&nbsp;from&nbsp;related&nbsp;tasks&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;
+};&nbsp;
+&nbsp;
+JObject&nbsp;retrievedAccount&nbsp;=&nbsp;await&nbsp;webAPIPreviewService.Retrieve(newAccountUri,&nbsp;properties,&nbsp;navigationProperties,&nbsp;<span class="cs__keyword">true</span>);&nbsp;
+&nbsp;
+Console.WriteLine(<span class="cs__string">&quot;Account&nbsp;retrieved&quot;</span>);&nbsp;
+Console.WriteLine(<span class="cs__string">&quot;Account&nbsp;accountcategorycode&nbsp;value:&nbsp;{0}&quot;</span>,&nbsp;retrievedAccount.GetValue(<span class="cs__string">&quot;accountcategorycode&quot;</span>));&nbsp;
+<span class="cs__com">//Access&nbsp;formatted&nbsp;value</span>&nbsp;
+String&nbsp;formattedAccountCategoryCodeValue&nbsp;=&nbsp;(String)retrievedAccount.GetValue(<span class="cs__string">&quot;accountcategorycode@mscrm.formattedvalue&quot;</span>);&nbsp;
+Console.WriteLine(<span class="cs__string">&quot;Account&nbsp;accountcategorycode&nbsp;formatted&nbsp;value:&nbsp;{0}&quot;</span>,&nbsp;formattedAccountCategoryCodeValue);&nbsp;
+&nbsp;
+Console.WriteLine(<span class="cs__string">&quot;Parent&nbsp;Account&nbsp;name:&nbsp;{0}&quot;</span>,&nbsp;retrievedAccount.GetValue(<span class="cs__string">&quot;Referencingaccount_parent_account&quot;</span>)[<span class="cs__string">&quot;name&quot;</span>]);&nbsp;
+&nbsp;
+&nbsp;
+<span class="cs__com">//Access&nbsp;related&nbsp;tasks</span>&nbsp;
+Console.WriteLine(<span class="cs__string">&quot;Related&nbsp;tasks&nbsp;subject&nbsp;values:&quot;</span>);&nbsp;
+retrievedAccount.GetValue(<span class="cs__string">&quot;Account_Tasks&quot;</span>).ToList().ForEach(<span class="cs__keyword">delegate</span>(JToken&nbsp;relatedTask)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="cs__string">&quot;&nbsp;&nbsp;&nbsp;&nbsp;Task&nbsp;Subject:&nbsp;{0}&quot;</span>,&nbsp;relatedTask.ToObject&lt;JObject&gt;().GetValue(<span class="cs__string">&quot;subject&quot;</span>));&nbsp;
+});&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+<h2><a name="_RetrievePropertyValue"></a>RetrievePropertyValue&lt;T&gt;</h2>
+<p>Retrieves the value of a single property of an entity.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="166" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>T</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Type</p>
+</td>
+<td width="742" valign="top">
+<p>The data type of the property to retrieve</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>entityUri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Uri</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the entity with the property to retrieve</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>propertyName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the property to return</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Guid</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns</strong></p>
+<p>The value of the property with the type specified by T.</p>
+<p><strong>Remarks</strong></p>
+<p>See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149058#_Retrieve_a_single">
+Retrieve an entity: Retrieve a single property value </a>.</p>
+<p>This method does not support retrieving the primitive value.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">//Retrieve individual properties from the new account
+DateTime createdOn = await webAPIPreviewService.RetrievePropertyValue&lt;DateTime&gt;(newAccountUri, &quot;createdon&quot;);
+Console.WriteLine(&quot;Returned createdon: {0}&quot;, createdOn.ToLongDateString());
+String createdby = await webAPIPreviewService.RetrievePropertyValue&lt;String&gt;(newAccountUri, &quot;createdby&quot;);
+Console.WriteLine(&quot;Returned createdby: {0}&quot;, createdby);
+Int32 statusCode = await webAPIPreviewService.RetrievePropertyValue&lt;Int32&gt;(newAccountUri, &quot;statuscode&quot;);
+Console.WriteLine(&quot;Returned statusCode: {0}&quot;, statusCode);
+//CreditLimit is null
+Decimal? creditLimit = await webAPIPreviewService.RetrievePropertyValue&lt;Decimal?&gt;(newAccountUri, &quot;creditlimit&quot;);
+Console.WriteLine(&quot;Returned creditLimit: {0}&quot;, (creditLimit == null) ? &quot;null&quot; : creditLimit.ToString());
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">//Retrieve&nbsp;individual&nbsp;properties&nbsp;from&nbsp;the&nbsp;new&nbsp;account</span>&nbsp;
+DateTime&nbsp;createdOn&nbsp;=&nbsp;await&nbsp;webAPIPreviewService.RetrievePropertyValue&lt;DateTime&gt;(newAccountUri,&nbsp;<span class="cs__string">&quot;createdon&quot;</span>);&nbsp;
+Console.WriteLine(<span class="cs__string">&quot;Returned&nbsp;createdon:&nbsp;{0}&quot;</span>,&nbsp;createdOn.ToLongDateString());&nbsp;
+String&nbsp;createdby&nbsp;=&nbsp;await&nbsp;webAPIPreviewService.RetrievePropertyValue&lt;String&gt;(newAccountUri,&nbsp;<span class="cs__string">&quot;createdby&quot;</span>);&nbsp;
+Console.WriteLine(<span class="cs__string">&quot;Returned&nbsp;createdby:&nbsp;{0}&quot;</span>,&nbsp;createdby);&nbsp;
+Int32&nbsp;statusCode&nbsp;=&nbsp;await&nbsp;webAPIPreviewService.RetrievePropertyValue&lt;Int32&gt;(newAccountUri,&nbsp;<span class="cs__string">&quot;statuscode&quot;</span>);&nbsp;
+Console.WriteLine(<span class="cs__string">&quot;Returned&nbsp;statusCode:&nbsp;{0}&quot;</span>,&nbsp;statusCode);&nbsp;
+<span class="cs__com">//CreditLimit&nbsp;is&nbsp;null</span>&nbsp;
+Decimal?&nbsp;creditLimit&nbsp;=&nbsp;await&nbsp;webAPIPreviewService.RetrievePropertyValue&lt;Decimal?&gt;(newAccountUri,&nbsp;<span class="cs__string">&quot;creditlimit&quot;</span>);&nbsp;
+Console.WriteLine(<span class="cs__string">&quot;Returned&nbsp;creditLimit:&nbsp;{0}&quot;</span>,&nbsp;(creditLimit&nbsp;==&nbsp;<span class="cs__keyword">null</span>)&nbsp;?&nbsp;<span class="cs__string">&quot;null&quot;</span>&nbsp;:&nbsp;creditLimit.ToString());&nbsp;</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<h2><a name="_Update"></a>Update</h2>
+<p>Updates an entity.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="166" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>entityUri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Uri</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the entity to update</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>updates</strong></p>
+</td>
+<td width="90" valign="top">
+<p><a href="http://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JObject.htm">JObject</a></p>
+</td>
+<td width="742" valign="top">
+<p>An object with properties set that you want to update.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Guid</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149067#_Basic_Update">Update, upsert, or delete entities: Basic update
+</a></p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">JObject accntObj = new JObject();
+accntObj.Add(&quot;name&quot;, &quot;Updated Account Name&quot;);
+accntObj.Add(&quot;description&quot;, &quot;Sample Account Description Updated.&quot;);
+
+await webAPIPreviewService.Update(newAccountUri, accntObj);
+Console.WriteLine(&quot;Account Updated&quot;);
+</pre>
+<div class="preview">
+<pre class="csharp">JObject&nbsp;accntObj&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;JObject();&nbsp;
+accntObj.Add(<span class="cs__string">&quot;name&quot;</span>,&nbsp;<span class="cs__string">&quot;Updated&nbsp;Account&nbsp;Name&quot;</span>);&nbsp;
+accntObj.Add(<span class="cs__string">&quot;description&quot;</span>,&nbsp;<span class="cs__string">&quot;Sample&nbsp;Account&nbsp;Description&nbsp;Updated.&quot;</span>);&nbsp;
+&nbsp;
+await&nbsp;webAPIPreviewService.Update(newAccountUri,&nbsp;accntObj);&nbsp;
+Console.WriteLine(<span class="cs__string">&quot;Account&nbsp;Updated&quot;</span>);&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+<h2><a name="_UpdatePropertyValue"></a>UpdatePropertyValue</h2>
+<p>Updates a single property of an entity</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="166" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>entityUri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Uri</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the entity to update</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>propertyName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the property you want to update.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>updateValue</strong></p>
+</td>
+<td width="90" valign="top">
+<p><a href="http://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JToken.htm">JToken</a></p>
+</td>
+<td width="742" valign="top">
+<p>The value of the property you want to change</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Guid</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149067#_Update_A_Single_Property_Value">
+Update, upsert, or delete entities: Update a single property value </a></p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">await webAPIPreviewService.UpdatePropertyValue(newAccountUri, &quot;name&quot;, &quot;New Improved Account Name&quot;);
+//Then retrieve to verify it was set
+String newName = await webAPIPreviewService.RetrievePropertyValue&lt;String&gt;(newAccountUri, &quot;name&quot;);
+Console.WriteLine(&quot;Updated name: {0}&quot;, newName);
+</pre>
+<div class="preview">
+<pre class="csharp">await&nbsp;webAPIPreviewService.UpdatePropertyValue(newAccountUri,&nbsp;<span class="cs__string">&quot;name&quot;</span>,&nbsp;<span class="cs__string">&quot;New&nbsp;Improved&nbsp;Account&nbsp;Name&quot;</span>);&nbsp;
+<span class="cs__com">//Then&nbsp;retrieve&nbsp;to&nbsp;verify&nbsp;it&nbsp;was&nbsp;set</span>&nbsp;
+String&nbsp;newName&nbsp;=&nbsp;await&nbsp;webAPIPreviewService.RetrievePropertyValue&lt;String&gt;(newAccountUri,&nbsp;<span class="cs__string">&quot;name&quot;</span>);&nbsp;
+Console.WriteLine(<span class="cs__string">&quot;Updated&nbsp;name:&nbsp;{0}&quot;</span>,&nbsp;newName);&nbsp;</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<h2><a name="_Upsert"></a>Upsert</h2>
+<p>Updates an existing entity if found, otherwise creates a new one.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="166" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>entityUri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Uri</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the entity to create or update</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>entity</strong></p>
+</td>
+<td width="90" valign="top">
+<p><a href="http://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JObject.htm">JObject</a></p>
+</td>
+<td width="742" valign="top">
+<p>The entity with properties set that should be created or updated</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>preventCreate</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Boolean</p>
+</td>
+<td width="742" valign="top">
+<p>Do not create the entity if it doesn't already exist. See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149067#_Prevent_Create_In_Upsert">
+Update, upsert, or delete entities: Prevent create in upsert </a></p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>preventUpdate</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Boolean</p>
+</td>
+<td width="742" valign="top">
+<p>Do not update the entity if it already exists. See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149067#_Prevent_Update_In_Insert">
+Update, upsert, or delete entities: Prevent update in upsert </a></p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Guid</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>An upsert is essentially the same as an Update, except this method provides some additional parameters to control whether or not an update or create should occur.</p>
+<p>See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149067.aspx">Update, upsert, or delete entities
+</a></p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">//Create a new contact with a specific contactid
+Uri newContactUri = new Uri(&quot;/api/data/contacts(80db55c7-a16b-4851-b5c8-24186f3d86b6)&quot;, UriKind.Relative);
+JObject contact = new JObject();
+contact.Add(&quot;firstname&quot;, &quot;Joe&quot;);
+contact.Add(&quot;lastname&quot;, &quot;Jones&quot;);
+await webAPIPreviewService.Upsert(newContactUri, contact);                   
+
+String fullName = await webAPIPreviewService.RetrievePropertyValue&lt;String&gt;(newContactUri, &quot;fullname&quot;);
+Console.WriteLine(&quot;New Contact fullname returned: {0}&quot;, fullName);
+
+//Do not update the contact if it already exists
+JObject doNotUpdateContact = new JObject();
+doNotUpdateContact.Add(&quot;firstname&quot;, &quot;Joseph&quot;);
+doNotUpdateContact.Add(&quot;lastname&quot;, &quot;Jones&quot;);
+await webAPIPreviewService.Upsert(newContactUri, doNotUpdateContact, false, true);
+
+String sameFullName = await webAPIPreviewService.RetrievePropertyValue&lt;String&gt;(newContactUri, &quot;fullname&quot;);
+Console.WriteLine(&quot;New Contact fullname returned: {0}&quot;, sameFullName);
+
+//Do not create the contact if it doesn't already exist
+Uri doNotCreateContactUri = new Uri(&quot;/api/data/contacts(ebeefeb4-c3aa-4d7b-a094-43288d3ccf95)&quot;, UriKind.Relative);
+JObject doNotCreateContact = new JObject();
+doNotCreateContact.Add(&quot;firstname&quot;, &quot;Bob&quot;);
+doNotCreateContact.Add(&quot;lastname&quot;, &quot;Burns&quot;);
+await webAPIPreviewService.Upsert(doNotCreateContactUri, doNotCreateContact, true);
+try
+{
+    JObject noContact = await webAPIPreviewService.Retrieve(doNotCreateContactUri, new String[] { &quot;fullname&quot; }, null, false);
+}
+catch (Exception ex)
+{
+    if (!ex.Message.EndsWith(&quot;Does Not Exist&quot;))
+    {
+        throw ex;
+    }
+
+    Console.WriteLine(&quot;Expected Error: {0}&quot;, ex.Message);
+}
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">//Create&nbsp;a&nbsp;new&nbsp;contact&nbsp;with&nbsp;a&nbsp;specific&nbsp;contactid</span>&nbsp;
+Uri&nbsp;newContactUri&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;Uri(<span class="cs__string">&quot;/api/data/contacts(80db55c7-a16b-4851-b5c8-24186f3d86b6)&quot;</span>,&nbsp;UriKind.Relative);&nbsp;
+JObject&nbsp;contact&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;JObject();&nbsp;
+contact.Add(<span class="cs__string">&quot;firstname&quot;</span>,&nbsp;<span class="cs__string">&quot;Joe&quot;</span>);&nbsp;
+contact.Add(<span class="cs__string">&quot;lastname&quot;</span>,&nbsp;<span class="cs__string">&quot;Jones&quot;</span>);&nbsp;
+await&nbsp;webAPIPreviewService.Upsert(newContactUri,&nbsp;contact);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;
+String&nbsp;fullName&nbsp;=&nbsp;await&nbsp;webAPIPreviewService.RetrievePropertyValue&lt;String&gt;(newContactUri,&nbsp;<span class="cs__string">&quot;fullname&quot;</span>);&nbsp;
+Console.WriteLine(<span class="cs__string">&quot;New&nbsp;Contact&nbsp;fullname&nbsp;returned:&nbsp;{0}&quot;</span>,&nbsp;fullName);&nbsp;
+&nbsp;
+<span class="cs__com">//Do&nbsp;not&nbsp;update&nbsp;the&nbsp;contact&nbsp;if&nbsp;it&nbsp;already&nbsp;exists</span>&nbsp;
+JObject&nbsp;doNotUpdateContact&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;JObject();&nbsp;
+doNotUpdateContact.Add(<span class="cs__string">&quot;firstname&quot;</span>,&nbsp;<span class="cs__string">&quot;Joseph&quot;</span>);&nbsp;
+doNotUpdateContact.Add(<span class="cs__string">&quot;lastname&quot;</span>,&nbsp;<span class="cs__string">&quot;Jones&quot;</span>);&nbsp;
+await&nbsp;webAPIPreviewService.Upsert(newContactUri,&nbsp;doNotUpdateContact,&nbsp;<span class="cs__keyword">false</span>,&nbsp;<span class="cs__keyword">true</span>);&nbsp;
+&nbsp;
+String&nbsp;sameFullName&nbsp;=&nbsp;await&nbsp;webAPIPreviewService.RetrievePropertyValue&lt;String&gt;(newContactUri,&nbsp;<span class="cs__string">&quot;fullname&quot;</span>);&nbsp;
+Console.WriteLine(<span class="cs__string">&quot;New&nbsp;Contact&nbsp;fullname&nbsp;returned:&nbsp;{0}&quot;</span>,&nbsp;sameFullName);&nbsp;
+&nbsp;
+<span class="cs__com">//Do&nbsp;not&nbsp;create&nbsp;the&nbsp;contact&nbsp;if&nbsp;it&nbsp;doesn't&nbsp;already&nbsp;exist</span>&nbsp;
+Uri&nbsp;doNotCreateContactUri&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;Uri(<span class="cs__string">&quot;/api/data/contacts(ebeefeb4-c3aa-4d7b-a094-43288d3ccf95)&quot;</span>,&nbsp;UriKind.Relative);&nbsp;
+JObject&nbsp;doNotCreateContact&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;JObject();&nbsp;
+doNotCreateContact.Add(<span class="cs__string">&quot;firstname&quot;</span>,&nbsp;<span class="cs__string">&quot;Bob&quot;</span>);&nbsp;
+doNotCreateContact.Add(<span class="cs__string">&quot;lastname&quot;</span>,&nbsp;<span class="cs__string">&quot;Burns&quot;</span>);&nbsp;
+await&nbsp;webAPIPreviewService.Upsert(doNotCreateContactUri,&nbsp;doNotCreateContact,&nbsp;<span class="cs__keyword">true</span>);&nbsp;
+<span class="cs__keyword">try</span>&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;JObject&nbsp;noContact&nbsp;=&nbsp;await&nbsp;webAPIPreviewService.Retrieve(doNotCreateContactUri,&nbsp;<span class="cs__keyword">new</span>&nbsp;String[]&nbsp;{&nbsp;<span class="cs__string">&quot;fullname&quot;</span>&nbsp;},&nbsp;<span class="cs__keyword">null</span>,&nbsp;<span class="cs__keyword">false</span>);&nbsp;
+}&nbsp;
+<span class="cs__keyword">catch</span>&nbsp;(Exception&nbsp;ex)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">if</span>&nbsp;(!ex.Message.EndsWith(<span class="cs__string">&quot;Does&nbsp;Not&nbsp;Exist&quot;</span>))&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">throw</span>&nbsp;ex;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="cs__string">&quot;Expected&nbsp;Error:&nbsp;{0}&quot;</span>,&nbsp;ex.Message);&nbsp;
+}&nbsp;</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<h2><a name="_Delete"></a>Delete</h2>
+<p>Deletes an entity</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="166" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>entityUri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Uri</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the entity to delete</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Guid</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149067#_Basic_Delete">Update, upsert, or delete entities: Basic delete
+</a></p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">await webAPIPreviewService.Delete(newAccountUri);</pre>
+<div class="preview">
+<pre class="csharp">await&nbsp;webAPIPreviewService.Delete(newAccountUri);</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+<h2><a name="_DeletePropertyValue"></a>DeletePropertyValue</h2>
+<p>Deletes the value of a specific property of an entity.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="166" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>entityUri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Uri</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the entity.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>propertyName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the property to delete.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Guid</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149067#_Delete_A_Single_Property_Value">
+Update, upsert, or delete entities: Delete a single property value </a></p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">// Delete the revenue property value of the new account created
+await webAPIPreviewService.DeletePropertyValue(newAccountUri, &quot;revenue&quot;);</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">//&nbsp;Delete&nbsp;the&nbsp;revenue&nbsp;property&nbsp;value&nbsp;of&nbsp;the&nbsp;new&nbsp;account&nbsp;created</span>&nbsp;
+await&nbsp;webAPIPreviewService.DeletePropertyValue(newAccountUri,&nbsp;<span class="cs__string">&quot;revenue&quot;</span>);</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<h2><a name="_Associate"></a>Associate</h2>
+<p>Associates two entities according to a specific relationship based on the collection-valued navigation property.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="166" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>parentUri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Uri</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the parent entity</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>navigationPropertyName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the collection-valued navigation property to use for the relationship.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>childUri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Uri</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the child entity.</p>
+</td>
+</tr>
+<tr>
+<td width="166" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Guid</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>Although this method refers to &lsquo;parent&rsquo; and &lsquo;child&rsquo; it can be used for N:N relationships where their isn&rsquo;t a clear hierarchy between the entities.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">// associate an account with a parent account
+await webAPIPreviewService.Associate(parentAccountUri, &quot;Referencedaccount_parent_account&quot;, newAccountUri);</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">//&nbsp;associate&nbsp;an&nbsp;account&nbsp;with&nbsp;a&nbsp;parent&nbsp;account</span>&nbsp;
+await&nbsp;webAPIPreviewService.Associate(parentAccountUri,&nbsp;<span class="cs__string">&quot;Referencedaccount_parent_account&quot;</span>,&nbsp;newAccountUri);</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+<h2><a name="_Disassociate"></a>Disassociate</h2>
+<p>Removes an association between two entities based on the collection-valued navigation property.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="172" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>parentUri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Uri</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the parent entity</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>navigationPropertyName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the collection-valued navigation property to use for the relationship.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>childUri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Uri</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the child entity.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Guid</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>Although this method refers to &lsquo;parent&rsquo; and &lsquo;child&rsquo; it can be used for N:N relationships where their isn&rsquo;t a clear hierarchy between the entities.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">//disassociate an account from a parent account
+await webAPIPreviewService.Disassociate(parentAccountUri, &quot;Referencedaccount_parent_account&quot;, newAccountUri);</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">//disassociate&nbsp;an&nbsp;account&nbsp;from&nbsp;a&nbsp;parent&nbsp;account</span>&nbsp;
+await&nbsp;webAPIPreviewService.Disassociate(parentAccountUri,&nbsp;<span class="cs__string">&quot;Referencedaccount_parent_account&quot;</span>,&nbsp;newAccountUri);</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<h2><a name="_RemoveReference"></a>RemoveReference</h2>
+<p>Removes an association between two entities by deleting the value of the single-valued navigation property of the entity.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="172" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>entityUri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Uri</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the entity</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>navigationPropertyName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the single-valued navigation property to use for the relationship.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Guid</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>This method cannot be used for N:N entity relationships.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>JavaScript</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">js</span>
+<pre class="hidden">// Remove the reference to a primary contact from an account
+await webAPIPreviewService.RemoveReference(accountUri, &quot;account_primary_contact&quot;);</pre>
+<div class="preview">
+<pre class="js"><span class="js__sl_comment">//&nbsp;Remove&nbsp;the&nbsp;reference&nbsp;to&nbsp;a&nbsp;primary&nbsp;contact&nbsp;from&nbsp;an&nbsp;account</span>&nbsp;
+await&nbsp;webAPIPreviewService.RemoveReference(accountUri,&nbsp;<span class="js__string">&quot;account_primary_contact&quot;</span>);</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+<p>&nbsp;</p>
+<h2><a name="_AddReference"></a>AddReference</h2>
+<p>Removes an association between two entities by deleting the value of the single-valued navigation property of the child entity.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="172" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>entityUri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Uri</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the entity.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>navigationPropertyName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the single-valued navigation property to use for the relationship.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>referencedEntityUri</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Uri</p>
+</td>
+<td width="742" valign="top">
+<p>The URI for the entity to relate to the entity.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Guid</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>This method cannot be used for N:N entity relationships.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">// Set the reference to a primary contact for an account
+await webAPIPreviewService.AddReference(accountUri, &quot;account_primary_contact&quot;, contactUri);</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">//&nbsp;Set&nbsp;the&nbsp;reference&nbsp;to&nbsp;a&nbsp;primary&nbsp;contact&nbsp;for&nbsp;an&nbsp;account</span>&nbsp;
+await&nbsp;webAPIPreviewService.AddReference(accountUri,&nbsp;<span class="cs__string">&quot;account_primary_contact&quot;</span>,&nbsp;contactUri);</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode"></div>
+<p>&nbsp;</p>
+<h2><a name="_InvokeBoundFunction"></a>InvokeBoundFunction</h2>
+<p>Invokes a function bound to an entity.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="172" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>entitySetName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the entity set</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>functionName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the function. The function name <strong><span style="text-decoration:underline">must</span></strong> include the namepace prefix &lsquo;mscrm.&rsquo;</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Guid</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>In the web API preview the only bound functions are <strong>mscrm.GetSavedQueries</strong> and
+<strong>mscrm.GetUserQueries</strong>. Neither of these functions require parameters so this method does not provide for including them.</p>
+<p>See the following resources for more information:</p>
+<ul>
+<li><a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149060.aspx">Retrieve and execute predefined queries
+</a></li><li><a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/dn927174">Microsoft Dynamics CRM Web API Preview Entity Types Reference</a>
+</li></ul>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">JArray queries = await webAPIPreviewService.InvokeBoundFunction(&quot;accounts&quot;, &quot;mscrm.GetSavedQueries&quot;);
+if (queries.Count &gt; 0)
+{
+    Console.WriteLine(&quot;These are the saved queries for the account entity.&quot;);
+
+    foreach (var item in queries.Children())
+    {
+        Console.WriteLine(&quot;   {0}&quot;, item[&quot;name&quot;].ToString());
+    }
+}
+else
+{
+    Console.WriteLine(&quot;There are no saved queries for this entity.&quot;);
+}
+</pre>
+<div class="preview">
+<pre class="csharp">JArray&nbsp;queries&nbsp;=&nbsp;await&nbsp;webAPIPreviewService.InvokeBoundFunction(<span class="cs__string">&quot;accounts&quot;</span>,&nbsp;<span class="cs__string">&quot;mscrm.GetSavedQueries&quot;</span>);&nbsp;
+<span class="cs__keyword">if</span>&nbsp;(queries.Count&nbsp;&gt;&nbsp;<span class="cs__number">0</span>)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="cs__string">&quot;These&nbsp;are&nbsp;the&nbsp;saved&nbsp;queries&nbsp;for&nbsp;the&nbsp;account&nbsp;entity.&quot;</span>);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="cs__keyword">foreach</span>&nbsp;(var&nbsp;item&nbsp;<span class="cs__keyword">in</span>&nbsp;queries.Children())&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="cs__string">&quot;&nbsp;&nbsp;&nbsp;{0}&quot;</span>,&nbsp;item[<span class="cs__string">&quot;name&quot;</span>].ToString());&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;
+}&nbsp;
+<span class="cs__keyword">else</span>&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="cs__string">&quot;There&nbsp;are&nbsp;no&nbsp;saved&nbsp;queries&nbsp;for&nbsp;this&nbsp;entity.&quot;</span>);&nbsp;
+}&nbsp;</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<h2><a name="_InvokeUnboundFunction"></a>InvokeUnboundFunction</h2>
+<p>Invokes an unbound function.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="172" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>functionName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the function. The function name must <strong><span style="text-decoration:underline">not</span></strong> include the namespace prefix.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><a href="http://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JArray.htm">JArray</a></p>
+</td>
+<td width="742" valign="top">
+<p>An array of string values that represent a name and a value separated by &lsquo;=&rsquo;.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Guid</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>See the following resources for more information:</p>
+<ul>
+<li><a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/dn927172">Microsoft Dynamics CRM Web API Preview Unbound Functions Reference</a>
+</li><li><a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149063.aspx">Call unbound functions
+</a></li></ul>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">// Use WhoAmI function
+JObject WhoAmIResponse = await webAPIPreviewService.InvokeUnboundFunction(&quot;WhoAmI&quot;, null);
+Console.WriteLine(&quot;Results from WhoAmI function:&quot;);
+UserId = (String)WhoAmIResponse.GetValue(&quot;UserId&quot;);
+Console.WriteLine(&quot; UserId: {0}&quot;, WhoAmIResponse.GetValue(&quot;UserId&quot;));
+Console.WriteLine(&quot; BusinessUnitId: {0}&quot;, WhoAmIResponse.GetValue(&quot;BusinessUnitId&quot;));
+Console.WriteLine(&quot; OrganizationId: {0}&quot;, WhoAmIResponse.GetValue(&quot;OrganizationId&quot;));
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">//&nbsp;Use&nbsp;WhoAmI&nbsp;function</span>&nbsp;
+JObject&nbsp;WhoAmIResponse&nbsp;=&nbsp;await&nbsp;webAPIPreviewService.InvokeUnboundFunction(<span class="cs__string">&quot;WhoAmI&quot;</span>,&nbsp;<span class="cs__keyword">null</span>);&nbsp;
+Console.WriteLine(<span class="cs__string">&quot;Results&nbsp;from&nbsp;WhoAmI&nbsp;function:&quot;</span>);&nbsp;
+UserId&nbsp;=&nbsp;(String)WhoAmIResponse.GetValue(<span class="cs__string">&quot;UserId&quot;</span>);&nbsp;
+Console.WriteLine(<span class="cs__string">&quot;&nbsp;UserId:&nbsp;{0}&quot;</span>,&nbsp;WhoAmIResponse.GetValue(<span class="cs__string">&quot;UserId&quot;</span>));&nbsp;
+Console.WriteLine(<span class="cs__string">&quot;&nbsp;BusinessUnitId:&nbsp;{0}&quot;</span>,&nbsp;WhoAmIResponse.GetValue(<span class="cs__string">&quot;BusinessUnitId&quot;</span>));&nbsp;
+Console.WriteLine(<span class="cs__string">&quot;&nbsp;OrganizationId:&nbsp;{0}&quot;</span>,&nbsp;WhoAmIResponse.GetValue(<span class="cs__string">&quot;OrganizationId&quot;</span>));&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">//User GetAllTimeZonesWithDisplayName function
+JArray lcidParams = new JArray();
+lcidParams.Add(&quot;LocaleId=1033&quot;);
+
+JObject GATZWDNResponse = await webAPIPreviewService.InvokeUnboundFunction(&quot;GetAllTimeZonesWithDisplayName&quot;, lcidParams);
+
+Console.WriteLine(&quot;GetAllTimeZonesWithDisplayName Function Response values:&quot;);
+
+foreach (var item in GATZWDNResponse.GetValue(&quot;value&quot;).Children())
+{
+    Console.WriteLine(&quot; {0}&quot;, item[&quot;userinterfacename&quot;].ToString());
+}
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">//User&nbsp;GetAllTimeZonesWithDisplayName&nbsp;function</span>&nbsp;
+JArray&nbsp;lcidParams&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;JArray();&nbsp;
+lcidParams.Add(<span class="cs__string">&quot;LocaleId=1033&quot;</span>);&nbsp;
+&nbsp;
+JObject&nbsp;GATZWDNResponse&nbsp;=&nbsp;await&nbsp;webAPIPreviewService.InvokeUnboundFunction(<span class="cs__string">&quot;GetAllTimeZonesWithDisplayName&quot;</span>,&nbsp;lcidParams);&nbsp;
+&nbsp;
+Console.WriteLine(<span class="cs__string">&quot;GetAllTimeZonesWithDisplayName&nbsp;Function&nbsp;Response&nbsp;values:&quot;</span>);&nbsp;
+&nbsp;
+<span class="cs__keyword">foreach</span>&nbsp;(var&nbsp;item&nbsp;<span class="cs__keyword">in</span>&nbsp;GATZWDNResponse.GetValue(<span class="cs__string">&quot;value&quot;</span>).Children())&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="cs__string">&quot;&nbsp;{0}&quot;</span>,&nbsp;item[<span class="cs__string">&quot;userinterfacename&quot;</span>].ToString());&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">//User RetrieveUserQueues function
+JArray parameters = new JArray();
+parameters.Add(String.Format(&quot;UserId={0}&quot;, UserId));
+parameters.Add(&quot;IncludePublic=true&quot;);
+JObject RetrieveUserQueuesResponse = await webAPIPreviewService.InvokeUnboundFunction(&quot;RetrieveUserQueues&quot;, parameters);
+
+Console.WriteLine(&quot;Returned {0} user queues.&quot;, RetrieveUserQueuesResponse.GetValue(&quot;value&quot;).Children().Count());
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">//User&nbsp;RetrieveUserQueues&nbsp;function</span>&nbsp;
+JArray&nbsp;parameters&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;JArray();&nbsp;
+parameters.Add(String.Format(<span class="cs__string">&quot;UserId={0}&quot;</span>,&nbsp;UserId));&nbsp;
+parameters.Add(<span class="cs__string">&quot;IncludePublic=true&quot;</span>);&nbsp;
+JObject&nbsp;RetrieveUserQueuesResponse&nbsp;=&nbsp;await&nbsp;webAPIPreviewService.InvokeUnboundFunction(<span class="cs__string">&quot;RetrieveUserQueues&quot;</span>,&nbsp;parameters);&nbsp;
+&nbsp;
+Console.WriteLine(<span class="cs__string">&quot;Returned&nbsp;{0}&nbsp;user&nbsp;queues.&quot;</span>,&nbsp;RetrieveUserQueuesResponse.GetValue(<span class="cs__string">&quot;value&quot;</span>).Children().Count());&nbsp;</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<h2><a name="_InvokeUnboundAction"></a>InvokeUnboundAction</h2>
+<p>Invokes an unbound action.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="172" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>actionName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the function. The function name must <strong><span style="text-decoration:underline">not</span></strong> include the namespace prefix.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><a href="http://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JObject.htm">JObject</a></p>
+</td>
+<td width="742" valign="top">
+<p>An object with values assigned to properties which correspond to the values to be passed with the action.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Guid</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>See the following resources for more information:</p>
+<ul>
+<li><a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/dn927171.aspx">Microsoft Dynamics CRM Web API Preview Unbound Actions Reference</a>
+</li><li><a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149066.aspx">Call unbound actions
+</a></li></ul>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">// Use WinOpportunity action
+
+//Create an Account to own the Opportunity
+JObject winOppAccount = new JObject();
+winOppAccount.Add(&quot;name&quot;, &quot;Win Opp Account&quot;);
+Uri winOppAccountUri = await webAPIPreviewService.Create(&quot;accounts&quot;, winOppAccount);
+
+//Create an associated opportunity to win
+JObject winOpp = new JObject();
+winOpp.Add(&quot;name&quot;, &quot;Opportunity to Win&quot;);
+winOpp.Add(&quot;opportunity_parent_account@odata.bind&quot;, winOppAccountUri);
+Uri winOppUri = await webAPIPreviewService.Create(&quot;opportunities&quot;, winOpp);
+
+
+//Create Opportunityclose object to pass with the parameters
+JObject opportunityClose = new JObject();
+opportunityClose.Add(&quot;@odata.type&quot;, &quot;#mscrm.opportunityclose&quot;); //Essential to describe the type of entity
+opportunityClose.Add(&quot;subject&quot;, &quot;Won Opp Activity&quot;);
+opportunityClose.Add(&quot;description&quot;, &quot;We won this opportunity.&quot;);
+opportunityClose.Add(&quot;Opportunity_OpportunityClose@odata.bind&quot;, winOppUri);
+
+//Prepare Parameter object
+JObject winOppParams = new JObject();
+winOppParams.Add(&quot;Status&quot;, 3);
+winOppParams.Add(&quot;OpportunityClose&quot;, opportunityClose);
+
+//Invoke the action
+JObject winOppResponse = await webAPIPreviewService.InvokeUnboundAction(&quot;WinOpportunity&quot;, winOppParams);
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">//&nbsp;Use&nbsp;WinOpportunity&nbsp;action</span>&nbsp;
+&nbsp;
+<span class="cs__com">//Create&nbsp;an&nbsp;Account&nbsp;to&nbsp;own&nbsp;the&nbsp;Opportunity</span>&nbsp;
+JObject&nbsp;winOppAccount&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;JObject();&nbsp;
+winOppAccount.Add(<span class="cs__string">&quot;name&quot;</span>,&nbsp;<span class="cs__string">&quot;Win&nbsp;Opp&nbsp;Account&quot;</span>);&nbsp;
+Uri&nbsp;winOppAccountUri&nbsp;=&nbsp;await&nbsp;webAPIPreviewService.Create(<span class="cs__string">&quot;accounts&quot;</span>,&nbsp;winOppAccount);&nbsp;
+&nbsp;
+<span class="cs__com">//Create&nbsp;an&nbsp;associated&nbsp;opportunity&nbsp;to&nbsp;win</span>&nbsp;
+JObject&nbsp;winOpp&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;JObject();&nbsp;
+winOpp.Add(<span class="cs__string">&quot;name&quot;</span>,&nbsp;<span class="cs__string">&quot;Opportunity&nbsp;to&nbsp;Win&quot;</span>);&nbsp;
+winOpp.Add(<span class="cs__string">&quot;opportunity_parent_account@odata.bind&quot;</span>,&nbsp;winOppAccountUri);&nbsp;
+Uri&nbsp;winOppUri&nbsp;=&nbsp;await&nbsp;webAPIPreviewService.Create(<span class="cs__string">&quot;opportunities&quot;</span>,&nbsp;winOpp);&nbsp;
+&nbsp;
+&nbsp;
+<span class="cs__com">//Create&nbsp;Opportunityclose&nbsp;object&nbsp;to&nbsp;pass&nbsp;with&nbsp;the&nbsp;parameters</span>&nbsp;
+JObject&nbsp;opportunityClose&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;JObject();&nbsp;
+opportunityClose.Add(<span class="cs__string">&quot;@odata.type&quot;</span>,&nbsp;<span class="cs__string">&quot;#mscrm.opportunityclose&quot;</span>);&nbsp;<span class="cs__com">//Essential&nbsp;to&nbsp;describe&nbsp;the&nbsp;type&nbsp;of&nbsp;entity</span>&nbsp;
+opportunityClose.Add(<span class="cs__string">&quot;subject&quot;</span>,&nbsp;<span class="cs__string">&quot;Won&nbsp;Opp&nbsp;Activity&quot;</span>);&nbsp;
+opportunityClose.Add(<span class="cs__string">&quot;description&quot;</span>,&nbsp;<span class="cs__string">&quot;We&nbsp;won&nbsp;this&nbsp;opportunity.&quot;</span>);&nbsp;
+opportunityClose.Add(<span class="cs__string">&quot;Opportunity_OpportunityClose@odata.bind&quot;</span>,&nbsp;winOppUri);&nbsp;
+&nbsp;
+<span class="cs__com">//Prepare&nbsp;Parameter&nbsp;object</span>&nbsp;
+JObject&nbsp;winOppParams&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;JObject();&nbsp;
+winOppParams.Add(<span class="cs__string">&quot;Status&quot;</span>,&nbsp;<span class="cs__number">3</span>);&nbsp;
+winOppParams.Add(<span class="cs__string">&quot;OpportunityClose&quot;</span>,&nbsp;opportunityClose);&nbsp;
+&nbsp;
+<span class="cs__com">//Invoke&nbsp;the&nbsp;action</span>&nbsp;
+JObject&nbsp;winOppResponse&nbsp;=&nbsp;await&nbsp;webAPIPreviewService.InvokeUnboundAction(<span class="cs__string">&quot;WinOpportunity&quot;</span>,&nbsp;winOppParams);&nbsp;</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<h2><a name="_QueryEntitySet"></a>QueryEntitySet</h2>
+<p>Returns an object which includes an array entities that match any filter criteria and include any properties requested.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="172" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>entitySetName</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The name of the entity set</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>query</strong></p>
+</td>
+<td width="90" valign="top">
+<p>String</p>
+</td>
+<td width="742" valign="top">
+<p>The system query parameters</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>includeFormattedValues</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Boolean</p>
+</td>
+<td width="742" valign="top">
+<p>Whether to include formatted values</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>maxPageSize</strong></p>
+</td>
+<td width="90" valign="top">
+<p>uint?</p>
+</td>
+<td width="742" valign="top">
+<p>If not null, the maximum number of entities to include in a page. The default is 5000.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Guid</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns </strong>JObject</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="161" valign="top">
+<p><strong>Properties</strong></p>
+</td>
+<td width="840" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="161" valign="top">
+<p><strong>value</strong></p>
+</td>
+<td width="840" valign="top">
+<p>The array of entities that match any filter criteria in the query.</p>
+</td>
+</tr>
+<tr>
+<td width="161" valign="top">
+<p><strong>@odata.nextLink</strong></p>
+</td>
+<td width="840" valign="top">
+<p>The Uri of the next page of entities. This property is not present if there are no additional pages. This property value is URI encoded. Encoding it again will break the XML included in the Url.</p>
+</td>
+</tr>
+<tr>
+<td width="161" valign="top">
+<p><strong>@odata.count</strong></p>
+</td>
+<td width="840" valign="top">
+<p>The number of entities in the current page. This property is only present when the
+<strong>$count</strong> system query option is included in the query.</p>
+</td>
+</tr>
+<tr>
+<td width="161" valign="top">
+<p><strong>@odata.context</strong></p>
+</td>
+<td width="840" valign="top">
+<p>A value which describes the structure of the data returned. This property can be used to compare whether two results were from the same query.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&nbsp;</strong></p>
+<p><strong>Remarks</strong></p>
+<p>No object model is provided to compose the query in a structured way.</p>
+<p>See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149061.aspx">Query entity sets</a> for more information.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">String query = String.Format(&quot;$filter=regardingobjectid eq {0}&amp;$select=subject&quot;, newAccountId);
+Boolean includeFormattedValues = true;
+uint maxPageSize = 2;
+
+
+JObject QueryEntitySetActivitiesResponse = await webAPIPreviewService.QueryEntitySet(&quot;activitypointers&quot;, query, includeFormattedValues, maxPageSize);
+
+
+Console.WriteLine(&quot;First page of activities retrieved using QueryEntitySet:&quot;);
+QueryEntitySetActivitiesResponse.GetValue(&quot;value&quot;).ToList().ForEach(delegate(JToken relatedActivity)
+{
+    Console.WriteLine(&quot;Activity Subject: {0}&quot;, relatedActivity.ToObject&lt;JObject&gt;().GetValue(&quot;subject&quot;));
+});
+
+Uri nextPageQuery = (Uri)QueryEntitySetActivitiesResponse.GetValue(&quot;@odata.nextLink&quot;);
+if (nextPageQuery != null)
+{
+    JObject QueryEntitySetActivitiesNextPageResponse = await webAPIPreviewService.GetNextPage(nextPageQuery, includeFormattedValues, maxPageSize);
+    Console.WriteLine(&quot;Second page of activities retrieved using QueryEntitySet:&quot;);
+    QueryEntitySetActivitiesNextPageResponse.GetValue(&quot;value&quot;).ToList().ForEach(delegate(JToken relatedActivity)
+    {
+        Console.WriteLine(&quot;Activity Subject: {0}&quot;, relatedActivity.ToObject&lt;JObject&gt;().GetValue(&quot;subject&quot;));
+    });
+}
+</pre>
+<div class="preview">
+<pre class="csharp">String&nbsp;query&nbsp;=&nbsp;String.Format(<span class="cs__string">&quot;$filter=regardingobjectid&nbsp;eq&nbsp;{0}&amp;$select=subject&quot;</span>,&nbsp;newAccountId);&nbsp;
+Boolean&nbsp;includeFormattedValues&nbsp;=&nbsp;<span class="cs__keyword">true</span>;&nbsp;
+<span class="cs__keyword">uint</span>&nbsp;maxPageSize&nbsp;=&nbsp;<span class="cs__number">2</span>;&nbsp;
+&nbsp;
+&nbsp;
+JObject&nbsp;QueryEntitySetActivitiesResponse&nbsp;=&nbsp;await&nbsp;webAPIPreviewService.QueryEntitySet(<span class="cs__string">&quot;activitypointers&quot;</span>,&nbsp;query,&nbsp;includeFormattedValues,&nbsp;maxPageSize);&nbsp;
+&nbsp;
+&nbsp;
+Console.WriteLine(<span class="cs__string">&quot;First&nbsp;page&nbsp;of&nbsp;activities&nbsp;retrieved&nbsp;using&nbsp;QueryEntitySet:&quot;</span>);&nbsp;
+QueryEntitySetActivitiesResponse.GetValue(<span class="cs__string">&quot;value&quot;</span>).ToList().ForEach(<span class="cs__keyword">delegate</span>(JToken&nbsp;relatedActivity)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="cs__string">&quot;Activity&nbsp;Subject:&nbsp;{0}&quot;</span>,&nbsp;relatedActivity.ToObject&lt;JObject&gt;().GetValue(<span class="cs__string">&quot;subject&quot;</span>));&nbsp;
+});&nbsp;
+&nbsp;
+Uri&nbsp;nextPageQuery&nbsp;=&nbsp;(Uri)QueryEntitySetActivitiesResponse.GetValue(<span class="cs__string">&quot;@odata.nextLink&quot;</span>);&nbsp;
+<span class="cs__keyword">if</span>&nbsp;(nextPageQuery&nbsp;!=&nbsp;<span class="cs__keyword">null</span>)&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;JObject&nbsp;QueryEntitySetActivitiesNextPageResponse&nbsp;=&nbsp;await&nbsp;webAPIPreviewService.GetNextPage(nextPageQuery,&nbsp;includeFormattedValues,&nbsp;maxPageSize);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="cs__string">&quot;Second&nbsp;page&nbsp;of&nbsp;activities&nbsp;retrieved&nbsp;using&nbsp;QueryEntitySet:&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;QueryEntitySetActivitiesNextPageResponse.GetValue(<span class="cs__string">&quot;value&quot;</span>).ToList().ForEach(<span class="cs__keyword">delegate</span>(JToken&nbsp;relatedActivity)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="cs__string">&quot;Activity&nbsp;Subject:&nbsp;{0}&quot;</span>,&nbsp;relatedActivity.ToObject&lt;JObject&gt;().GetValue(<span class="cs__string">&quot;subject&quot;</span>));&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;});&nbsp;
+}&nbsp;</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<h2><a name="_GetNextPage"></a>GetNextPage</h2>
+<p>Retrieves the next page when the number of entities returned using <a href="#_QueryEntitySet">
+QueryEntitySet</a> exceeds the <strong>maxPageSize</strong>.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="172" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="90" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="742" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>query</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Uri</p>
+</td>
+<td width="742" valign="top">
+<p>The <strong>@odata.nextLink</strong> property value of a collection returned from
+<a href="#_QueryEntitySet">QueryEntitySet</a></p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>includeFormattedValues</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Boolean</p>
+</td>
+<td width="742" valign="top">
+<p>Whether to include formatted values</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>maxPageSize</strong></p>
+</td>
+<td width="90" valign="top">
+<p>uint?</p>
+</td>
+<td width="742" valign="top">
+<p>Use the same maxPageSize value used by the call to <a href="#_QueryEntitySet">
+QueryEntitySet</a> which provided the <strong>@odata.nextLink </strong>value</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="90" valign="top">
+<p>Guid</p>
+</td>
+<td width="742" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns </strong><a href="http://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JObject.htm">JObject</a></p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="161" valign="top">
+<p><strong>Properties</strong></p>
+</td>
+<td width="840" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="161" valign="top">
+<p><strong>value</strong></p>
+</td>
+<td width="840" valign="top">
+<p>The array of entities that match any filter criteria in the query.</p>
+</td>
+</tr>
+<tr>
+<td width="161" valign="top">
+<p><strong>@odata.nextLink</strong></p>
+</td>
+<td width="840" valign="top">
+<p>The Uri of the next page of entities. This property is not present if there are no additional pages. This property value is URI encoded. Encoding it again will break the XML included in the Url.</p>
+</td>
+</tr>
+<tr>
+<td width="161" valign="top">
+<p><strong>@odata.count</strong></p>
+</td>
+<td width="840" valign="top">
+<p>The number of entities in the current page. This property is only present when the
+<strong>$count</strong> system query option is included in the query.</p>
+</td>
+</tr>
+<tr>
+<td width="161" valign="top">
+<p><strong>@odata.context</strong></p>
+</td>
+<td width="840" valign="top">
+<p>A value which describes the structure of the data returned. This property can be used to compare whether two results were from the same query.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149061.aspx">Query entity sets</a> for more information and example.</p>
+<h2><a name="_ExecuteBatch"></a>ExecuteBatch</h2>
+<p>Executes a batch operation</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="172" valign="top">
+<p><strong>Parameters</strong></p>
+</td>
+<td width="120" valign="top">
+<p><strong>Type</strong></p>
+</td>
+<td width="709" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>payload</strong></p>
+</td>
+<td width="120" valign="top">
+<p><a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/en-us/library/6sh2ey19(v=vs.110).aspx">List</a> &lt;<a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/en-us/library/system.net.http.httpcontent(v=vs.110).aspx">HttpContent</a>&gt;</p>
+</td>
+<td width="709" valign="top">
+<p>A series of HttpContent to include within the batch.</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>batchId</strong></p>
+</td>
+<td width="120" valign="top">
+<p>Guid</p>
+</td>
+<td width="709" valign="top">
+<p>A unique identifier to use for the batch</p>
+</td>
+</tr>
+<tr>
+<td width="172" valign="top">
+<p><strong>callerId</strong></p>
+</td>
+<td width="120" valign="top">
+<p>Guid</p>
+</td>
+<td width="709" valign="top">
+<p>Optional. The systemuserid value for the user to impersonate. See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149068.aspx">
+Impersonate another user </a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns </strong>String</p>
+<p>The raw body of the response<strong>&nbsp;</strong></p>
+<p><strong>Remarks</strong></p>
+<p>This function expects that you will use <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/en-us/library/system.net.http.multipartcontent(v=vs.110).aspx">
+MultipartContent Class</a> to group a set of <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/en-us/library/system.net.http.httpmessagecontent(v=vs.118).aspx">
+HttpMessageContent</a> operations to perform within a change set. The change set must be flagged with a unique change set id. When included in a change set, all operations within the change set will either succeed or fail. If any operations fail, all operations
+ within the change set will be rolled back.</p>
+<p>Operations using GET cannot be included within a change set and should be added to the payload as separate
+<a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/en-us/library/system.net.http.httpmessagecontent(v=vs.118).aspx">
+HttpMessageContent</a> objects.</p>
+<p>See the following resources for more information</p>
+<ul>
+<li><a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149059.aspx">Execute batch operations
+</a></li><li><a href="http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part1-protocol/odata-v4.0-errata02-os-part1-protocol-complete.html%23_Toc406398359">OData Version 4.0 Part 1: Protocol Plus Errata 02: 11.7 Batch Requests
+</a></li></ul>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">// Add 2 related tasks in a batch
+Guid batchId = Guid.NewGuid();
+
+List&lt;JObject&gt; tasks = new List&lt;JObject&gt;();
+
+JObject firstTask = new JObject();
+firstTask.Add(&quot;subject&quot;, &quot;Task 1 in batch&quot;);
+firstTask.Add(&quot;Account_Tasks@odata.bind&quot;, newAccountUri);
+tasks.Add(firstTask);
+
+JObject secondTask = new JObject();
+secondTask.Add(&quot;subject&quot;, &quot;Task 2 in batch&quot;);
+secondTask.Add(&quot;Account_Tasks@odata.bind&quot;, newAccountUri);
+tasks.Add(secondTask);
+
+List&lt;HttpContent&gt; payload = new List&lt;HttpContent&gt;();
+
+String changeSetId = Guid.NewGuid().ToString();
+MultipartContent changeSet = new MultipartContent(&quot;mixed&quot;, &quot;changeset_&quot; &#43; changeSetId);
+
+int taskNumber = 1;
+
+tasks.ForEach(t =&gt;
+{
+    HttpRequestMessage message = new HttpRequestMessage(HttpMethod.Post, config.ServiceUrl &#43; &quot;/api/data/tasks&quot;);
+    message.Content = new StringContent(JsonConvert.SerializeObject(t));
+    message.Content.Headers.ContentType = MediaTypeHeaderValue.Parse(&quot;application/json&quot;);
+
+    HttpMessageContent messageContent = new HttpMessageContent(message);
+    messageContent.Headers.ContentType = MediaTypeHeaderValue.Parse(&quot;application/http&quot;);
+    messageContent.Headers.Add(&quot;Content-Transfer-Encoding&quot;, &quot;binary&quot;);
+    messageContent.Headers.Add(&quot;Content-ID&quot;, taskNumber.ToString());
+
+    changeSet.Add(messageContent);
+
+    taskNumber&#43;&#43;;
+
+});
+
+payload.Add(changeSet);
+
+HttpRequestMessage retrieveTasks = new HttpRequestMessage(HttpMethod.Get, newAccountUri &#43; &quot;/Account_Tasks?$select=subject&quot;);
+HttpMessageContent retrieveTasksContent = new HttpMessageContent(retrieveTasks);
+
+retrieveTasksContent.Headers.ContentType = MediaTypeHeaderValue.Parse(&quot;application/http&quot;);
+retrieveTasksContent.Headers.Add(&quot;Content-Transfer-Encoding&quot;, &quot;binary&quot;);
+payload.Add(retrieveTasksContent);
+
+String batchResponse = await webAPIPreviewService.ExecuteBatch(payload, batchId);
+</pre>
+<div class="preview">
+<pre class="csharp"><span class="cs__com">//&nbsp;Add&nbsp;2&nbsp;related&nbsp;tasks&nbsp;in&nbsp;a&nbsp;batch</span>&nbsp;
+Guid&nbsp;batchId&nbsp;=&nbsp;Guid.NewGuid();&nbsp;
+&nbsp;
+List&lt;JObject&gt;&nbsp;tasks&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;List&lt;JObject&gt;();&nbsp;
+&nbsp;
+JObject&nbsp;firstTask&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;JObject();&nbsp;
+firstTask.Add(<span class="cs__string">&quot;subject&quot;</span>,&nbsp;<span class="cs__string">&quot;Task&nbsp;1&nbsp;in&nbsp;batch&quot;</span>);&nbsp;
+firstTask.Add(<span class="cs__string">&quot;Account_Tasks@odata.bind&quot;</span>,&nbsp;newAccountUri);&nbsp;
+tasks.Add(firstTask);&nbsp;
+&nbsp;
+JObject&nbsp;secondTask&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;JObject();&nbsp;
+secondTask.Add(<span class="cs__string">&quot;subject&quot;</span>,&nbsp;<span class="cs__string">&quot;Task&nbsp;2&nbsp;in&nbsp;batch&quot;</span>);&nbsp;
+secondTask.Add(<span class="cs__string">&quot;Account_Tasks@odata.bind&quot;</span>,&nbsp;newAccountUri);&nbsp;
+tasks.Add(secondTask);&nbsp;
+&nbsp;
+List&lt;HttpContent&gt;&nbsp;payload&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;List&lt;HttpContent&gt;();&nbsp;
+&nbsp;
+String&nbsp;changeSetId&nbsp;=&nbsp;Guid.NewGuid().ToString();&nbsp;
+MultipartContent&nbsp;changeSet&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;MultipartContent(<span class="cs__string">&quot;mixed&quot;</span>,&nbsp;<span class="cs__string">&quot;changeset_&quot;</span>&nbsp;&#43;&nbsp;changeSetId);&nbsp;
+&nbsp;
+<span class="cs__keyword">int</span>&nbsp;taskNumber&nbsp;=&nbsp;<span class="cs__number">1</span>;&nbsp;
+&nbsp;
+tasks.ForEach(t&nbsp;=&gt;&nbsp;
+{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;HttpRequestMessage&nbsp;message&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;HttpRequestMessage(HttpMethod.Post,&nbsp;config.ServiceUrl&nbsp;&#43;&nbsp;<span class="cs__string">&quot;/api/data/tasks&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;message.Content&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;StringContent(JsonConvert.SerializeObject(t));&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;message.Content.Headers.ContentType&nbsp;=&nbsp;MediaTypeHeaderValue.Parse(<span class="cs__string">&quot;application/json&quot;</span>);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;HttpMessageContent&nbsp;messageContent&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;HttpMessageContent(message);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;messageContent.Headers.ContentType&nbsp;=&nbsp;MediaTypeHeaderValue.Parse(<span class="cs__string">&quot;application/http&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;messageContent.Headers.Add(<span class="cs__string">&quot;Content-Transfer-Encoding&quot;</span>,&nbsp;<span class="cs__string">&quot;binary&quot;</span>);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;messageContent.Headers.Add(<span class="cs__string">&quot;Content-ID&quot;</span>,&nbsp;taskNumber.ToString());&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;changeSet.Add(messageContent);&nbsp;
+&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;taskNumber&#43;&#43;;&nbsp;
+&nbsp;
+});&nbsp;
+&nbsp;
+payload.Add(changeSet);&nbsp;
+&nbsp;
+HttpRequestMessage&nbsp;retrieveTasks&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;HttpRequestMessage(HttpMethod.Get,&nbsp;newAccountUri&nbsp;&#43;&nbsp;<span class="cs__string">&quot;/Account_Tasks?$select=subject&quot;</span>);&nbsp;
+HttpMessageContent&nbsp;retrieveTasksContent&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;HttpMessageContent(retrieveTasks);&nbsp;
+&nbsp;
+retrieveTasksContent.Headers.ContentType&nbsp;=&nbsp;MediaTypeHeaderValue.Parse(<span class="cs__string">&quot;application/http&quot;</span>);&nbsp;
+retrieveTasksContent.Headers.Add(<span class="cs__string">&quot;Content-Transfer-Encoding&quot;</span>,&nbsp;<span class="cs__string">&quot;binary&quot;</span>);&nbsp;
+payload.Add(retrieveTasksContent);&nbsp;
+&nbsp;
+String&nbsp;batchResponse&nbsp;=&nbsp;await&nbsp;webAPIPreviewService.ExecuteBatch(payload,&nbsp;batchId);&nbsp;</pre>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<h2><a name="_GetEntityList"></a>GetEntityList</h2>
+<p>Returns an array of entities available for the web API.</p>
+<p>This is simply a GET request to <strong><em>[Organization Uri]</em></strong>/api/data/</p>
+<p>Each item returned has the following properties:</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="119" valign="top">
+<p><strong>Property</strong></p>
+</td>
+<td width="882" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="119" valign="top">
+<p><strong>name</strong></p>
+</td>
+<td width="882" valign="top">
+<p>This is the name of the entity set. It is the same as the <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/en-us/library/microsoft.xrm.sdk.metadata.entitymetadata.logicalcollectionname.aspx">
+EntityMetadata.LogicalCollectionName Property </a>defined in the metadata for each entity type.</p>
+</td>
+</tr>
+<tr>
+<td width="119" valign="top">
+<p><strong>kind</strong></p>
+</td>
+<td width="882" valign="top">
+<p>For the web API preview every item is an EntitySet.</p>
+</td>
+</tr>
+<tr>
+<td width="119" valign="top">
+<p><strong>url</strong></p>
+</td>
+<td width="882" valign="top">
+<p>This value is the same as the name property and it represents the part of the resource path to retrieve data for the entity.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Remarks</strong></p>
+<p>See <a href="https://code.msdn.microsoft.com/WebAPIPreviewService-Sample-c872f093/https://msdn.microsoft.com/dynamics/crm/mt149064#_Service_documents">
+Web API preview types, functions and actions: Service documents </a>for more information.</p>
+<p>&nbsp;</p>
+<div class="scriptcode">
+<div class="pluginEditHolder" pluginCommand="mceScriptCode">
+<div class="title"><span>C#</span></div>
+<div class="pluginLinkHolder"><span class="pluginEditHolderLink">Edit</span>|<span class="pluginRemoveHolderLink">Remove</span></div>
+<span class="hidden">csharp</span>
+<pre class="hidden">JArray entities = await webAPIPreviewService.GetEntityList();
+Console.WriteLine(&quot;{0} entities returned.&quot;, entities.Count);
+JArray sortedEntities = new JArray(entities.OrderBy(obj =&gt; obj[&quot;name&quot;].ToString().ToLower()));
+foreach (var item in sortedEntities)
+{
+Console.WriteLine(item[&quot;name&quot;]);
+}
+</pre>
+<div class="preview">
+<pre class="csharp">JArray&nbsp;entities&nbsp;=&nbsp;await&nbsp;webAPIPreviewService.GetEntityList();&nbsp;
+Console.WriteLine(<span class="cs__string">&quot;{0}&nbsp;entities&nbsp;returned.&quot;</span>,&nbsp;entities.Count);&nbsp;
+JArray&nbsp;sortedEntities&nbsp;=&nbsp;<span class="cs__keyword">new</span>&nbsp;JArray(entities.OrderBy(obj&nbsp;=&gt;&nbsp;obj[<span class="cs__string">&quot;name&quot;</span>].ToString().ToLower()));&nbsp;
+<span class="cs__keyword">foreach</span>&nbsp;(var&nbsp;item&nbsp;<span class="cs__keyword">in</span>&nbsp;sortedEntities)&nbsp;
+{&nbsp;
+Console.WriteLine(item[<span class="cs__string">&quot;name&quot;</span>]);&nbsp;
+}&nbsp;
+</pre>
+</div>
+</div>
+</div>
+<div class="endscriptcode">&nbsp;</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

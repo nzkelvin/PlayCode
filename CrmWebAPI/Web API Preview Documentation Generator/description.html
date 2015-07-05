@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=2B08C435C8251DADB8A53F8C45B39737" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:FooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=1E60E7B49899FEC4640711B64FF56FA6" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Web API Preview Documentation Generator</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Web API Preview Documentation Generator</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            Microsoft Dynamics CRM Online Web API Preview
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Documentation Generation
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Cloud, Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">6/6/2015</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/Web-API-Preview-Documentati-f46694cd">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p>The Web API Preview Documentation Generator is a sample that will generate reference documents that include the customizations which are included in your organization. For more information about the web API preview see
+<a href="https://code.msdn.microsoft.com/Web-API-Preview-Documentati-f46694cd/https://msdn.microsoft.com/dynamics/crm/webapipreview">Microsoft Dynamics CRM Web API Preview</a>.</p>
+<ul>
+<li><a href="#_What_it_does">What it does </a></li><li><a href="#_Prerequisites">Prerequisites </a></li><li><a href="#_Options">Options </a></li><li><a href="#_Include_content_for">Include content for your custom types </a></li><li><a href="#_Run_the_sample">Run the sample </a></li></ul>
+<h1><a name="_What_it_does"></a>What it does</h1>
+<p>This console application will connect to your Microsoft Dynamics CRM Online 2015 Update 1 organization to download the Common Schema Definition Language (CSDL) document that describes the available entities, properties, functions, and actions which are exposed
+ using the web API preview for your organization. This application will generate five documents which include the same type of content found in the documentation which is published for an un-customized system here:</p>
+<ul>
+<li><a href="https://code.msdn.microsoft.com/Web-API-Preview-Documentati-f46694cd/https://msdn.microsoft.com/dynamics/crm/dn927174" >Microsoft Dynamics CRM Web API Preview Entity Types Reference</a>
+</li><li><a href="https://code.msdn.microsoft.com/Web-API-Preview-Documentati-f46694cd/https://msdn.microsoft.com/dynamics/crm/dn927172" >Microsoft Dynamics CRM Web API Preview Unbound Functions Reference</a>
+</li><li><a href="https://code.msdn.microsoft.com/Web-API-Preview-Documentati-f46694cd/https://msdn.microsoft.com/dynamics/crm/dn927171">Microsoft Dynamics CRM Web API Preview Unbound Actions Reference</a>
+</li><li><a href="https://code.msdn.microsoft.com/Web-API-Preview-Documentati-f46694cd/https://msdn.microsoft.com/dynamics/crm/dn927173">Microsoft Dynamics CRM Web API Preview Complex Types Reference</a>
+</li><li><a href="https://code.msdn.microsoft.com/Web-API-Preview-Documentati-f46694cd/https://msdn.microsoft.com/dynamics/crm/dn927170">Microsoft Dynamics CRM Web API Preview Enum Types Reference</a>
+</li></ul>
+<h1><a name="_Prerequisites"></a>Prerequisites</h1>
+<p>This sample uses the same authentication and configuration classes used by other C# samples included in this preview. Before you can run this sample you must have a valid
+<strong>ClientId</strong> and <strong>RedirectUrl</strong> that you acquired by registering an application. See
+<a href="https://code.msdn.microsoft.com/Web-API-Preview-Documentati-f46694cd/https://msdn.microsoft.com/dynamics/crm/mt149065.aspx">Register application</a> for information about how to get a ClientId and RedirectUrl you can use to run this sample. You will need to update the App.config to include these values as well as information
+ to connect to your Microsoft Dynamics CRM Online 2015 organization.</p>
+<h1><a name="_Options"></a>Options</h1>
+<p>You can control how the files generated by this sample are created.</p>
+<p>Within the App.config appSettings area you will find the following keys:</p>
+<p>&lt;add key=&quot;EntityTypesFileName&quot; value=&quot;entityTypes&quot;/&gt;</p>
+<p>&lt;add key=&quot;ActionsFileName&quot; value=&quot;actions&quot;/&gt;</p>
+<p>&lt;add key=&quot;FunctionsFileName&quot; value=&quot;functions&quot;/&gt;</p>
+<p>&lt;add key=&quot;EnumTypesFileName&quot; value=&quot;enumTypes&quot;/&gt;</p>
+<p>&lt;add key=&quot;ComplexTypesFileName&quot; value=&quot;complexTypes&quot;/&gt;</p>
+<p>&lt;add key=&quot;OutputFileExtension&quot; value=&quot;.htm&quot;/&gt;</p>
+<p>&lt;add key=&quot;WriteFilesToPath&quot; value=&quot;C:\\temp\\Web API Documentation Files&quot;/&gt;</p>
+<p>Use these keys to control the names of the files generated and where you want the files to be written. The pages are designed to be viewed via a web browser and contain links between the pages. If you later re-name the files or the file extensions, the links
+ will be broken.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="1277" valign="top">
+<p><strong>Note</strong></p>
+</td>
+</tr>
+<tr>
+<td width="1277" valign="top">
+<p>The default <strong>WriteFilesToPath</strong> value is &lsquo;C:\temp\Web API Documentation Files&rsquo;. If this path doesn&rsquo;t exist or you don&rsquo;t have write access to the folder an error will occur. You should change this value to represent a
+ valid path on the computer you use to run this sample.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h1><a name="_Run_the_sample"></a><a name="_Include_content_for"></a>Include content for your custom types</h1>
+<p>Information about custom entities, attributes, and relationships are available as annotations from the CSDL. This information in taken from the description properties of these metadata items. If you need this information to be included in the documentation
+ generated, include the information in the appropriate description fields for these metadata items in the customization tools.</p>
+<p>When you customize your organization by adding custom actions, information about these types is not included in CSDL annotations. This sample depends on resource files to provide that content. If you run the sample without providing information about your
+ custom types, the text &lsquo;TODO&rsquo; will be inserted where there is no content to available.</p>
+<p>In the Resources folder of the solution you will find the following XML files:</p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td width="221" valign="top">
+<p><strong>File</strong></p>
+</td>
+<td width="1055" valign="top">
+<p><strong>Description</strong></p>
+</td>
+</tr>
+<tr>
+<td width="221" valign="top">
+<p><strong>ActionsContent.xml</strong></p>
+</td>
+<td width="1055" valign="top">
+<p>Edit this file to include information to describe the custom action and the parameters and return value. You will find examples for each of the system actions in this file.</p>
+</td>
+</tr>
+<tr>
+<td width="221" valign="top">
+<p><strong>ComplexTypesContent.xml</strong></p>
+</td>
+<td width="1055" valign="top">
+<p>If you have a custom action which returns more than a primitive value, a custom complex types</p>
+</td>
+</tr>
+<tr>
+<td width="221" valign="top">
+<p><strong>EntityTypesContent.xml</strong></p>
+</td>
+<td width="1055" valign="top">
+<p>By default entity descriptions are provided from the metadata, however you can use this to include additional HTML content for Remarks, Samples, or Links related to the entity.</p>
+</td>
+</tr>
+<tr>
+<td width="221" valign="top">
+<p><strong>EnumTypesContent.xml</strong></p>
+</td>
+<td width="1055" valign="top">
+<p>Enum types should not be effected by your customizations, so you should not have to edit this file.</p>
+</td>
+</tr>
+<tr>
+<td width="221" valign="top">
+<p><strong>FunctionsContent.xml</strong></p>
+</td>
+<td width="1055" valign="top">
+<p>Functions should not be effected by your customizations, so you should not have to edit this file.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h1>Run the sample</h1>
+<p>When you have edited the App.config file to include the information described in
+<a href="#_Prerequisites">Prerequisites </a>, simply press F5 to run the sample. You will see the following output to the console when the sample runs:</p>
+<pre>        CRM Web API Preview Documentation Generator Started...
+        CSDL downloaded from https://<strong><em>&lt;your org name&gt;</em></strong>.crm.dynamics.com/api/data/$metadata
+        Metadata Returned
+        Entity Types document written to C:\\temp\\Web API Documentation Files\entityTypes.htm
+        Actions document written to C:\\temp\\Web API Documentation Files\actions.htm
+        Functions document written to C:\\temp\\Web API Documentation Files\functions.htm
+        EnumTypes document written to C:\\temp\\Web API Documentation Files\enumTypes.htm
+        ComplexTypes document written to C:\\temp\\Web API Documentation Files\complexTypes.htm
+        Press any key to exit
+    </pre>
+<p>You should then be able to view any of the files using your browser. You can move the files to another folder, but all the files should be kept in the same folder.</p>
+
+</div>
+
+
+    </div>
+</body>
+</html>

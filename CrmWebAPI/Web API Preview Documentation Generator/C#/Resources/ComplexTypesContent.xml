@@ -1,0 +1,509 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ComplexTypes Version="2">
+ <ComplexType Name="AppointmentProposal"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Represents a proposed appointment time and date as a result of the Search Action. </Description>
+  <Properties>
+   <Property Name="Start">The proposed appointment start date and time.</Property>
+   <Property Name="End">The proposed appointment end date and time.</Property>
+   <Property Name="SiteId">The ID of the site for the proposed appointment.</Property>
+   <Property Name="SiteName">The name of the site for the proposed appointment.</Property>
+   <Property Name="ProposalParties">An array of parties needed for the proposed appointment.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="AppointmentRequest"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Provides the details of an appointment request for the Search action.</Description>
+  <Properties>
+   <Property Name="ServiceId">The ID of the service to search for.</Property>
+   <Property Name="AnchorOffset">The time offset in minutes, from midnight, when the first occurrence of the appointment can take place</Property>
+   <Property Name="UserTimeZoneCode">The time zone code of the user who is requesting the appointment.</Property>
+   <Property Name="RecurrenceDuration">The time, in minutes, for which the appointment recurrence is valid.</Property>
+   <Property Name="RecurrenceTimeZoneCode">
+    A value to override the time zone that is specified by the <strong>UserTimeZoneCode</strong> property.
+   </Property>
+   <Property Name="AppointmentsToIgnore">The appointments to ignore in the search for possible appointments.</Property>
+   <Property Name="RequiredResources">The resources that are needed for this appointment.</Property>
+   <Property Name="SearchWindowStart">The date and time to begin the search.</Property>
+   <Property Name="SearchWindowEnd">The date and time to end the search.</Property>
+   <Property Name="SearchRecurrenceStart">the date and time for the first possible instance of the appointment.</Property>
+   <Property Name="SearchRecurrenceRule">The recurrence rule for appointment recurrence.</Property>
+   <Property Name="Duration">The appointment duration, in minutes.</Property>
+   <Property Name="Constraints">Any additional constraints.</Property>
+   <Property Name="Objectives">The scheduling strategy that overrides the default constraints.</Property>
+   <Property Name="Direction">The direction of the search.</Property>
+   <Property Name="NumberOfResults">The number of results to be returned from the search request.</Property>
+   <Property Name="Sites">The sites where the requested appointment can take place.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="AppointmentsToIgnore"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Specifies the appointments to ignore in an appointment request from the Search action.</Description>
+  <Properties>
+   <Property Name="Appointments">An array of IDs of appointments to ignore.</Property>
+   <Property Name="ResourceId">The resource for which appointments are to be ignored.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="AttributeMapping"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>This type doesn’t have any extensibility scenarios in this release.</Description>
+  <Properties>
+   <Property Name="AttributeMappingId">For internal use only.</Property>
+   <Property Name="MappingName">For internal use only.</Property>
+   <Property Name="AttributeCrmName">For internal use only.</Property>
+   <Property Name="AttributeExchangeName">For internal use only.</Property>
+   <Property Name="SyncDirection">For internal use only.</Property>
+   <Property Name="DefaultSyncDirection">For internal use only.</Property>
+   <Property Name="AllowedSyncDirection">For internal use only.</Property>
+   <Property Name="IsComputed">For internal use only.</Property>
+   <Property Name="EntityTypeCode">For internal use only.</Property>
+   <Property Name="ComputedProperties">For internal use only.</Property>
+   <Property Name="AttributeCrmDisplayName">For internal use only.</Property>
+   <Property Name="AttributeExchangeDisplayName">For internal use only.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="AttributePrivilege"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Specifies the field level security privileges allowed for an attribute.</Description>
+  <Properties>
+   <Property Name="AttributeId">The ID of the attribute.</Property>
+   <Property Name="CanCreate">Indicates whether creation of the attribute value is allowed.</Property>
+   <Property Name="CanRead">Indicates whether read of the attribute value is allowed.</Property>
+   <Property Name="CanUpdate">Indicates whether update of the attribute value is allowed.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="AuditPartitionDetail"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Identifies a Microsoft SQL Server partition that is used to store changes to entity data records.</Description>
+  <Properties>
+   <Property Name="PartitionNumber">The sequence (serial) number of the partition.</Property>
+   <Property Name="StartDate">The creation date and time of the first audit record in the partition.</Property>
+   <Property Name="EndDate">The end date and time for the last audit record in the partition.</Property>
+   <Property Name="Size">The size, in bytes, of the partition.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="BookResponse"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Contains the response from the Book action.</Description>
+  <Properties>
+   <Property Name="Notifications">For internal use only.</Property>
+   <Property Name="ValidationResult">The appointment validation results.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="BooleanManagedProperty"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Defines a managed property that stores a Boolean value.</Description>
+  <Properties>
+   <Property Name="Value">The value of the managed property.</Property>
+   <Property Name="CanBeChanged">Indicates whether the managed property value can be changed.</Property>
+   <Property Name="ManagedPropertyLogicalName">The logical name for the managed property.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="BusinessNotification"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>For internal use only.</Description>
+  <Properties>
+   <Property Name="Severity">For internal use only.</Property>
+   <Property Name="Message">For internal use only.</Property>
+   <Property Name="Parameters">For internal use only.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="BusinessNotificationParameter"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>For internal use only.</Description>
+  <Properties>
+   <Property Name="ParameterType">For internal use only.</Property>
+   <Property Name="Data">For internal use only.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="CheckIncomingEmailResponse"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Contains the response from the CheckIncomingEmail action.</Description>
+  <Properties>
+   <Property Name="ReasonCode">The reason for the result in the ShouldDeliver property.</Property>
+   <Property Name="ShouldDeliver">A value that indicates whether the message should be delivered to Microsoft Dynamics CRM.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="CheckPromoteEmailResponse"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Contains the response from the CheckPromoteEmail action.</Description>
+  <Properties>
+   <Property Name="ReasonCode">The reason for the result in the ShouldPromote property.</Property>
+   <Property Name="ShouldPromote">A value that indicates whether the message should be promoted to Microsoft Dynamics CRM.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="ColumnSet"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Specifies the attributes for which non-null values are returned from a query.</Description>
+  <Properties>
+   <Property Name="AllColumns">Indicates whether to retrieve all the attributes of a record.</Property>
+   <Property Name="Columns">Gets the collection of Strings containing the names of the attributes to be retrieved from a query.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="ConstraintRelation"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Specifies additional constraints to be applied when you select resources for appointments.</Description>
+  <Properties>
+   <Property Name="ObjectId">the ID of the calendar rule to which the constraint is applied.</Property>
+   <Property Name="ConstraintType">The type of constraints.</Property>
+   <Property Name="Constraints">The set of additional constraints.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="EndpointCollection"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>A collection of service endpoints.</Description>
+  <Properties>
+   <Property Name="Count">The number of elements in the collection.</Property>
+   <Property Name="IsReadOnly">A value indicating whether the data collection (a collection of keys and values) is read-only.</Property>
+   <Property Name="Keys">A collection containing the keys in the data collection.</Property>
+   <Property Name="Values">A collection containing the values in the data collection.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="EntityKeyMetadata"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Represents the metadata for an entity alternate key.</Description>
+  <Properties>
+   <Property Name="DisplayName">The label containing the display name for the entity alternate key.</Property>
+   <Property Name="LogicalName">The logical name for the entity alternate key.</Property>
+   <Property Name="SchemaName">The schema name for the entity alternate key.</Property>
+   <Property Name="EntityLogicalName">The logical name for the entity the alternate key is associated with.</Property>
+   <Property Name="KeyAttributes">The entity attributes which constitute the entity alternate key.</Property>
+   <Property Name="IsCustomizable">The property that determines whether the entity alternate key is customizable.</Property>
+   <Property Name="IsManaged">Indicates whether the entity alternate key is part of a managed solution.</Property>
+   <Property Name="IntroducedVersion">A string identifying the solution version that the entity alternate key was added in.</Property>
+   <Property Name="MetadataId">A unique identifier for the metadata item.</Property>
+   <Property Name="HasChanged">Indicates whether the item of metadata has changed.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="ErrorInfo"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Specifies the results of a scheduling operation using the Validate, Book, or Reschedule action.</Description>
+  <Properties>
+   <Property Name="ResourceList">The array of information about a resource that has a scheduling problem for an appointment.</Property>
+   <Property Name="ErrorCode">The reason for a scheduling failure.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="Label"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>A collection of translations for a label.</Description>
+  <Properties>
+   <Property Name="LocalizedLabels">The collection of localized labels.</Property>
+   <Property Name="UserLocalizedLabel">The label for the language of the current user.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="LocalizedLabel"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>A localized label, including the label string and the language code.</Description>
+  <Properties>
+   <Property Name="Label">The localized label string.</Property>
+   <Property Name="LanguageCode">The language code for the label.</Property>
+   <Property Name="IsManaged">Indicates whether the label is managed.</Property>
+   <Property Name="MetadataId">A unique identifier for the metadata item.</Property>
+   <Property Name="HasChanged">Indicates whether the item of metadata has changed.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="MailboxTrackingFolderMapping"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Stores data about what folders for a mailbox are auto tracked.</Description>
+  <Properties>
+   <Property Name="ExchangeFolderId">The ID of the Microsoft Exchange folder that is tracked.</Property>
+   <Property Name="ExchangeFolderName">The name of the Microsoft Exchange folder that is tracked.</Property>
+   <Property Name="RegardingObjectId">The ID of a record that the folder is regarding.</Property>
+   <Property Name="RegardingObjectName">The name of entity that is represented by the regarding object ID.</Property>
+   <Property Name="RegardingObjectTypeCode">The type of entity that is represented by the regarding object ID.</Property>
+   <Property Name="IsFolderOnboarded">Indicates whether the folder has been on boarded for auto tracking.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="ObjectiveRelation"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Describes the scheduling strategy for the Appointment action and that overrides the default constraints.</Description>
+  <Properties>
+   <Property Name="ResourceSpecId">The ID of the resource specification.</Property>
+   <Property Name="ObjectiveExpression">The search strategy to use in the appointment request for the Search action.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="OrganizationDetail"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Provides detailed information on an organization.</Description>
+  <Properties>
+   <Property Name="OrganizationId">The global unique identifier of the organization.</Property>
+   <Property Name="FriendlyName">The friendly name of the organization.</Property>
+   <Property Name="OrganizationVersion">The version of the organization.</Property>
+   <Property Name="UrlName">The organization name used in the URL for the organization Web service.</Property>
+   <Property Name="UniqueName">The unique name of the organization.</Property>
+   <Property Name="Endpoints">A collection that identifies the service type and address for each endpoint of the organization.</Property>
+   <Property Name="State">The state of the organization.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="OrganizationResources"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Specifies resources used by an organization.</Description>
+  <Properties>
+   <Property Name="CurrentNumberOfActiveUsers">The current number of active users.</Property>
+   <Property Name="MaxNumberOfActiveUsers">The maximum number of active users.</Property>
+   <Property Name="CurrentNumberOfNonInteractiveUsers">The current number of non-interactive users.</Property>
+   <Property Name="MaxNumberOfNonInteractiveUsers">The maximum number of non-interactive users.</Property>
+   <Property Name="CurrentNumberOfCustomEntities">The current number of custom entities.</Property>
+   <Property Name="MaxNumberOfCustomEntities">The maximum number of custom entities.</Property>
+   <Property Name="CurrentNumberOfPublishedWorkflows">The current number of published workflows.</Property>
+   <Property Name="MaxNumberOfPublishedWorkflows">The maximum number of published workflows.</Property>
+   <Property Name="CurrentStorage">The current storage used by the organization.</Property>
+   <Property Name="MaxStorage">The maximum storage allowed for the organization.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="PagingInfo"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Specifies a number of pages and a number of entity instances per page to return from the query.</Description>
+  <Properties>
+   <Property Name="PageNumber">The number of pages returned from the query.</Property>
+   <Property Name="Count">The number of entity instances returned per page.</Property>
+   <Property Name="ReturnTotalRecordCount">The total number of records should be returned from the query.</Property>
+   <Property Name="PagingCookie">The info used to page large result sets.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="ProposalParty"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Represents a party (user, team, or resource) that is needed for the proposed appointment.</Description>
+  <Properties>
+   <Property Name="ResourceId">The ID of the resource that is represented by this party.</Property>
+   <Property Name="ResourceSpecId">The ID of the resource specification that is represented by this party.</Property>
+   <Property Name="DisplayName">The display name for the party.</Property>
+   <Property Name="EntityName">The logical name of the type of entity that is represented by this party.</Property>
+   <Property Name="EffortRequired">The percentage of time that is required to perform the service.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="RequiredResource"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Specifies a resource that is required for a scheduling operation.</Description>
+  <Properties>
+   <Property Name="ResourceId">The ID of the required resource.</Property>
+   <Property Name="ResourceSpecId">The ID of the required resource specification.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="RescheduleResponse"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Contains the response from the Reschedule action.</Description>
+  <Properties>
+   <Property Name="ValidationResult">The validation results for the appointment, recurring appointment master, or service appointment (service activity).</Property>
+   <Property Name="Notifications">For internal use only.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="ResourceInfo"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Specifies information about a resource that has a scheduling problem for an appointment.</Description>
+  <Properties>
+   <Property Name="Id">the ID of the record that has a scheduling problem.</Property>
+   <Property Name="DisplayName">The display name for the resource.</Property>
+   <Property Name="EntityName">The logical name of the entity.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="RolePrivilege"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Contains information about a privilege.</Description>
+  <Properties>
+   <Property Name="Depth">The depth of the privilege.</Property>
+   <Property Name="PrivilegeId">The ID of the privilege.</Property>
+   <Property Name="BusinessUnitId">The ID of the business unit.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="SearchResults"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Contains the results from the Search action.</Description>
+  <Properties>
+   <Property Name="Proposals">The set of proposed appointments that meet the appointment request criteria.</Property>
+   <Property Name="TraceInfo">The information regarding the results of the search.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="TimeInfo"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Specifies a set of time blocks with appointment information.</Description>
+  <Properties>
+   <Property Name="Start">The start time for the block.</Property>
+   <Property Name="End">The end time for the block.</Property>
+   <Property Name="TimeCode">The value that indicates whether the time block is available, busy, filtered, or unavailable.</Property>
+   <Property Name="SubCode">Information about the time block such as whether it is an appointment, break, or holiday.</Property>
+   <Property Name="SourceId">The ID of the record referred to in the time block.</Property>
+   <Property Name="CalendarId">The ID of the calendar for this block of time.</Property>
+   <Property Name="SourceTypeCode">The type of entity referred to in the time block.</Property>
+   <Property Name="IsActivity">The value that indicates whether the block of time refers to an activity.</Property>
+   <Property Name="ActivityStatusCode">The status of the activity.</Property>
+   <Property Name="Effort">The amount of effort required for this block of time.</Property>
+   <Property Name="DisplayText">The display text shown in the calendar for the time block.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="TimeInfoCollection"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>The results of the search, a set of possible time slots for the resource. </Description>
+  <Properties>
+   <Property Name="Items">An array of TimeInfo items.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="TraceInfo"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Specifies the results of a scheduling operation using the Validate, Book, Reschedule, or Search action.</Description>
+  <Properties>
+   <Property Name="ErrorInfoList">The list of error information for the scheduling operation.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="ValidationResult"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Contains the result from the Validate, Book, or Reschedule action.</Description>
+  <Properties>
+   <Property Name="ValidationSuccess">The value that indicates whether the appointment or service appointment was validated successfully.</Property>
+   <Property Name="TraceInfo">The reason for any scheduling failures.</Property>
+   <Property Name="ActivityId">The ID of the validated activity.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexType Name="WhoAmIResponse"
+              Status="Complete"
+              Writer="crmSdk">
+  <Description>Contains the response from the WhoAmI action. </Description>
+  <Properties>
+   <Property Name="UserId">The ID of the user who is logged on.</Property>
+   <Property Name="BusinessUnitId">The ID of the business to which the logged on user belongs.</Property>
+   <Property Name="OrganizationId">The ID of the organization that the user belongs to.</Property>
+  </Properties>
+  <Remarks />
+  <Samples />
+  <Links />
+ </ComplexType>
+ <ComplexTypesToDocument>
+  <!--all assigned to crmSdk-->
+ </ComplexTypesToDocument>
+</ComplexTypes>

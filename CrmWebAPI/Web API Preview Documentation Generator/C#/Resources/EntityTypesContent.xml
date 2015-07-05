@@ -1,0 +1,682 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityTypes Version="2">
+  <EntityType Name="account" Status="TODO" Writer="UnAssigned">
+    <Remarks>
+      <p>Remarks for the account entity can be entered here.</p>
+    </Remarks>
+    <Samples />
+    <Links />
+  </EntityType>
+  <EntityTypesToDocument>
+    <EntityType Name="activityparty" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="activitypointer" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="annotation" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="annualfiscalcalendar" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="appointment" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="attachment" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="audit" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="businessunit" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="businessunitnewsarticle" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="calendar" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="campaign" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="campaignactivity" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="campaignresponse" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="commitment" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="competitor" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="competitoraddress" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="connection" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="connectionroleobjecttypecode" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="constraintbasedgroup" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="contact" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="contract" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="contractdetail" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="crmbaseentity" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="customeraddress" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="customeropportunityrole" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="customerrelationship" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="discount" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="discounttype" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="documentindex" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="email" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="entitlement" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="entitlementchannel" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="entitlementtemplate" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="entitlementtemplatechannel" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="equipment" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="fax" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="filtertemplate" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="fixedmonthlyfiscalcalendar" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="goal" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="goalrollupquery" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="incident" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="incidentresolution" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="internaladdress" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="invoice" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="invoicedetail" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="kbarticle" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="kbarticlecomment" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="knowledgebaserecord" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="lead" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="leadaddress" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="letter" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="list" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="lookupmapping" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="mailbox" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="mailboxtrackingfolder" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="metric" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="monthlyfiscalcalendar" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="msdyn_postalbum" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="msdyn_postconfig" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="msdyn_postruleconfig" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="msdyn_wallsavedquery" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="msdyn_wallsavedqueryusersettings" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="new_customentity" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="notification" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="opportunity" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="opportunityclose" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="opportunityproduct" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="orderclose" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="organization" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="owner" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="phonecall" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="plugintracelog" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="post" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="postcomment" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="postfollow" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="postlike" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="pricelevel" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="privilege" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="privilegeobjecttypecodes" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="product" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="productassociation" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="productpricelevel" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="productsubstitute" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="publisher" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="publisheraddress" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="quarterlyfiscalcalendar" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="queue" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="queueitem" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="quote" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="quoteclose" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="quotedetail" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="recurrencerule" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="recurringappointmentmaster" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="relationshiprole" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="relationshiprolemap" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="reportlink" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="resource" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="resourcegroup" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="resourcegroupexpansion" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="resourcespec" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="roletemplate" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="rollupfield" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="salesliterature" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="salesliteratureitem" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="salesorder" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="salesorderdetail" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="salesprocessinstance" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="savedquery" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="semiannualfiscalcalendar" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="service" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="serviceappointment" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="site" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="slakpiinstance" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="socialactivity" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="socialinsightsconfiguration" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="socialprofile" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="subject" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="systemuser" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="systemuserprincipals" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="task" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="team" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="teamtemplate" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="territory" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="timestampdatemapping" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="timezonedefinition" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="timezonelocalizedname" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="timezonerule" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="transactioncurrency" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="unresolvedaddress" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="uom" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="uomschedule" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="userfiscalcalendar" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="userquery" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+    <EntityType Name="usersettings" Status="TODO" Writer="UnAssigned">
+      <Remarks />
+      <Samples />
+      <Links />
+    </EntityType>
+  </EntityTypesToDocument>
+</EntityTypes>
