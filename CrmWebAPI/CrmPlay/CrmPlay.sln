@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrmPlay.Console.NewWebAPI", "CrmPlay.Console.NewWebAPI\CrmPlay.Console.NewWebAPI.csproj", "{463248F4-75AA-4786-A0CC-7CDCA899D3E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrmPlay.Js.NewWebAPI", "CrmPlay.Js.NewWebAPI\CrmPlay.Js.NewWebAPI.csproj", "{6257C1E6-93EC-42E2-931D-C40DDD2C1498}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{463248F4-75AA-4786-A0CC-7CDCA899D3E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{463248F4-75AA-4786-A0CC-7CDCA899D3E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{463248F4-75AA-4786-A0CC-7CDCA899D3E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6257C1E6-93EC-42E2-931D-C40DDD2C1498}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6257C1E6-93EC-42E2-931D-C40DDD2C1498}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6257C1E6-93EC-42E2-931D-C40DDD2C1498}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6257C1E6-93EC-42E2-931D-C40DDD2C1498}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
