@@ -61,8 +61,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Kelvin.CrmPlayConfig.html" />
+    <Content Include="SampleOldREST.js" />
     <Content Include="SampleWebApi.html" />
     <Content Include="SampleWebApi.js" />
+    <Content Include="SDK.REST.js" />
     <Content Include="Sdk.WebAPIPreview.js" />
   </ItemGroup>
   <ItemGroup>
