@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>REST Play</title>
+    <style>
+        body {
+            font-family: 'Segoe UI';
+        }
+    </style>
+    <!--Absolute location http://[Server_Name]/[CRM_ORG]/WebResources/ClientGlobalContext.js.aspx-->
+    <script src="./ClientGlobalContext.js.aspx"></script> <!--If you don't do this, you will get the following error "Uncaught Error: Context is not available.". -->
+    <script src="./lat_/CRMRESTBuilder/scripts/SDK.REST.js"></script>
+    <script>
+        /// <reference path="SDK.REST.js" />
+
+        function errorHandler(error) {
+            console.log(error.message);
+        }
+
+        document.onreadystatechange = function () {
+            if (document.readyState == "complete") {
+                document.getElementById("btnStart").addEventListener("click", onButtonStartClick);
+            }
+        }
+
+        function onButtonStartClick() {
+            alert("clicked");
+
+            SDK.REST.retrieveRecord('5e83ac5f-53ab-e411-80c8-080027a04894',
+                'Account',
+                'AccountId,Name',
+                null,
+                function (result) {
+                    console.log(result.Name)
+                },
+                errorHandler);
+        }
+    </script>
+</head>
+<body>
+    <button id="btnStart">Start</button>
+</body>
+</html>
