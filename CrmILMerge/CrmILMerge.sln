@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrmPackage", "CrmILMerge\CrmPackage\CrmPackage.csproj", "{ED4580BA-C08D-4669-988F-53DC7B3F0539}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B93714AE-4528-473B-9F9E-4EC46A824F38} = {B93714AE-4528-473B-9F9E-4EC46A824F38}
+		{592AF3BC-13AF-4471-884A-9936240E39D6} = {592AF3BC-13AF-4471-884A-9936240E39D6}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugins", "CrmILMerge\Plugins\Plugins.csproj", "{B93714AE-4528-473B-9F9E-4EC46A824F38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workflow", "CrmILMerge\Workflow\Workflow.csproj", "{592AF3BC-13AF-4471-884A-9936240E39D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{DA400D06-EAFB-48D6-8ADF-96D4200646EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ILMerge", "ILMerge", "{74978F4F-4962-46B5-A5E2-2D836236C287}"
+	ProjectSection(SolutionItems) = preProject
+		ILMerge\ILMerge.exe = ILMerge\ILMerge.exe
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(CRMSolutionProperties) = preSolution
+		SolutionIsBoundToCRM = True
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED4580BA-C08D-4669-988F-53DC7B3F0539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED4580BA-C08D-4669-988F-53DC7B3F0539}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED4580BA-C08D-4669-988F-53DC7B3F0539}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{ED4580BA-C08D-4669-988F-53DC7B3F0539}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED4580BA-C08D-4669-988F-53DC7B3F0539}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED4580BA-C08D-4669-988F-53DC7B3F0539}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B93714AE-4528-473B-9F9E-4EC46A824F38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B93714AE-4528-473B-9F9E-4EC46A824F38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B93714AE-4528-473B-9F9E-4EC46A824F38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B93714AE-4528-473B-9F9E-4EC46A824F38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{592AF3BC-13AF-4471-884A-9936240E39D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{592AF3BC-13AF-4471-884A-9936240E39D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{592AF3BC-13AF-4471-884A-9936240E39D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{592AF3BC-13AF-4471-884A-9936240E39D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA400D06-EAFB-48D6-8ADF-96D4200646EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA400D06-EAFB-48D6-8ADF-96D4200646EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA400D06-EAFB-48D6-8ADF-96D4200646EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA400D06-EAFB-48D6-8ADF-96D4200646EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
