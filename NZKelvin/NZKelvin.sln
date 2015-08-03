@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NZKelvin.Cache", "NZKelvin.Cache\NZKelvin.Cache.csproj", "{E81B8A7D-F926-4128-AFD9-FF78A9388A56}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{21FBA6AF-CAC3-48D7-9D9F-CF0B7D3A26B2}"
+	ProjectSection(SolutionItems) = preProject
+		Resources\NZKelvinKey.snk = Resources\NZKelvinKey.snk
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
