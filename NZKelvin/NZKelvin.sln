@@ -5,8 +5,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NZKelvin.Cache", "NZKelvin.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{21FBA6AF-CAC3-48D7-9D9F-CF0B7D3A26B2}"
 	ProjectSection(SolutionItems) = preProject
+		Resources\Microsoft.Crm.Sdk.Proxy.dll = Resources\Microsoft.Crm.Sdk.Proxy.dll
+		Resources\Microsoft.IdentityModel.dll = Resources\Microsoft.IdentityModel.dll
+		Resources\Microsoft.Xrm.Client.dll = Resources\Microsoft.Xrm.Client.dll
+		Resources\Microsoft.Xrm.Sdk.dll = Resources\Microsoft.Xrm.Sdk.dll
 		Resources\NZKelvinKey.snk = Resources\NZKelvinKey.snk
+		ToDos.txt = ToDos.txt
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NZKelvin.Config", "NZKelvin.Config\NZKelvin.Config.csproj", "{1BF2FFA6-C7F4-43D0-82CB-882EB65449DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NZKelvin.CRM", "NZKelvin.CRM\NZKelvin.CRM.csproj", "{C11ADA83-24FD-4B0A-8BDB-E5205E62EC62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +27,14 @@ Global
 		{E81B8A7D-F926-4128-AFD9-FF78A9388A56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E81B8A7D-F926-4128-AFD9-FF78A9388A56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E81B8A7D-F926-4128-AFD9-FF78A9388A56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BF2FFA6-C7F4-43D0-82CB-882EB65449DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BF2FFA6-C7F4-43D0-82CB-882EB65449DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BF2FFA6-C7F4-43D0-82CB-882EB65449DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BF2FFA6-C7F4-43D0-82CB-882EB65449DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C11ADA83-24FD-4B0A-8BDB-E5205E62EC62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C11ADA83-24FD-4B0A-8BDB-E5205E62EC62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C11ADA83-24FD-4B0A-8BDB-E5205E62EC62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C11ADA83-24FD-4B0A-8BDB-E5205E62EC62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
