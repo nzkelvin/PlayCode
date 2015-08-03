@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Register xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/crm/2011/tools/pluginregistration">
+  <Solutions>
+    <Solution Assembly="CrmILMerge.Plugins.dll" Id="1b4bf71b-4039-e511-80ed-080027a04894" IsolationMode="Sandbox" SourceType="Database">
+      <PluginTypes>
+        <Plugin Description="Plug-in to PreValidateContactUpdate" FriendlyName="PreValidateContactUpdate" Name="CrmILMerge.Plugins.PreValidateContactUpdate" Id="1e4bf71b-4039-e511-80ed-080027a04894" TypeName="CrmILMerge.Plugins.PreValidateContactUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreValidateContactUpdate" Description="Pre-Validation of Contact Update" FilteringAttributes="firstname,fullname,lastname,middlename" Id="1f4bf71b-4039-e511-80ed-080027a04894" MessageName="Update" Mode="Synchronous" PrimaryEntityName="contact" Rank="1" SecureConfiguration="" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreValidateAccountUpdate" FriendlyName="PreValidateAccountUpdate" Name="CrmILMerge.Plugins.PreValidateAccountUpdate" Id="4ad0d878-8839-e511-80ed-080027a04894" TypeName="CrmILMerge.Plugins.PreValidateAccountUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreValidateAccountUpdate" Description="Pre-Validation of Account Update" FilteringAttributes="name,accountnumber" Id="4bd0d878-8839-e511-80ed-080027a04894" MessageName="Update" Mode="Synchronous" PrimaryEntityName="account" Rank="1" SecureConfiguration="" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+      </PluginTypes>
+    </Solution>
+    <Solution Assembly="CrmILMerge.Workflow.dll" Id="224bf71b-4039-e511-80ed-080027a04894" IsolationMode="None" SourceType="Database" />
+  </Solutions>
+  <XamlWorkflows />
+</Register>
