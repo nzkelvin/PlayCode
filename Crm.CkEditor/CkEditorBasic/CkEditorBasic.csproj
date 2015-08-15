@@ -32,13 +32,126 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="adapters\jquery.js" />
     <Content Include="build-config.js" />
     <Content Include="ckeditor.js" />
     <Content Include="config.js" />
     <Content Include="contents.css" />
     <Content Include="jquery_1.9.1.min.js" />
+    <Content Include="lang\af.js" />
+    <Content Include="lang\ar.js" />
+    <Content Include="lang\bg.js" />
+    <Content Include="lang\bn.js" />
+    <Content Include="lang\bs.js" />
+    <Content Include="lang\ca.js" />
+    <Content Include="lang\cs.js" />
+    <Content Include="lang\cy.js" />
+    <Content Include="lang\da.js" />
+    <Content Include="lang\de.js" />
+    <Content Include="lang\el.js" />
+    <Content Include="lang\en-au.js" />
+    <Content Include="lang\en-ca.js" />
+    <Content Include="lang\en-gb.js" />
+    <Content Include="lang\en.js" />
+    <Content Include="lang\eo.js" />
+    <Content Include="lang\es.js" />
+    <Content Include="lang\et.js" />
+    <Content Include="lang\eu.js" />
+    <Content Include="lang\fa.js" />
+    <Content Include="lang\fi.js" />
+    <Content Include="lang\fo.js" />
+    <Content Include="lang\fr-ca.js" />
+    <Content Include="lang\fr.js" />
+    <Content Include="lang\gl.js" />
+    <Content Include="lang\gu.js" />
+    <Content Include="lang\he.js" />
+    <Content Include="lang\hi.js" />
+    <Content Include="lang\hr.js" />
+    <Content Include="lang\hu.js" />
+    <Content Include="lang\id.js" />
+    <Content Include="lang\is.js" />
+    <Content Include="lang\it.js" />
+    <Content Include="lang\ja.js" />
+    <Content Include="lang\ka.js" />
+    <Content Include="lang\km.js" />
+    <Content Include="lang\ko.js" />
+    <Content Include="lang\ku.js" />
+    <Content Include="lang\lt.js" />
+    <Content Include="lang\lv.js" />
+    <Content Include="lang\mk.js" />
+    <Content Include="lang\mn.js" />
+    <Content Include="lang\ms.js" />
+    <Content Include="lang\nb.js" />
+    <Content Include="lang\nl.js" />
+    <Content Include="lang\no.js" />
+    <Content Include="lang\pl.js" />
+    <Content Include="lang\pt-br.js" />
+    <Content Include="lang\pt.js" />
+    <Content Include="lang\ro.js" />
+    <Content Include="lang\ru.js" />
+    <Content Include="lang\si.js" />
+    <Content Include="lang\sk.js" />
+    <Content Include="lang\sl.js" />
+    <Content Include="lang\sq.js" />
+    <Content Include="lang\sr-latn.js" />
+    <Content Include="lang\sr.js" />
+    <Content Include="lang\sv.js" />
+    <Content Include="lang\th.js" />
+    <Content Include="lang\tr.js" />
+    <Content Include="lang\tt.js" />
+    <Content Include="lang\ug.js" />
+    <Content Include="lang\uk.js" />
+    <Content Include="lang\vi.js" />
+    <Content Include="lang\zh-cn.js" />
+    <Content Include="lang\zh.js" />
+    <Content Include="plugins\about\dialogs\about.js" />
+    <Content Include="plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="plugins\clipboard\dialogs\paste.js" />
+    <Content Include="plugins\dialog\dialogDefinition.js" />
+    <Content Include="plugins\icons.png" />
+    <Content Include="plugins\icons_hidpi.png" />
+    <Content Include="plugins\link\dialogs\anchor.js" />
+    <Content Include="plugins\link\dialogs\link.js" />
+    <Content Include="plugins\link\images\anchor.png" />
+    <Content Include="plugins\link\images\hidpi\anchor.png" />
     <Content Include="richeditor.html" />
+    <Content Include="skins\moono\dialog.css" />
+    <Content Include="skins\moono\dialog_ie.css" />
+    <Content Include="skins\moono\dialog_ie7.css" />
+    <Content Include="skins\moono\dialog_ie8.css" />
+    <Content Include="skins\moono\dialog_iequirks.css" />
+    <Content Include="skins\moono\editor.css" />
+    <Content Include="skins\moono\editor_gecko.css" />
+    <Content Include="skins\moono\editor_ie.css" />
+    <Content Include="skins\moono\editor_ie7.css" />
+    <Content Include="skins\moono\editor_ie8.css" />
+    <Content Include="skins\moono\editor_iequirks.css" />
+    <Content Include="skins\moono\icons.png" />
+    <Content Include="skins\moono\icons_hidpi.png" />
+    <Content Include="skins\moono\images\arrow.png" />
+    <Content Include="skins\moono\images\close.png" />
+    <Content Include="skins\moono\images\hidpi\close.png" />
+    <Content Include="skins\moono\images\hidpi\lock-open.png" />
+    <Content Include="skins\moono\images\hidpi\lock.png" />
+    <Content Include="skins\moono\images\hidpi\refresh.png" />
+    <Content Include="skins\moono\images\lock-open.png" />
+    <Content Include="skins\moono\images\lock.png" />
+    <Content Include="skins\moono\images\refresh.png" />
+    <Content Include="skins\moono\images\spinner.gif" />
     <Content Include="styles.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
