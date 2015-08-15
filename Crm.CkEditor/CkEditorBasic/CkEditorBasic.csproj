@@ -33,7 +33,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="adapters\jquery.js" />
-    <Content Include="build-config.js" />
     <Content Include="ckeditor.js" />
     <Content Include="config.js" />
     <Content Include="contents.css" />
@@ -132,10 +131,10 @@
     <Content Include="skins\moono\images\arrow.png" />
     <Content Include="skins\moono\images\close.png" />
     <Content Include="skins\moono\images\hidpi\close.png" />
-    <Content Include="skins\moono\images\hidpi\lock-open.png" />
+    <Content Include="skins\moono\images\hidpi\lock_open.png" />
     <Content Include="skins\moono\images\hidpi\lock.png" />
     <Content Include="skins\moono\images\hidpi\refresh.png" />
-    <Content Include="skins\moono\images\lock-open.png" />
+    <Content Include="skins\moono\images\lock_open.png" />
     <Content Include="skins\moono\images\lock.png" />
     <Content Include="skins\moono\images\refresh.png" />
     <Content Include="skins\moono\images\spinner.gif" />
