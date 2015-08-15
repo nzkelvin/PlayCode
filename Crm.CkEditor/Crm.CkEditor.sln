@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrmPackage", "Crm.CkEditor\CrmPackage\CrmPackage.csproj", "{F15160EA-0043-4E29-AA7E-CA43591C1BAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CkEditorBasic", "CkEditorBasic\CkEditorBasic.csproj", "{00EA4BD0-5DA8-4880-890C-E74642DD9F03}"
+EndProject
+Global
+	GlobalSection(CRMSolutionProperties) = preSolution
+		SolutionIsBoundToCRM = True
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F15160EA-0043-4E29-AA7E-CA43591C1BAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F15160EA-0043-4E29-AA7E-CA43591C1BAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F15160EA-0043-4E29-AA7E-CA43591C1BAB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F15160EA-0043-4E29-AA7E-CA43591C1BAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F15160EA-0043-4E29-AA7E-CA43591C1BAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F15160EA-0043-4E29-AA7E-CA43591C1BAB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{00EA4BD0-5DA8-4880-890C-E74642DD9F03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00EA4BD0-5DA8-4880-890C-E74642DD9F03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00EA4BD0-5DA8-4880-890C-E74642DD9F03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00EA4BD0-5DA8-4880-890C-E74642DD9F03}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

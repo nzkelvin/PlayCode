@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CKEditor</title>
+    <script src="jquery_1.9.1.min.js"></script>
+	<script src="ckeditor.js"></script>
+    <script>
+        if (typeof (Koorb) == typeof (undefined))
+            Koorb = {};
+
+        if (typeof (Koorb.Common) == typeof (undefined)) {
+            Koorb.Common = {
+                parseQueryStringToJson: function () {
+                    var search = window.location.search.substring(1);
+                    return search
+                        ? JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g, '":"') + '"}', function (key, value) { return key === "" ? value : decodeURIComponent(value) })
+                        : {};
+                }
+            };
+        }
+
+        CKEDITOR.timestamp = null;
+
+        $(document).ready(function () {
+            CKEDITOR.config.contentsCss = CKEDITOR.getUrl("contents.css");
+            CKEDITOR.replace('editor1');
+            
+            var fieldName = Koorb.Common.parseQueryStringToJson().data;
+
+            // CRM field -> CKEditor - onload
+            var field = window.parent.Xrm.Page.getAttribute(fieldName);
+            var rawValue = field.getValue();
+            document.getElementById('editor1').value = rawValue;
+
+            // CKEditor -> CRM field
+            CKEDITOR.instances.editor1.on('blur', function () {
+                var value = CKEDITOR.instances.editor1.getData();
+                var attr = window.parent.Xrm.Page.getAttribute(fieldName);
+                var maxLength = attr.getMaxLength();
+
+                // error on content is too long.
+                if (value.length > maxLength) {
+                    window.parent.Xrm.Utility.alertDialog("You have exceeded the maximum number of " + maxLength + " characters in this field");
+                }
+
+                attr.setValue(CKEDITOR.instances.editor1.getData(value));
+            });
+        });
+    </script>
+</head>
+<body id="main">
+	<textarea id="editor1" class="ckeditor" name="editor1" rows="2" cols="80"></textarea>
+</body>
+</html>
