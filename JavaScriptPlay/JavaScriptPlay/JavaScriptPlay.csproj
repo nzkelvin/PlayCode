@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Event.js" />
     <Content Include="NameSpace.js" />
     <Content Include="OO.js" />
     <Content Include="Test.html" />
