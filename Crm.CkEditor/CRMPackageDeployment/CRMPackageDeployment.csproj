@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{170C0103-3F94-4896-9062-6314167F596A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CRMPackageDeployment</RootNamespace>
+    <AssemblyName>CRMPackageDeployment</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy">
+      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.7.0.0\lib\net45\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.AifServices">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.7.0.0\lib\net45\Microsoft.Uii.AifServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Common">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.7.0.0\lib\net45\Microsoft.Uii.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Common.Configuration">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.7.0.0\lib\net45\Microsoft.Uii.Common.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Common.Listeners">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.7.0.0\lib\net45\Microsoft.Uii.Common.Listeners.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Common.Logging">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.7.0.0\lib\net45\Microsoft.Uii.Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Common.Logging.Providers">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.7.0.0\lib\net45\Microsoft.Uii.Common.Logging.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Common.Providers">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.7.0.0\lib\net45\Microsoft.Uii.Common.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Csr.Browser.Web">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.7.0.0\lib\net45\Microsoft.Uii.Csr.Browser.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Csr.Core">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.7.0.0\lib\net45\Microsoft.Uii.Csr.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Uii.Csr.Win32Api">
+      <HintPath>..\packages\Microsoft.CrmSdk.UII.CommonAssemblies.7.0.0\lib\net45\Microsoft.Uii.Csr.Win32Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk">
+      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.7.0.0\lib\net45\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk.Deployment">
+      <HintPath>..\packages\Microsoft.CrmSdk.Deployment.7.0.0\lib\net45\Microsoft.Xrm.Sdk.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk.Workflow">
+      <HintPath>..\packages\Microsoft.CrmSdk.Workflow.7.0.0\lib\net45\Microsoft.Xrm.Sdk.Workflow.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Tooling.Connector">
+      <HintPath>..\packages\Microsoft.CrmSdk.XrmTooling.CoreAssembly.7.0.0\lib\net45\Microsoft.Xrm.Tooling.Connector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Tooling.CrmConnectControl">
+      <HintPath>..\packages\Microsoft.CrmSdk.XrmTooling.WpfControls.7.0.0\lib\net45\Microsoft.Xrm.Tooling.CrmConnectControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Tooling.PackageDeployment.CrmPackageExtentionBase">
+      <HintPath>..\packages\Microsoft.CrmSdk.XrmTooling.PackageDeployment.7.0.0\lib\net45\Microsoft.Xrm.Tooling.PackageDeployment.CrmPackageExtentionBase.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Tooling.Ui.Styles">
+      <HintPath>..\packages\Microsoft.CrmSdk.XrmTooling.WpfControls.7.0.0\lib\net45\Microsoft.Xrm.Tooling.Ui.Styles.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Tooling.WebResourceUtility">
+      <HintPath>..\packages\Microsoft.CrmSdk.XrmTooling.WpfControls.7.0.0\lib\net45\Microsoft.Xrm.Tooling.WebResourceUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Workflow.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Workflow.Runtime" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PackageTemplate.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PkgFolder\Content\en-us\EndHtml\CSS\common.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PkgFolder\Content\en-us\EndHtml\HTML\Default.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PkgFolder\Content\en-us\EndHtml\Images\body_back.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PkgFolder\Content\en-us\EndHtml\Images\contentarea_back.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PkgFolder\Content\en-us\EndHtml\Images\contentArea_back_home.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PkgFolder\Content\en-us\EndHtml\Images\content_back.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PkgFolder\Content\en-us\EndHtml\Images\content_back_orig.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PkgFolder\Content\en-us\EndHtml\Images\footer_back.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PkgFolder\Content\en-us\EndHtml\Images\header_back.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PkgFolder\Content\en-us\EndHtml\Images\nav_back.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PkgFolder\Content\en-us\EndHtml\Images\nav_list_back.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PkgFolder\Content\en-us\EndHtml\Images\top_item_selected_bg.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PkgFolder\Content\en-us\WelcomeHtml\CSS\common.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PkgFolder\Content\en-us\WelcomeHtml\HTML\Default.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PkgFolder\Content\en-us\WelcomeHtml\Images\body_back.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PkgFolder\Content\en-us\WelcomeHtml\Images\contentarea_back.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PkgFolder\Content\en-us\WelcomeHtml\Images\contentArea_back_home.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PkgFolder\Content\en-us\WelcomeHtml\Images\content_back.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PkgFolder\Content\en-us\WelcomeHtml\Images\content_back_orig.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PkgFolder\Content\en-us\WelcomeHtml\Images\footer_back.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PkgFolder\Content\en-us\WelcomeHtml\Images\header_back.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PkgFolder\Content\en-us\WelcomeHtml\Images\nav_back.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PkgFolder\Content\en-us\WelcomeHtml\Images\nav_list_back.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PkgFolder\Content\en-us\WelcomeHtml\Images\top_item_selected_bg.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PkgFolder\ImportConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="PkgFolder\KoorbCommonFieldValidator_0_0_150812_1_target_CRM_7.0_managed.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="PkgFolder\MetadataBrowser_2_0_1_1_managed.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
