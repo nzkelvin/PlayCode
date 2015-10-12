@@ -10,6 +10,49 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PackageDeployer", "PackageDeployer", "{5AD6DC8D-162A-4F51-848B-28E90A3250E3}"
 	ProjectSection(SolutionItems) = preProject
 		PackageDeployer\CRMDeployment.ps1 = PackageDeployer\CRMDeployment.ps1
+		PackageDeployer\CRMPackageDeployment.dll = PackageDeployer\CRMPackageDeployment.dll
+		PackageDeployer\Microsoft.Crm.Sdk.Proxy.dll = PackageDeployer\Microsoft.Crm.Sdk.Proxy.dll
+		PackageDeployer\Microsoft.Expression.Interactions.dll = PackageDeployer\Microsoft.Expression.Interactions.dll
+		PackageDeployer\Microsoft.Expression.Interactions.xml = PackageDeployer\Microsoft.Expression.Interactions.xml
+		PackageDeployer\Microsoft.IdentityModel.dll = PackageDeployer\Microsoft.IdentityModel.dll
+		PackageDeployer\Microsoft.Uii.AifServices.dll = PackageDeployer\Microsoft.Uii.AifServices.dll
+		PackageDeployer\Microsoft.Uii.AifServices.xml = PackageDeployer\Microsoft.Uii.AifServices.xml
+		PackageDeployer\Microsoft.Uii.Common.dll = PackageDeployer\Microsoft.Uii.Common.dll
+		PackageDeployer\Microsoft.Uii.Common.TypeProvider.dll = PackageDeployer\Microsoft.Uii.Common.TypeProvider.dll
+		PackageDeployer\Microsoft.Uii.Common.TypeProvider.xml = PackageDeployer\Microsoft.Uii.Common.TypeProvider.xml
+		PackageDeployer\Microsoft.Uii.Common.xml = PackageDeployer\Microsoft.Uii.Common.xml
+		PackageDeployer\Microsoft.Uii.CrmEntityManager.dll = PackageDeployer\Microsoft.Uii.CrmEntityManager.dll
+		PackageDeployer\Microsoft.Uii.CrmEntityManager.xml = PackageDeployer\Microsoft.Uii.CrmEntityManager.xml
+		PackageDeployer\Microsoft.Xrm.Sdk.Deployment.dll = PackageDeployer\Microsoft.Xrm.Sdk.Deployment.dll
+		PackageDeployer\Microsoft.Xrm.Sdk.dll = PackageDeployer\Microsoft.Xrm.Sdk.dll
+		PackageDeployer\microsoft.xrm.sdk.workflow.dll = PackageDeployer\microsoft.xrm.sdk.workflow.dll
+		PackageDeployer\Microsoft.Xrm.Tooling.Connector.dll = PackageDeployer\Microsoft.Xrm.Tooling.Connector.dll
+		PackageDeployer\Microsoft.Xrm.Tooling.Connector.xml = PackageDeployer\Microsoft.Xrm.Tooling.Connector.xml
+		PackageDeployer\Microsoft.Xrm.Tooling.CrmConnectControl.dll = PackageDeployer\Microsoft.Xrm.Tooling.CrmConnectControl.dll
+		PackageDeployer\Microsoft.Xrm.Tooling.CrmConnectControl.xml = PackageDeployer\Microsoft.Xrm.Tooling.CrmConnectControl.xml
+		PackageDeployer\Microsoft.Xrm.Tooling.Dmt.DataMigCommon.dll = PackageDeployer\Microsoft.Xrm.Tooling.Dmt.DataMigCommon.dll
+		PackageDeployer\Microsoft.Xrm.Tooling.Dmt.DataMigCommon.xml = PackageDeployer\Microsoft.Xrm.Tooling.Dmt.DataMigCommon.xml
+		PackageDeployer\Microsoft.Xrm.Tooling.Dmt.ImportProcessor.dll = PackageDeployer\Microsoft.Xrm.Tooling.Dmt.ImportProcessor.dll
+		PackageDeployer\Microsoft.Xrm.Tooling.Dmt.ImportProcessor.xml = PackageDeployer\Microsoft.Xrm.Tooling.Dmt.ImportProcessor.xml
+		PackageDeployer\Microsoft.Xrm.Tooling.Dmt.MetadataHandler.dll = PackageDeployer\Microsoft.Xrm.Tooling.Dmt.MetadataHandler.dll
+		PackageDeployer\Microsoft.Xrm.Tooling.Dmt.MetadataHandler.xml = PackageDeployer\Microsoft.Xrm.Tooling.Dmt.MetadataHandler.xml
+		PackageDeployer\Microsoft.Xrm.Tooling.PackageDeployment.CrmPackageCore.dll = PackageDeployer\Microsoft.Xrm.Tooling.PackageDeployment.CrmPackageCore.dll
+		PackageDeployer\Microsoft.Xrm.Tooling.PackageDeployment.CrmPackageCore.XML = PackageDeployer\Microsoft.Xrm.Tooling.PackageDeployment.CrmPackageCore.XML
+		PackageDeployer\Microsoft.Xrm.Tooling.PackageDeployment.CrmPackageExtentionBase.dll = PackageDeployer\Microsoft.Xrm.Tooling.PackageDeployment.CrmPackageExtentionBase.dll
+		PackageDeployer\Microsoft.Xrm.Tooling.PackageDeployment.CrmPackageExtentionBase.XML = PackageDeployer\Microsoft.Xrm.Tooling.PackageDeployment.CrmPackageExtentionBase.XML
+		PackageDeployer\Microsoft.Xrm.Tooling.Ui.Styles.dll = PackageDeployer\Microsoft.Xrm.Tooling.Ui.Styles.dll
+		PackageDeployer\Microsoft.Xrm.Tooling.Ui.Styles.xml = PackageDeployer\Microsoft.Xrm.Tooling.Ui.Styles.xml
+		PackageDeployer\PackageDeployer.exe = PackageDeployer\PackageDeployer.exe
+		PackageDeployer\PackageDeployer.exe.config = PackageDeployer\PackageDeployer.exe.config
+		PackageDeployer\PackageDeployer.XML = PackageDeployer\PackageDeployer.XML
+		PackageDeployer\System.IdentityModel.dll = PackageDeployer\System.IdentityModel.dll
+		PackageDeployer\System.Windows.Interactivity.dll = PackageDeployer\System.Windows.Interactivity.dll
+		PackageDeployer\System.Windows.Interactivity.xml = PackageDeployer\System.Windows.Interactivity.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PkgFolder", "PkgFolder", "{449F4C23-4DE7-4BE2-B8A5-0B94BB39BFAE}"
+	ProjectSection(SolutionItems) = preProject
+		PackageDeployer\PkgFolder\ImportConfig.xml = PackageDeployer\PkgFolder\ImportConfig.xml
 	EndProjectSection
 EndProject
 Global
@@ -35,5 +78,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{449F4C23-4DE7-4BE2-B8A5-0B94BB39BFAE} = {5AD6DC8D-162A-4F51-848B-28E90A3250E3}
 	EndGlobalSection
 EndGlobal

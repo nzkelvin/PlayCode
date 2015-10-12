@@ -1,0 +1,1550 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PackageDeployer</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.ProgressGrapicConverter">
+            <summary>
+            Progress graphic converter.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.ProgressGrapicConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convert for Progress Graphic.
+            </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>Visibility mode.</returns>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.ProgressGrapicConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+             <summary>
+             Convert back.
+             </summary>
+            <param name="value">The value produced by the binding source.</param>
+            <param name="targetType">The type of the binding target property.</param>
+            <param name="parameter">The converter parameter to use.</param>
+            <param name="culture">The culture to use in the converter.</param>
+            <returns>Visibility mode.</returns>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.CoreAppObjects">
+            <summary>
+            This is the shared data payload. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.CoreAppObjects.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.CoreAppObjects.RootConnectionManager">
+            <summary>
+            Root configuration manager used to support creating connections. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.CoreAppObjects.CurrentPanel">
+            <summary>
+            Current Panel. 
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.WizardPanels">
+            <summary>
+            Panels array.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.WizardPanels.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.WizardPanels.GetPanelById(Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.WizardPanelId)">
+            <summary>
+            Get the wizard panels by panel id.
+            </summary>
+            <param name="pnId">Panel id.</param>
+            <returns>Panel item.</returns>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.WizardPanels.Items">
+            <summary>
+            Gets or Sets WizardPanel collection.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.WizardPanel">
+            <summary>
+            Describes a single panel. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.WizardPanel.PanelObject">
+            <summary>
+            Gets or Sets User control container. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.WizardPanel.DisplayName">
+            <summary>
+            Gets or Sets Display name for the panel. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.WizardPanel.PanelId">
+            <summary>
+            Gets or Sets ID of the Panel. 
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.WizardPanelId">
+            <summary>
+            This enumerates the panels.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.WizardPanelId.Unknown">
+            <summary>
+            Indicates launching wizard.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.WizardPanelId.CRMLogin">
+            <summary>
+            Indicates login wizard.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.WizardPanelId.SelectPackage">
+            <summary>
+            Indicates package selection wizard.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.WizardPanelId.Welcome">
+            <summary>
+            Indicates welcome wizard.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.WizardPanelId.ReadytoInstall">
+            <summary>
+            Indicates selected organization wizard.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.WizardPanelId.ReadConfig">
+            <summary>
+            Indicates select package use wizard.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.WizardPanelId.VerifySolutions">
+            <summary>
+            Indicates solution verification wizard.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.WizardPanelId.DoImport">
+            <summary>
+            Indicates import wizard.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.WizardPanelId.Complete">
+            <summary>
+            Indicates completed wizard.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.IPanelWizardActions">
+            <summary>
+            Interface to allow main control to access panel info. 
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.IPanelWizardActions.GoNext">
+            <summary>
+            Go next wizard.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.IPanelWizardActions.GoBack">
+            <summary>
+            Go back wizard.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.IPanelWizardActions.GoBackFowardStateChanged">
+            <summary>
+            BackForward state change.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.IPanelWizardActions.HideNext">
+            <summary>
+            Gets or Sets hide next button.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.IPanelWizardActions.HideBack">
+            <summary>
+            Gets or Sets hide back button.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.IPanelWizardActions.CanGoBack">
+            <summary>
+            Gets or Sets boolean property for go back.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.IPanelWizardActions.CanGoFoward">
+            <summary>
+            Gets or Sets boolean property for go forward.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.IPanelWizardActions.PanelTitleName">
+            <summary>
+            Gets panel title.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Models.IPanelWizardActions.WindowTitle">
+            <summary>
+            Gets window title.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.BUTTONFINISH">
+            <summary>
+              Looks up a localized string similar to Finish.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.BUTTONNEXT">
+            <summary>
+              Looks up a localized string similar to Next.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.BUTTONPREVIOUS">
+            <summary>
+              Looks up a localized string similar to Previous.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.CCADIRECTORYPATHLABEL">
+            <summary>
+              Looks up a localized string similar to Install to directory :.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.CLOSE_CONFIRMTEXT">
+             <summary>
+               Looks up a localized string similar to Are you sure you want to close Package Deployer?
+            This will end your current deployment process..
+             </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.COMPLETEUI_DESKTOPLAUNCH_DEFAULTTEXT">
+            <summary>
+              Looks up a localized string similar to Thanks you for installing {0} for Microsoft Dynamics CRM..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.COMPLETEUI_DESKTOPLAUNCH_TEXT">
+            <summary>
+              Looks up a localized string similar to Launch the agent desktop .
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.COMPLETEVIEWPANELTITLE">
+            <summary>
+              Looks up a localized string similar to Installation Complete.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.CONTINUE">
+            <summary>
+              Looks up a localized string similar to Continue.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.CRMCONNVIEWPANELTITLE">
+            <summary>
+              Looks up a localized string similar to Connect to Microsoft Dynamics CRM.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.CRMLOGIN">
+            <summary>
+              Looks up a localized string similar to Sign-In.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.CRMREGIONTITLE">
+            <summary>
+              Looks up a localized string similar to CRM Region :.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.DESCRIPTION">
+            <summary>
+              Looks up a localized string similar to Description.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.DOIMPORT">
+            <summary>
+              Looks up a localized string similar to Do Import.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.DOIMPORTCCAUNPACKEDMESSAGE">
+            <summary>
+              Looks up a localized string similar to Unpacked.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.DOIMPORTLOADSOLUTIONPROGRESSMESSAGE">
+            <summary>
+              Looks up a localized string similar to Importing solutions. Please wait....
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.DOIMPORTPANELTITLEDEFAULTNAME">
+            <summary>
+              Looks up a localized string similar to Executing Install Actions.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.DYNAMICSCRMHEADER">
+            <summary>
+              Looks up a localized string similar to Microsoft Dynamics CRM.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.FAILED">
+            <summary>
+              Looks up a localized string similar to Failed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.FILE">
+            <summary>
+              Looks up a localized string similar to file.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.FILE_NOT_FOUND">
+            <summary>
+              Looks up a localized string similar to File not found.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.FINISHED">
+            <summary>
+              Looks up a localized string similar to Finished.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.FORMATSTRINGONCOMPLETE">
+            <summary>
+              Looks up a localized string similar to {0} {1}.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.INSTALLATIONDIRECTORYDEFAULTLABEL">
+            <summary>
+              Looks up a localized string similar to Install to Default Directory.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.INSTALLATIONDIRECTORYLABEL">
+            <summary>
+              Looks up a localized string similar to Please select a folder where package specific files should be copied:.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.LOG">
+            <summary>
+              Looks up a localized string similar to View log file .
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.MAINDLG_TITLE_FORMAT_STIRNG">
+            <summary>
+              Looks up a localized string similar to {0} Setup for Microsoft Dynamics CRM.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.MAINWINDOW_TITLE">
+            <summary>
+              Looks up a localized string similar to Package Deployer for Microsoft Dynamics CRM.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.MICROSOFT_LICENSE_AGREEMENT">
+            <summary>
+              Looks up a localized string similar to Please read and review the license agreement for this product..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.MISSINGDEPENDANCY_MSG">
+            <summary>
+              Looks up a localized string similar to You&apos;re missing Windows Identity Foundation assemblies that are needed to run this program..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.MISSINGDEPENDANCY_MSG_LINK">
+            <summary>
+              Looks up a localized string similar to You can get the necessary assemblies at: http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=17331 \nWould you like to go to that website now?.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.MULTIPLEIMPORTPACKFOUND">
+            <summary>
+              Looks up a localized string similar to Multiple import packages were found..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.NOIMPORTPACKAGESEXITING_MSG">
+            <summary>
+              Looks up a localized string similar to No import packages were found. Exiting the program....
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.ORGANIZATION">
+            <summary>
+              Looks up a localized string similar to Organization :.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.PACKAGEDEPLOYERDESCRIPTION">
+            <summary>
+              Looks up a localized string similar to The Package Deployer lets you package one or more CRM solutions, data, files, and custom code operations together into a &quot;package&quot; that can be deployed to any CRM environment. The Package Deployer also supports the upgrade of existing &quot;package&quot; deployments..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.PACKAGEDEPLOYERTITLE">
+            <summary>
+              Looks up a localized string similar to Package Deployer.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.PACKAGENAME">
+            <summary>
+              Looks up a localized string similar to Package Name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.PACKAGESETUP_MAINWINDOW_TITLE">
+            <summary>
+              Looks up a localized string similar to Microsoft Dynamics CRM Unified Service Desk.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.PLEASESELECTIMPORTPACK_MSG">
+            <summary>
+              Looks up a localized string similar to Select the import package to use..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.READCONFIG">
+            <summary>
+              Looks up a localized string similar to Read Configuration.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.READCONFIGDEFAULTPANELTITLE">
+            <summary>
+              Looks up a localized string similar to Reading Installer Configuration.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.READCONFIGINITIALIZETHREAD">
+            <summary>
+              Looks up a localized string similar to Initializing {0} connection threads for detailed data import..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.READCONFIGINITIALIZETHREADMESSAGE">
+            <summary>
+              Looks up a localized string similar to Initializing {1} of {0} connection threads for detailed data import. Please wait….
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.READCONFIGINPROGRESSMESSAGE">
+            <summary>
+              Looks up a localized string similar to Reading the Config file. Please wait….
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.READCONFIGPANELTITLE">
+            <summary>
+              Looks up a localized string similar to Reading {0} Installer Configuration.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.READCONFIGRESETTHREADMESSAGE">
+            <summary>
+              Looks up a localized string similar to The maximum possible worker threads is {0}, resetting to {0} threads..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.READCONFIGSTATUSMESSAGEFORMAT">
+            <summary>
+              Looks up a localized string similar to Status: {0}.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.READY">
+            <summary>
+              Looks up a localized string similar to Ready.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.READYTOINSTALL_MSG">
+            <summary>
+              Looks up a localized string similar to To make changes, click Previous. To install the solution package, click Next..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.READYTOINSTALLTITLE">
+            <summary>
+              Looks up a localized string similar to Ready to Install.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.SELECT">
+            <summary>
+              Looks up a localized string similar to Select.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.SELECTIMPORTPACKAGE_TITLE">
+            <summary>
+              Looks up a localized string similar to Multiple Import Packages .
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.SOLUTIONPACKAGETITLE">
+            <summary>
+              Looks up a localized string similar to Solution Package :.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.STATUSLABEL">
+            <summary>
+              Looks up a localized string similar to Status :.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.VERIFYCRMCONFIG">
+            <summary>
+              Looks up a localized string similar to Verify CRM Configuration.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.VERIFYCRMSTATEDEFAULTTITLE">
+            <summary>
+              Looks up a localized string similar to UII Installer Configuration Options.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.VERIFYCRMSTATEPANELTITLE">
+            <summary>
+              Looks up a localized string similar to {0} Configuration Options.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.VIEW">
+            <summary>
+              Looks up a localized string similar to View .
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.WELCOME">
+            <summary>
+              Looks up a localized string similar to Welcome.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.WELCOMEPAGEPANELDEFAULTTITLE">
+            <summary>
+              Looks up a localized string similar to Welcome to the UII Demo Setup Tool.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Resources.LocalResourcesInfo.WELCOMEPAGEPANELTITLE">
+            <summary>
+              Looks up a localized string similar to Welcome to the {0} Setup Tool.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.AvailablePlugins">
+            <summary>
+            Class which shows available packages.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.AvailablePlugins.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.AvailablePlugins.Items">
+            <summary>
+            Plugin collection.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.PluginInfo">
+            <summary>
+            Information related to Available packages.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.PluginInfo.PluginName">
+            <summary>
+            Gets or Set Plugin name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.PluginInfo.PluginDescription">
+            <summary>
+            Gets or Sets plugin description.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.CompleteViewModel">
+            <summary>
+            Installation complete class.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.CompleteViewModel.launchText">
+            <remarks/>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.CompleteViewModel.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.CompleteViewModel.SetProperty``1(``0@,``0,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.CompleteViewModel.NotifyPropertyChanged(System.String)">
+            <remarks/>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.CompleteViewModel.LaunchText">
+            <summary>
+            Gets or Sets LaunchText.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.CompleteViewModel.Launch_Text">
+            <summary>
+            Gets or Sets Launch_Text.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.CompleteViewModel.PropertyChanged">
+            <summary>
+            Default Event Hook for INotifyPropertyChanged.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.CrmConnectionViewModel">
+            <summary>
+            View model for CRM connection page.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.CrmConnectionViewModel.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.CrmConnectionViewModel.PropertyChanged">
+            <summary>
+            Default Event Hook for INotifyPropertyChanged.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.DoImportModel">
+            <summary>
+            View model for the Import Items page.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.DoImportModel.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.DoImportModel.ProgressItems">
+            <summary>
+            Gets or Sets Progress Items collection.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.ReadConfigurationModel">
+            <summary>
+            View model for Reading Configuration.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.ReadConfigurationModel.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.ReadConfigurationModel.ProgressItems">
+            <summary>
+            Gets or Sets Progress Items collection.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.ReadyToInstallPageModel.Refresh">
+            <summary>
+            Refreshes the information in the ViewModel
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.ReadyToInstallPageModel.NotifyPropertyChanged(System.String)">
+            <remarks/>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.ReadyToInstallPageModel.SolutionName">
+            <summary>
+            Bind to this field to display the selected Solution Name
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.ReadyToInstallPageModel.Organization">
+            <summary>
+            Bind to this field to display the selected Crm Region
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.ReadyToInstallPageModel.PropertyChanged">
+            <summary>
+            Default Event Hook for INotifyPropertyChanged
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.SelectPackageViewModel.initializePackages">
+            <summary>
+            Initialize Packages
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.StartWelcomePageModel">
+            <summary>
+            View model for Package Deployer welcome page.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.StartWelcomePageModel._ver">
+            <summary>
+            Variable to hold the program version.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.StartWelcomePageModel.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.StartWelcomePageModel.VersionId">
+            <summary>
+            Gets or sets the Program version.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.VerifyCrmStateModel">
+            <summary>
+            View model for CRM state verify page.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.VerifyCrmStateModel.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.VerifyCrmStateModel.PropertyChanged">
+            <summary>
+            Default Event Hook for INotifyPropertyChanged.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.WelcomePageModel">
+            <summary>
+            View Model for Welcome Page.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.WelcomePageModel.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.WelcomePageModel.PropertyChanged">
+            <summary>
+            Default Event Hook for INotifyPropertyChanged.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CompleteView">
+            <summary>
+            Interaction logic for CompleteView.xaml.
+            </summary>
+            <summary>
+            CompleteView
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CompleteView.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CompleteView.linkMsg_MouseLeftButtonUp(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Handles clicking on the error link in the status text.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CompleteView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CompleteView.GoNext">
+            <summary>
+            Go next wizard.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CompleteView.GoBack">
+            <summary>
+            Go back wizard.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CompleteView.GoBackFowardStateChanged">
+            <summary>
+            BackForward state change.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CompleteView.CanGoBack">
+            <summary>
+            Gets or Sets boolean property for go back.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CompleteView.CanGoFoward">
+            <summary>
+            Gets or Sets boolean property for go next.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CompleteView.HideNext">
+            <summary>
+            Gets or Sets hide next visibility.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CompleteView.HideBack">
+            <summary>
+            Gets or Sets hide back visibility.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CompleteView.WindowTitle">
+            <summary>
+            Gets CRM main window title.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CompleteView.PanelTitleName">
+            <summary>
+            Gets installation complete panel title.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CrmConnectionView">
+            <summary>
+            Interaction logic for CrmConnectionView.xaml.
+            </summary>
+            <summary>
+            CrmConnectionView
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CrmConnectionView.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CrmConnectionView.CrmLoginCtrl_UserCancelClicked(System.Object,System.EventArgs)">
+            <summary>
+             User clicked the cancel button.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CrmConnectionView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CrmConnectionView.GoNext">
+            <summary>
+            Go next wizard.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CrmConnectionView.GoBack">
+            <summary>
+            Go back wizard.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CrmConnectionView.GoBackFowardStateChanged">
+            <summary>
+            BackForward state change.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CrmConnectionView.CanGoBack">
+            <summary>
+            Gets or Sets boolean property for go back.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CrmConnectionView.CanGoFoward">
+            <summary>
+            Gets or Sets boolean property for go forward.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CrmConnectionView.HideNext">
+            <summary>
+            Gets or Sets Hide Next visibility.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CrmConnectionView.HideBack">
+            <summary>
+            Gets or Sets Hide Back visibility.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CrmConnectionView.WindowTitle">
+            <summary>
+            Gets package deployer setup title.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.CrmConnectionView.PanelTitleName">
+            <summary>
+            Gets CRM window connection title.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.DoImport">
+            <summary>
+            Interaction logic for DoImport.xaml.
+            </summary>
+            <summary>
+            DoImport
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.DoImport.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.DoImport.linkMsg_MouseLeftButtonUp(System.Object,System.EventArgs)">
+            <summary>
+            Mouse click event
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.DoImport.ShowLogFile">
+            <summary>
+            Show the log file link.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.DoImport.AddLoadingProgressUpdate(System.String,Microsoft.Xrm.Tooling.PackageDeployment.CrmPackageExtentionBase.ProgressPanelItemStatus,Microsoft.Xrm.Tooling.PackageDeployment.CrmPackageExtentionBase.ProgressDataItem)">
+            <summary>
+            
+            </summary>
+            <param name="sText"></param>
+            <param name="status"></param>
+            <param name="dataItem"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.DoImport.DoImportSolutionItem(System.Object)">
+            <summary>
+            Imports an individual solution item. 
+            </summary>
+            <param name="o"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.DoImport.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.DoImport.GoNext">
+            <summary>
+            Go next wizard.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.DoImport.GoBack">
+            <summary>
+            Go back wizard.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.DoImport.GoBackFowardStateChanged">
+            <summary>
+            BackForward state change.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.DoImport.CanGoBack">
+            <summary>
+            Gets or Sets boolean property for go back.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.DoImport.CanGoFoward">
+            <summary>
+            Gets or Sets boolean property for go forward.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.DoImport.HideNext">
+            <summary>
+            Gets or Sets Hide next visibility.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.DoImport.HideBack">
+            <summary>
+            Gets or Sets Hide back visibility.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.DoImport.WindowTitle">
+            <summary>
+            Gets CRM main window title.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.DoImport.PanelTitleName">
+            <summary>
+            Gets installation complete panel title.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadConfiguration">
+            <summary>
+            Interaction logic for ReadConfiguration.xaml.
+            </summary>
+            <summary>
+            ReadConfiguration
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadConfiguration.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadConfiguration.ConfigReadStageOne(System.Object)">
+            <summary>
+            Config Reader
+            </summary>
+            <param name="o"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadConfiguration.cfgParser_ConfigReadComplete(System.Object,Microsoft.Xrm.Tooling.PackageDeployment.CrmPackageExtentionBase.ImportProgressStatus)">
+            <summary>
+            Begin reading configuration. 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadConfiguration.cfgParser_UpdateProgressItem(System.Object,Microsoft.Xrm.Tooling.PackageDeployment.CrmPackageExtentionBase.ProdgressDataItemEventArgs)">
+            <summary>
+            Updates the UI. 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadConfiguration.cfgParser_AddNewProgressItem(System.Object,Microsoft.Xrm.Tooling.PackageDeployment.CrmPackageExtentionBase.ProdgressDataItemEventArgs)">
+            <summary>
+            Add a new progress item to the UI. 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadConfiguration.connectMgr_ConnectionCheckComplete(System.Object,Microsoft.Xrm.Tooling.CrmConnectControl.ServerConnectStatusEventArgs)">
+            <summary>
+            Manages the connection complete events when building multiple import connections. 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadConfiguration.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadConfiguration.GoNext">
+            <summary>
+            Go next wizard.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadConfiguration.GoBack">
+            <summary>
+            Go back wizard.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadConfiguration.GoBackFowardStateChanged">
+            <summary>
+            BackForward state change.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadConfiguration.CanGoBack">
+            <summary>
+            Gets or Sets boolean property for go Back.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadConfiguration.CanGoFoward">
+            <summary>
+            Gets or Sets boolean property for go forward.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadConfiguration.HideNext">
+            <summary>
+            Gets or Sets Hide next visibility.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadConfiguration.HideBack">
+            <summary>
+            Gets or Sets Hide Back visibility.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadConfiguration.WindowTitle">
+            <summary>
+            Gets Main window setup title.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadConfiguration.PanelTitleName">
+            <summary>
+            Gets installer configuration panel title.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadyToInstallPage">
+            <summary>
+            Interaction logic for ReadyToInstallPage.xaml.
+            </summary>
+            <summary>
+            ReadyToInstallPage
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadyToInstallPage.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadyToInstallPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadyToInstallPage.GoNext">
+            <summary>
+            Go next wizard.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadyToInstallPage.GoBack">
+            <summary>
+            Go back wizard.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadyToInstallPage.GoBackFowardStateChanged">
+            <summary>
+            BackForward state change.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadyToInstallPage.CanGoBack">
+            <summary>
+            Gets or Sets boolean property for go Back.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadyToInstallPage.CanGoFoward">
+            <summary>
+            Gets or Sets boolean property for go forward.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadyToInstallPage.HideNext">
+            <summary>
+            Gets or Sets Hide next visibility.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadyToInstallPage.HideBack">
+            <summary>
+            Gets or Sets Hide Back visibility.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadyToInstallPage.WindowTitle">
+            <summary>
+            Gets Main window setup title.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.ReadyToInstallPage.PanelTitleName">
+            <summary>
+            Gets ready to install panel title.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.SelectPackage">
+            <summary>
+            Interaction logic for SelectImportPackage.xaml.
+            </summary>
+            <summary>
+            SelectPackage
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.SelectPackage.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.SelectPackage.SelectedPlugin">
+            <summary>
+            Gets the SelectedPlugin.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.SelectPackage.btnOK_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Click event for btnOk.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.SelectPackage.lvPackages_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>
+            SelectionChanged event lvPackages.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.SelectPackage.UserControl_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            UserControl Loaded event.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.SelectPackage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.SelectPackage.selectedPluginItem">
+            <summary>
+            Gets or Sets plugin items.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.SelectPackage.GoNext">
+            <summary>
+            Go next wizard.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.SelectPackage.GoBack">
+            <summary>
+            Go back wizard.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.SelectPackage.GoBackFowardStateChanged">
+            <summary>
+            BackForward state change.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.SelectPackage.CanGoBack">
+            <summary>
+            Gets or Sets boolean property for go Back.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.SelectPackage.CanGoFoward">
+            <summary>
+            Gets or Sets boolean property for go Forward.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.SelectPackage.HideNext">
+            <summary>
+            Gets or Sets Hide next visibility.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.SelectPackage.HideBack">
+            <summary>
+            Gets or Sets Hide Back visibility.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.SelectPackage.WindowTitle">
+            <summary>
+            Gets package deployer setup window title.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.SelectPackage.PanelTitleName">
+            <summary>
+            Gets multiple package imports panel title.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.StartWelcome">
+            <summary>
+            Interaction logic for StartWelcome.xaml.
+            </summary>
+            <summary>
+            StartWelcome
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.StartWelcome.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.StartWelcome.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.StartWelcome.GoNext">
+            <summary>
+            Go next wizard.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.StartWelcome.GoBack">
+            <summary>
+            Go back wizard.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.StartWelcome.GoBackFowardStateChanged">
+            <summary>
+            BackForward state change.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.StartWelcome.CanGoBack">
+            <summary>
+            Gets or Sets boolean property for go Back.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.StartWelcome.CanGoFoward">
+            <summary>
+            Gets or Sets boolean property for go Forward.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.StartWelcome.HideNext">
+            <summary>
+            Gets or Sets Hide next visibility.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.StartWelcome.HideBack">
+            <summary>
+            Gets or Sets Hide Back visibility.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.StartWelcome.WindowTitle">
+            <summary>
+            Gets window title.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.StartWelcome.PanelTitleName">
+            <summary>
+            Gets window panel title.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.VerifyCrmState">
+            <summary>
+            Interaction logic for VerifyCrmState.xaml.
+            </summary>
+            <summary>
+            VerifyCrmState
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.VerifyCrmState.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.VerifyCrmState.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.VerifyCrmState.GoNext">
+            <summary>
+            Go next wizard.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.VerifyCrmState.GoBack">
+            <summary>
+            Go back wizard.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.VerifyCrmState.GoBackFowardStateChanged">
+            <summary>
+            BackForward state change.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.VerifyCrmState.CanGoBack">
+            <summary>
+            Gets or Sets boolean property for go Back.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.VerifyCrmState.CanGoFoward">
+            <summary>
+            Gets or Sets boolean property for go Forward.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.VerifyCrmState.HideNext">
+            <summary>
+            Gets or Sets Hide next visibility.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.VerifyCrmState.HideBack">
+            <summary>
+            Gets or Sets Hide Back visibility.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.VerifyCrmState.WindowTitle">
+            <summary>
+            Gets configuration options Window title.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.VerifyCrmState.PanelTitleName">
+            <summary>
+            Gets configuration options panel title.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.WelcomePage">
+            <summary>
+            Interaction logic for WelcomePage.xaml.
+            </summary>
+            <summary>
+            WelcomePage
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.WelcomePage.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.WelcomePage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.WelcomePage.GoNext">
+            <summary>
+            Go next wizard.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.WelcomePage.GoBack">
+            <summary>
+            Go back wizard.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.WelcomePage.GoBackFowardStateChanged">
+            <summary>
+            BackForward state change.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.WelcomePage.CanGoBack">
+            <summary>
+            Gets or Sets boolean property for go Back.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.WelcomePage.CanGoFoward">
+            <summary>
+            Gets or Sets boolean property for go Forward.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.WelcomePage.HideNext">
+            <summary>
+            Gets or Sets Hide next visibility.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.WelcomePage.HideBack">
+            <summary>
+            Gets or Sets Hide Back visibility.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.WelcomePage.WindowTitle">
+            <summary>
+            Gets Main window setup title.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.WelcomePage.PanelTitleName">
+            <summary>
+            Gets welcome to setup panel title.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Welcome">
+            <summary>
+            Interaction logic for Welcome.xaml.
+            </summary>
+            <summary>
+            Welcome
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Welcome.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Welcome.viewEULAagreement_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Invoke the click event  
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>		
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Welcome.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Welcome.Continue">
+            <summary>
+            Gets or Sets continue.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.App">
+            <summary>
+            Interaction logic for App.xaml.
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.App.OnStartup(System.Windows.StartupEventArgs)">
+            <summary>
+            Raises the System.Windows.Application.Startup event.
+            </summary>
+            <param name="e">A System.Windows.StartupEventArgs that contains the event data.</param>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.App.CoreData">
+            <summary>
+            Core configuration data. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.App.ConnectionObjects">
+            <summary>
+            Gets or Sets connection objects.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.MainWindow">
+            <summary>
+            Interaction logic for MainWindow.xaml.
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.MainWindow.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.MainWindow.InstallerCustomizedExentions_ImportCustomizationsLoaded(System.Object,System.EventArgs)">
+            <summary>
+            Raised when the Customization Libs are done loading. 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.MainWindow.Frame_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Load panels and set things up.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.MainWindow.Frame_Navigated(System.Object,System.Windows.Navigation.NavigationEventArgs)">
+            <summary>
+            Set the Title.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.MainViewModel">
+            <summary>
+            View Model for Main View.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.MainViewModel.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.MainViewModel.ViewModelMethod">
+            <summary>
+            Sample ViewModel method; this method is invoked by a Behaviour that is associated with it in the View.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.MainViewModel.ViewModelProperty">
+            <summary>
+            Sample ViewModel property; this property is used in the view to display its value using a Binding.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="E:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.ViewModels.MainViewModel.PropertyChanged">
+            <summary>
+            Default Event Hook for INotifyPropertyChanged.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.MainView">
+            <summary>
+            MainView
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.MainView.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xrm.Tooling.PackageDeployment.CRMPackageDeployer.Views.MainView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>
