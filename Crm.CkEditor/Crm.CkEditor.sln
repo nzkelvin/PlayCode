@@ -45,6 +45,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PackageDeployer", "PackageD
 		PackageDeployer\PackageDeployer.exe = PackageDeployer\PackageDeployer.exe
 		PackageDeployer\PackageDeployer.exe.config = PackageDeployer\PackageDeployer.exe.config
 		PackageDeployer\PackageDeployer.XML = PackageDeployer\PackageDeployer.XML
+		PackageDeployer\readme.txt = PackageDeployer\readme.txt
 		PackageDeployer\System.IdentityModel.dll = PackageDeployer\System.IdentityModel.dll
 		PackageDeployer\System.Windows.Interactivity.dll = PackageDeployer\System.Windows.Interactivity.dll
 		PackageDeployer\System.Windows.Interactivity.xml = PackageDeployer\System.Windows.Interactivity.xml
