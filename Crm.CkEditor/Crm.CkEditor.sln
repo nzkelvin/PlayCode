@@ -53,7 +53,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PackageDeployer", "PackageD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PkgFolder", "PkgFolder", "{449F4C23-4DE7-4BE2-B8A5-0B94BB39BFAE}"
 	ProjectSection(SolutionItems) = preProject
+		PackageDeployer\PkgFolder\CRMRESTBuilder_2_0_2_0_managed.zip = PackageDeployer\PkgFolder\CRMRESTBuilder_2_0_2_0_managed.zip
 		PackageDeployer\PkgFolder\ImportConfig.xml = PackageDeployer\PkgFolder\ImportConfig.xml
+		PackageDeployer\PkgFolder\MetadataBrowser_2_0_1_1_managed.zip = PackageDeployer\PkgFolder\MetadataBrowser_2_0_1_1_managed.zip
+		PackageDeployer\PkgFolder\RibbonWorkbench2013_2_0_0_7_managed.zip = PackageDeployer\PkgFolder\RibbonWorkbench2013_2_0_0_7_managed.zip
 	EndProjectSection
 EndProject
 Global
