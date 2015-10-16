@@ -1,4 +1,12 @@
-﻿namespace Library1
+﻿#if INTERACTIVE
+#else
+module JumpStart
+#endif
 
-type Class1() = 
-    member this.X = "F#"
+let x = 42
+let hi = "hello"
+
+let SayHiTo me =
+    printfn "Hi, %s" me
+
+let Square x = x * x
