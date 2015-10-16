@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfi0JjrOBC15yUa5_1YvyvyQWoNS8WMZk"></script>-->
+    <script src="GoogleJsapi.js"></script>
+    <script>
+        function PopulateAddresses() {
+
+            //If google library not loaded then settime
+            if (google == null) {
+                google.load("maps", "3", { other_params: "libraries=places&sensor=false", "callback": PopulateAddresses });
+                setTimeout(PopulateAddresses, 2000);
+                return;
+            }
+            //If google library loaded but google maps libray not loaded then add those and settime to recall same function again
+            if (google != null && google.maps == null) {
+                google.load("maps", "3", { other_params: "libraries=places&sensor=false", "callback": PopulateAddresses });
+                setTimeout(PopulateAddresses, 2000);
+                return;
+            }
+            //if google map places is undefined then recall function after some time..
+            if (google.maps.places == null) {
+                setTimeout(PopulateAddresses, 2000);
+                return;
+            }
+
+            //Get input control for Google places  
+            var autocomplete = new google.maps.places.Autocomplete(document.getElementById('address'));
+            
+            /* Set up event listener for place selection */
+            google.maps.event.addListener(autocomplete, 'place_changed', function () {
+                
+            });
+
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="address" />
+</body>
+</html>
