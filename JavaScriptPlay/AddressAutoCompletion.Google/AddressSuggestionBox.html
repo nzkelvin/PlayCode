@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Address Auto Completion</title>
+    <title>Place Autocomplete Address Form</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <style>
@@ -125,6 +125,15 @@
             country: 'long_name',
             postal_code: 'short_name'
         };
+        var crmDataMap = {
+            street_number: 'address1_line1',
+            route: 'address1_line2',
+            sublocality_level_1: 'address1_line3',
+            locality: 'address1_city',
+            administrative_area_level_1: 'address1_stateorprovince',
+            country: 'address1_country',
+            postal_code: 'address1_postalcode'
+        }
 
         function initAutocomplete() {
             // Create the autocomplete object, restricting the search to geographical
@@ -148,6 +157,11 @@
                 document.getElementById(component).disabled = false;
             }
 
+            // CRM Page
+            var crmPage = window.parent.Xrm.Page;
+            if (crmPage == null)
+                return;
+
             // Get each component of the address from the place details
             // and fill the corresponding field on the form.
             for (var i = 0; i < place.address_components.length; i++) {
@@ -155,8 +169,15 @@
                 if (componentForm[addressType]) {
                     var val = place.address_components[i][componentForm[addressType]];
                     document.getElementById(addressType).value = val;
+
+                    // CRM integration
+                    var crmField = crmPage.getAttribute(crmDataMap[addressType]);
+                    if (crmField != null)
+                        crmField.setValue(val);
                 }
             }
+
+            crmPage.data.entity.save();
         }
         // [END region_fillform]
 
