@@ -10,6 +10,8 @@ var componentForm = {
     country: 'long_name',
     postal_code: 'short_name'
 };
+// todo: comment about the map
+// todo: video
 var crmDataMap = {
     street_number: 'address1_line1',
     route: 'address1_line2',
