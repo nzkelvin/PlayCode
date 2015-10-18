@@ -33,6 +33,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="AddressSuggestionBox.html" />
+    <Content Include="AddressSuggestion.js" />
+    <Content Include="Kelvin.Common.js" />
+    <Content Include="XrmPageTemplate.js" />
+    <Content Include="XrmPageTemplate2011.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
