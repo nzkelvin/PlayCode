@@ -121,3 +121,9 @@ function geolocate() {
     }
 }
 // [END region_geolocation]
+
+var imported = document.createElement('script');
+imported.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCfi0JjrOBC15yUa5_1YvyvyQWoNS8WMZk&libraries=places&callback=initAutocomplete";
+imported.defer = "defer";
+imported.async = "async";
+document.body.appendChild(imported);
