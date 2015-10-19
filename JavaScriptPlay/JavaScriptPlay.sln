@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavaScriptPlay", "JavaScrip
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressAutoCompletion.Google", "AddressAutoCompletion.Google\AddressAutoCompletion.Google.csproj", "{2DCD4FEF-C854-4344-9B1F-2D3131EBB3C7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Packages", "Packages", "{1A4D231A-B14C-4EDB-960C-6AF621853821}"
+	ProjectSection(SolutionItems) = preProject
+		Packages\AddressAutoCompletion_1_0_151019_2.zip = Packages\AddressAutoCompletion_1_0_151019_2.zip
+		Packages\AddressAutoCompletion_1_0_151019_2_managed.zip = Packages\AddressAutoCompletion_1_0_151019_2_managed.zip
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
