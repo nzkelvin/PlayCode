@@ -21,9 +21,19 @@ var crmDataMap = {
     country: 'address1_country',
     postal_code: 'address1_postalcode'
 };
+//var googleKey = "";
 
 function initAutocomplete() {
-    crmDataMap = Kelvin.Common.Crm.parseWebResourceCustomParameterToJson();
+    //var googleKey = "";
+    var paramData = Kelvin.Common.Crm.parseWebResourceCustomParameterToJson();
+    if (paramData != null && paramData.map != null)
+        crmDataMap = paramData.map;
+
+    //if (paramData != null && paramData.googlekey != null)
+    //    googleKey = paramData.googlekey;
+    
+    initAddressFields();
+    //importGoogleJs(googleKey);
 
     // Create the autocomplete object, restricting the search to geographical
     // location types.
@@ -34,8 +44,6 @@ function initAutocomplete() {
     // When the user selects an address from the dropdown, populate the address
     // fields in the form.
     autocomplete.addListener('place_changed', fillInAddress);
-
-    initAddressFields();
 }
 
 function initAddressFields() {
@@ -122,8 +130,18 @@ function geolocate() {
 }
 // [END region_geolocation]
 
-var imported = document.createElement('script');
-imported.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCfi0JjrOBC15yUa5_1YvyvyQWoNS8WMZk&libraries=places&callback=initAutocomplete";
-imported.defer = "defer";
-imported.async = "async";
-document.body.appendChild(imported);
+(function importGoogleJs(googleKey) {
+    var googleKey = "";
+    var paramData = Kelvin.Common.Crm.parseWebResourceCustomParameterToJson();
+    if (paramData != null && paramData.googlekey != null)
+        googleKey = paramData.googlekey;
+
+    var imported = document.createElement('script');
+    var googleLibSrc = "https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete";
+    if (googleKey && googleKey.trim())
+        googleLibSrc = googleLibSrc + "&key=" + googleKey;
+    imported.src = googleLibSrc;
+    imported.defer = "defer";
+    imported.async = "async";
+    document.body.appendChild(imported);
+}());
