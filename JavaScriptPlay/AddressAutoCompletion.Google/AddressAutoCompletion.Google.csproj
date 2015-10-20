@@ -35,6 +35,7 @@
     <Content Include="AddressSuggestionBox.html" />
     <Content Include="AddressSuggestion.js" />
     <Content Include="Kelvin.Common.js" />
+    <Content Include="readme.txt" />
     <Content Include="XrmPageTemplate.js" />
     <Content Include="XrmPageTemplate2011.js" />
   </ItemGroup>
