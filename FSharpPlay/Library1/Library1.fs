@@ -15,4 +15,10 @@ let Greeting name =
 let SayHiTo me =
     printfn "Hi, %s" (Greeting me)
 
-let Square x = x * x
+//let Square x = x * x
+
+let PrintNumbers min max =
+    let square x =
+        x * x
+    for x in min..max do
+        printfn "%i %i" x (square x)

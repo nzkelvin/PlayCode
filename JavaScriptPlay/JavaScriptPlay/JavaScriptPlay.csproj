@@ -33,6 +33,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="Event.js" />
+    <Content Include="IdentifyTypes.js" />
+    <Content Include="Inheritance.js" />
     <Content Include="NameSpace.js" />
     <Content Include="OO.js" />
     <Content Include="Test.html" />
