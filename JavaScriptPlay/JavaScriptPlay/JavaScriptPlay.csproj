@@ -37,6 +37,7 @@
     <Content Include="Inheritance.js" />
     <Content Include="NameSpace.js" />
     <Content Include="OO.js" />
+    <Content Include="Reflection.js" />
     <Content Include="Test.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
