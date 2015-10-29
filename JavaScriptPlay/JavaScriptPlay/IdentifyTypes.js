@@ -75,7 +75,7 @@ var k$ = k$ || {
         var instance = new ClassFirst();
 
         console.log(typeof instance);
-        console.log(typeof instance == 'ClassFirst');
+        console.log(typeof instance == 'ClassFirst'); //typeof() will work too
         console.log(instance instanceof Object);
         console.log(instance instanceof ClassFirst);
         console.log(instance instanceof ClassSecond);
