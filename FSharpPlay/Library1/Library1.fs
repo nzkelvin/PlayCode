@@ -22,3 +22,10 @@ let PrintNumbers min max =
         x * x
     for x in min..max do
         printfn "%i %i" x (square x)
+
+let RandomPosition() = 
+    let r = new System.Random()
+    r.NextDouble(), r.NextDouble()
+
+open System.IO
+let files = Directory.GetFiles(@"c:\windows", "*.exe")
