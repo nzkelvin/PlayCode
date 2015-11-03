@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpPlay.Fundamentals.Grades
 {
-    class GradeBook
+    public class GradeBook
     {
     }
 }

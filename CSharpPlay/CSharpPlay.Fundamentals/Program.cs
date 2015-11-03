@@ -10,7 +10,9 @@ namespace CSharpPlay.Fundamentals
     {
         static void Main(string[] args)
         {
-            FlowControl.Switching();
+            EventRedux.EventDemo();
+
+            //FlowControl.Switching();
 
             //TypesAndAssemblies.Immutable();
 

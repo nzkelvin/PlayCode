@@ -59,6 +59,10 @@ var Xrm = {
         },
         getAttribute: function (attributeName) {
 
+        },
+        getControl: function (id)
+        {
+
         }
     }
 };
@@ -66,9 +70,14 @@ var Xrm = {
 // ENTITY =====================================================
 
 function Entity() {
-
+    attributes: [];
 }
 Entity.prototype.save = function () { };
+Entity.prototype.getDataXml = function () { };
+Entity.prototype.getEntityName = function () { };
+Entity.prototype.getId = function () { };
+Entity.prototype.getIsDirty = function () { };
+Entity.prototype.addOnSave = function () { };
 
 function _entity() {
     return {
