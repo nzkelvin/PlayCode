@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace CSharpPlay.Fundamentals
 {
+    /// <summary>
+    /// todo: use buying stock scenario
+    /// todo: extend to func
+    /// todo: record tutorial
+    /// </summary>
     public class EventRedux
     {
         private static int THRESHOLD = 5;
