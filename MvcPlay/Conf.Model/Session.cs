@@ -8,6 +8,7 @@ namespace Conf.Model
 {
     public class Session
     {
+        public int Id { get; set; } // Key field
         public string Name { get; set; }
     }
 }

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>a5fe2c50-d838-4ec9-a032-59f96a956216</ProjectGuid>
+    <ProjectTypeGuids>{88A30576-7583-4F75-8136-5EFD2C14ADFF}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Crm.Workflow.CrmPackage</RootNamespace>
+    <AssemblyName>Crm.Workflow.CrmPackage</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <OutputFile>CrmPackage.zip</OutputFile>
+    <Name>CrmPackage</Name>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <RegisterPlugin Include="RegisterFile.crmregister">
+      <DisplayName>RegisterFile</DisplayName>
+      <UniqueName>new_RegisterFile</UniqueName>
+      <WebResourceType>NotSupported</WebResourceType>
+    </RegisterPlugin>
+    <Folder Include="WebResources" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Plugins\Plugins.csproj">
+      <Name>Plugins</Name>
+      <Project>{716519fd-6819-402f-83f6-239d932c0c4a}</Project>
+      <Private>True</Private>
+      <SilverlightApplication>False</SilverlightApplication>
+    </ProjectReference>
+    <ProjectReference Include="..\SilverlightApplication\SilverlightApplication.csproj">
+      <Name>SilverlightApplication</Name>
+      <Project>{6eefad02-2b10-4bb3-8c18-bc908862a6dc}</Project>
+      <Private>False</Private>
+      <SilverlightApplication>True</SilverlightApplication>
+      <SilverlightVersion>v5.0</SilverlightVersion>
+    </ProjectReference>
+    <ProjectReference Include="..\Workflow\Workflow.csproj">
+      <Name>Workflow</Name>
+      <Project>{87f12896-7041-4b6c-be28-161fd9b4c8dc}</Project>
+      <Private>True</Private>
+      <SilverlightApplication>False</SilverlightApplication>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\CRM\Microsoft.CrmDeveloperTools.12.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+			 Other similar extension points exist, see Microsoft.Common.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>
