@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Crm.Console
+namespace Crm.ConsoleApp
 {
-    public class Program
+    class Program
     {
         static void Main(string[] args)
         {
@@ -18,10 +18,9 @@ namespace Crm.Console
             var request = new WhoAmIRequest();
             var response = xrm.Execute(request);
 
-            System.Console.WriteLine(response.Results.FirstOrDefault());
+            Console.WriteLine(response.Results.FirstOrDefault());
 
-            System.Console.ReadKey();
-            
+            Console.ReadKey();
         }
     }
 }
