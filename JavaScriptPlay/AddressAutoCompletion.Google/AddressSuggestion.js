@@ -11,8 +11,17 @@ var componentForm = {
     postal_code: 'short_name'
 };
 // todo: comment about the map
-// todo: video
-var crmDataMap = {
+var addrDataToHtmlCtrlMap = {
+    premise: 'street_number',
+    street_number: 'street_number',
+    route: 'route',
+    sublocality_level_1: 'sublocality_level_1',
+    locality: 'locality',
+    administrative_area_level_1: 'administrative_area_level_1',
+    country: 'country',
+    postal_code: 'postal_code'
+};
+var htmlCtrlToCrmMap = {
     street_number: 'address1_line1',
     route: 'address1_line2',
     sublocality_level_1: 'address1_line3',
@@ -21,19 +30,13 @@ var crmDataMap = {
     country: 'address1_country',
     postal_code: 'address1_postalcode'
 };
-//var googleKey = "";
 
 function initAutocomplete() {
-    //var googleKey = "";
     var paramData = Kelvin.Common.Crm.parseWebResourceCustomParameterToJson();
     if (paramData != null && paramData.map != null)
-        crmDataMap = paramData.map;
+        htmlCtrlToCrmMap = paramData.map;
 
-    //if (paramData != null && paramData.googlekey != null)
-    //    googleKey = paramData.googlekey;
-    
     initAddressFields();
-    //importGoogleJs(googleKey);
 
     // Create the autocomplete object, restricting the search to geographical
     // location types.
@@ -47,19 +50,19 @@ function initAutocomplete() {
 }
 
 function initAddressFields() {
-    var keys = Object.keys(crmDataMap);
+    var keys = Object.keys(htmlCtrlToCrmMap);
     var crmPage = window.parent.Xrm.Page;
     if (crmPage == null)
         return;
 
     for (var i = 0; i < keys.length; i++) {
-        var key = keys[i];
-        var element = document.getElementById(key);
-        
+        var webFieldId = keys[i];
+        var element = document.getElementById(webFieldId);
+
         if (element != null) {
-            var crmFieldName = crmDataMap[key];
+            var crmFieldName = htmlCtrlToCrmMap[webFieldId];
             var crmAttr = crmPage.getAttribute(crmFieldName);
-            
+
             if (crmAttr != null) {
                 element.value = crmAttr.getValue(); // load data from crm fields
 
@@ -91,22 +94,48 @@ function fillInAddress() {
     if (crmPage == null)
         return;
 
+    clearAllAddrCtrls();
+
     // Get each component of the address from the place details
     // and fill the corresponding field on the form.
     for (var i = 0; i < place.address_components.length; i++) {
         var addressType = place.address_components[i].types[0];
-        if (componentForm[addressType]) {
-            var val = place.address_components[i][componentForm[addressType]];
-            document.getElementById(addressType).value = val;
+        var webFieldId = addrDataToHtmlCtrlMap[addressType];
+        var addressValueForm = componentForm[addressType] || "long_name";
 
-            // CRM integration
-            var crmField = crmPage.getAttribute(crmDataMap[addressType]);
-            if (crmField != null)
-                crmField.setValue(val);
+        if (!webFieldId) //cannot find matching field id.
+            continue;
+
+        var val = place.address_components[i][addressValueForm];
+        if (!val) // is null / empty
+            continue;
+
+        var currentValue = document.getElementById(webFieldId).value;
+        if (currentValue) //both value exists
+        {
+            currentValue = currentValue + ", " + val;
+        }
+        else {
+            currentValue = val;
+        }
+        document.getElementById(webFieldId).value = currentValue;
+
+        // CRM integration
+        var crmField = crmPage.getAttribute(htmlCtrlToCrmMap[webFieldId]);
+        if (crmField != null) {
+            crmField.setValue(currentValue);
         }
     }
 
     document.getElementById("autocomplete").value = "";
+}
+
+function clearAllAddrCtrls() {
+    var ctrlIds = Object.keys(htmlCtrlToCrmMap);
+
+    for (var i = 0; i < ctrlIds.length; i++) {
+        document.getElementById(ctrlIds[i]).value = "";
+    }
 }
 // [END region_fillform]
 

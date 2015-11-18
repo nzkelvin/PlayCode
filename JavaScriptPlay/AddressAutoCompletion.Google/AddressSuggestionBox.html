@@ -19,40 +19,46 @@
     <style>
         #locationField, #controls {
             position: relative;
-            width: 480px;
+            width: 100%;
         }
 
         #autocomplete {
             position: absolute;
+            font-family: 'Segoe UI';
+            font-size: 12px;
             top: 0px;
             left: 0px;
             width: 99%;
         }
 
         .label {
-            text-align: right;
-            font-weight: bold;
-            width: 100px;
+            text-align: left;
+            font-family: 'Segoe UI';
+            width: 83px;
             color: #303030;
         }
 
         #address {
-            border: 1px solid #000090;
-            background-color: #f0f0ff;
-            width: 480px;
+            border: 0px;
+            background-color: transparent;
+            width: 100%;
             padding-right: 2px;
         }
 
             #address td {
-                font-size: 10pt;
+                font-size: 12px;
             }
 
         .field {
             width: 99%;
+            font-family: 'Segoe UI';
+            font-size: 12px;
+            border: none;
+            background-color: rgb(247, 247, 247);
         }
 
         .slimField {
-            width: 80px;
+            width: 15px;
         }
 
         .wideField {
@@ -75,26 +81,38 @@
     <table id="address">
         <tr>
             <td class="label">Street address</td>
-            <td class="slimField">
+            <td class="wideField">
                 <input class="field" id="street_number"></input>
             </td>
-            <td class="wideField" colspan="2">
+
+        </tr>
+        <tr>
+            <td class="label"></td>
+            <td class="wideField">
                 <input class="field" id="route"></input>
             </td>
         </tr>
         <tr>
+            <td class="label">Suburb</td>
+            <td class="wideField">
+                <input class="field" id="sublocality_level_1"></input>
+            </td>
+        </tr>
+        <tr>
             <td class="label">City</td>
-            <td class="wideField" colspan="3">
+            <td class="wideField">
                 <input class="field" id="locality"></input>
             </td>
         </tr>
         <tr>
             <td class="label">State</td>
-            <td class="slimField">
+            <td class="wideField">
                 <input class="field"
                        id="administrative_area_level_1"></input>
             </td>
-            <td class="label">Zip code</td>
+        </tr>
+        <tr>
+            <td class="label">Postal code</td>
             <td class="wideField">
                 <input class="field" id="postal_code"></input>
             </td>
