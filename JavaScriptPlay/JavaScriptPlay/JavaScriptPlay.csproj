@@ -39,6 +39,7 @@
     <Content Include="OO.js" />
     <Content Include="Reflection.js" />
     <Content Include="Template.js" />
+    <Content Include="TimerSetInterval.js" />
     <Content Include="Test.html" />
     <Content Include="Property.js" />
   </ItemGroup>
