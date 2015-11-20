@@ -1,4 +1,4 @@
-﻿"use strict"
+﻿"use strict";
 
 var k$ = k$ || {
     MyClass: function (name) {
