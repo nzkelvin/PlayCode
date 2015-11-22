@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Iterator.Con
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpPlay.Fundamentals.Grades", "CSharpPlay.Fundamentals.Grades\CSharpPlay.Fundamentals.Grades.csproj", "{BB80EA9F-E200-48C6-A810-4CBD79006989}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplicationAsync", "WpfApplicationAsync\WpfApplicationAsync.csproj", "{3FE41051-26EE-495F-AB3B-87782888B00F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{BB80EA9F-E200-48C6-A810-4CBD79006989}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB80EA9F-E200-48C6-A810-4CBD79006989}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB80EA9F-E200-48C6-A810-4CBD79006989}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FE41051-26EE-495F-AB3B-87782888B00F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FE41051-26EE-495F-AB3B-87782888B00F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FE41051-26EE-495F-AB3B-87782888B00F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FE41051-26EE-495F-AB3B-87782888B00F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
