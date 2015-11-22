@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Crm.ConsoleApp
 {
+    // todo: encryption
     class Program
     {
         private const string _connStrName = "Xrm";
