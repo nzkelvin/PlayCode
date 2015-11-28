@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocabBook.DataModel.Sql", "VocabBook.DataModel.Sql\VocabBook.DataModel.Sql.csproj", "{16EA7682-61CE-45D8-8E52-1DFC74B8ABF3}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "VocabBook.Database.Sql", "VocabBook.Database.Sql\VocabBook.Database.Sql.sqlproj", "{13973168-0F0C-4BFE-B957-060D500DD16F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocabBook.ConsoleApp", "VocabBook.Console\VocabBook.ConsoleApp.csproj", "{82E64C4C-00E5-4CF8-ADC8-2738A5378869}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataFirstModeling", "DataFirstModeling\DataFirstModeling.csproj", "{CA09F3EC-01F3-4342-A08D-883A35514D06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{82E64C4C-00E5-4CF8-ADC8-2738A5378869}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82E64C4C-00E5-4CF8-ADC8-2738A5378869}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82E64C4C-00E5-4CF8-ADC8-2738A5378869}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA09F3EC-01F3-4342-A08D-883A35514D06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA09F3EC-01F3-4342-A08D-883A35514D06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA09F3EC-01F3-4342-A08D-883A35514D06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA09F3EC-01F3-4342-A08D-883A35514D06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
