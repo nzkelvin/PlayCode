@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpPlay.Console", "FSharpPlay.Console\FSharpPlay.Console.fsproj", "{C46429E2-F291-47C4-83FD-CB3BB49DA8AF}"
 EndProject
