@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Quiz Board</title>
+    <style>
+        div.questionLabel {
+            position: absolute;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(document).ready(
+            function () {
+                var board = new Kode.QuizBoard(10, $("#questionLabel"));
+                board.questions = board.questions.concat([
+                                                            "How many children do De Carlos have?",
+                                                            "What's Ru's fav question?",
+                                                            "question 3",
+                                                            "question 4",
+                                                            "Best car?"
+                                                        ]);
+
+                $("#nextButton").click(function () {
+                    board.initBoard();
+                });
+            }
+        );
+
+        //jQueryHelper
+        jQuery.fn.center = function () {
+            this.css("position", "absolute");
+            this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) +
+                                                        $(window).scrollTop()) + "px");
+            this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) +
+                                                        $(window).scrollLeft()) + "px");
+            return this;
+        }
+
+        var Kode = Kode != "undefined" && Kode ? Kode : {
+            QuizBoard: function (maxNumOfSuffles, questionLabel) {
+                this.numOfSuffles = 0;
+                this.maxNumOfSuffles = maxNumOfSuffles;
+                this.suffleQuestionsIntervalId = null;
+                this.questions = new Array();
+                this.questionLabel = questionLabel
+            }
+        }
+
+        Kode.QuizBoard.prototype.initBoard = function () {
+            var that = this;
+            this.numOfSuffles = 0;
+            this.suffleQuestionsIntervalId = setInterval(function () { that.suffleQuestions() }, 100);
+        }
+
+        Kode.QuizBoard.prototype.suffleQuestions = function () {
+            var questionNumber = Math.floor(Math.random() * this.questions.length);
+            this.questionLabel.text(this.questions[questionNumber]);
+            this.questionLabel.css({ 
+                "top": Math.floor(Math.random() * ($(document).height() - 15)) + "px",
+                "left": Math.floor(Math.random() * ($(document).width() - 100)) + "px"
+                });
+            this.numOfSuffles++;
+            if (this.numOfSuffles > this.maxNumOfSuffles) {
+                clearInterval(this.suffleQuestionsIntervalId);
+                this.questionLabel.center();
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="questionLabel" class="questionLabel">Question 1</div>
+    <!--<input type="button" id="nextButton" value="Next" />-->
+    <button type="button" id="nextButton">Next</button>
+</body>
+</html>
