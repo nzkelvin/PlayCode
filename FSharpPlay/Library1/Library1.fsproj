@@ -45,6 +45,7 @@
     <Compile Include="JumpStart.fs" />
     <None Include="Script.fsx" />
     <Compile Include="Module3.fs" />
+    <Compile Include="Module4.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
