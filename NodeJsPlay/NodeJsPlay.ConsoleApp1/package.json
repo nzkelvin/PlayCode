@@ -6,5 +6,8 @@
   "author": {
     "name": "Kelvin",
     "email": ""
+  },
+  "dependencies": {
+    "underscore": "^1.8.3"
   }
 }
