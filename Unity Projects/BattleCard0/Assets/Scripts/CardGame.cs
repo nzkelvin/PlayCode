@@ -18,7 +18,7 @@ public class CardGame : MonoBehaviour {
     public int CardType;
     public string CardName;
 
-	// Use this for initialization
+	// Use this for initialization.
 	void Start () {
         Hand = new GameObject[HandSize];
         for (int x = 0; x < HandSize; x++)
