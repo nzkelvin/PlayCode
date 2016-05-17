@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -26,6 +26,7 @@
     <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
     <TargetFrameworkProfile />
     <WebGreaseLibPath>..\..\Framework</WebGreaseLibPath>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -858,6 +859,8 @@
     <Compile Include="Areas\Products\ProductsAreaRegistration.cs" />
     <Compile Include="Areas\Products\ViewModels\ProductImageGalleryViewModel.cs" />
     <Compile Include="Areas\Products\ViewModels\ProductViewModel.cs" />
+    <Compile Include="Areas\Registration\Controllers\RegisterController.cs" />
+    <Compile Include="Areas\Registration\RegistrationAreaRegistration.cs" />
     <Compile Include="Areas\Retail\Pages\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1789,6 +1792,9 @@
     <Content Include="Areas\Setup\css\setup.css" />
     <Content Include="Areas\Setup\images\adx-weblogo-220-100-V2.png" />
     <Content Include="Areas\Setup\js\setup.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="Controls\BlogsPanel.ascx" />
     <Content Include="Controls\EventsPanel.ascx" />
     <Content Include="Controls\ForumsPanel.ascx" />
@@ -1833,6 +1839,12 @@
     <Content Include="Pages\WebTemplate.aspx" />
     <Content Include="Pages\WebLinkNavigationPage.aspx" />
     <Content Include="Pages\WebTemplateNoMaster.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Views\Shared\Breadcrumbs.iframe.ascx" />
     <Content Include="Views\Shared\FooterCopy.iframe.ascx" />
     <Content Include="Views\Shared\FooterMenu.iframe.ascx" />
@@ -1900,6 +1912,10 @@
     <Content Include="Areas\Marketing\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Marketing\Views\web.config" />
     <Content Include="Areas\Marketing\Views\Marketing\Success.cshtml" />
+    <Content Include="Areas\Registration\Views\web.config" />
+    <Content Include="Areas\Registration\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Registration\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Registration\Views\Register\Index.cshtml" />
     <None Include="AzureStartup\Startup.ps1">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -2002,6 +2018,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Pages\WebForm.aspx" />
@@ -2083,6 +2101,7 @@
     <Folder Include="Areas\Forums\Controllers\" />
     <Folder Include="Areas\KnowledgeBase\Views\Shared\" />
     <Folder Include="Areas\Marketing\Models\" />
+    <Folder Include="Areas\Registration\Models\" />
     <Folder Include="Areas\Social\Models\" />
     <Folder Include="Areas\Social\Views\Shared\" />
     <Folder Include="images\prettyPhoto\" />
