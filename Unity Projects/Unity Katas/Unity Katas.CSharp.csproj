@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\MovementRotation_QuaternionLookAt.cs" />
     <Compile Include="Assets\Scripts\RigidBody_ApplyForce.cs" />
   </ItemGroup>
