@@ -1,5 +1,0 @@
-﻿prettyPhoto
-Lightbox clone for jQuery
-Version: 3.1.5
-Copyright (c) Stephane Caron
-Licensed under the Creative Commons Attribution 2.5 Generic License (http://creativecommons.org/licenses/by/2.5/)
