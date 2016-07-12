@@ -10,11 +10,13 @@ namespace CSharpPlay.Fundamentals
     {
         static void Main(string[] args)
         {
-            EventRedux.EventDemo();
+            //EventRedux.EventDemo();
 
             //FlowControl.Switching();
 
             //TypesAndAssemblies.Immutable();
+
+            StringComposing.Run();
 
             Console.Read();
         }
