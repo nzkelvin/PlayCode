@@ -19,7 +19,9 @@ namespace CSharpPlay.Fundamentals
 
             //StringComposing.Run();
 
-            CodeAsCodeCodeAsData.Run();
+            //CodeAsCodeCodeAsData.Run();
+
+            LambdaExpression.Run();
             
 
             Console.Read();
