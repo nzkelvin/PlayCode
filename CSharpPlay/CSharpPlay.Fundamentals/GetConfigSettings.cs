@@ -11,6 +11,7 @@ namespace CSharpPlay.Fundamentals
     {
         public static void Run()
         {
+            // http://www.codeproject.com/Articles/616065/Why-Where-and-How-of-NET-Configuration-Files
             Console.WriteLine(Properties.Settings.Default.MyApplicationSetting);
             Console.WriteLine(ConfigurationManager.AppSettings["MyAppSetting"]);
         }
