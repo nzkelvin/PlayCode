@@ -21,8 +21,9 @@ namespace CSharpPlay.Fundamentals
 
             //CodeAsCodeCodeAsData.Run();
 
-            LambdaExpression.Run();
-            
+            //LambdaExpression.Run();
+
+            GetConfigSettings.Run();
 
             Console.Read();
         }
