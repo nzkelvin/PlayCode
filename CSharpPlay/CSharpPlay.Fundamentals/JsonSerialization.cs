@@ -62,6 +62,11 @@ namespace CSharpPlay.Fundamentals
             fs.Close();
         }
 
+        /// <summary>
+        /// Serializer: Oject <-> Stream
+        /// StreamReader: Stream -> String
+        /// Stream: Just a storage plus a pointer
+        /// </summary>
         public static void DeserializeFromFile()
         {
             var js = new DataContractJsonSerializer(typeof(Spell));
