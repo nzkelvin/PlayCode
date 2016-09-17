@@ -28,7 +28,9 @@ namespace CSharpPlay.Fundamentals
             //JsonSerialization.Run();
 
             //JsonSerialization.SerializeToFile();
-            JsonSerialization.DeserializeFromFile();
+            //JsonSerialization.DeserializeFromFile();
+
+            CallWebApi.GetLocationInfo();
 
             Console.Read();
         }
