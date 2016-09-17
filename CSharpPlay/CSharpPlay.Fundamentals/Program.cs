@@ -23,9 +23,13 @@ namespace CSharpPlay.Fundamentals
 
             //LambdaExpression.Run();
 
-            GetConfigSettings.Run();
+            //GetConfigSettings.Run();
+
+            JsonSerialization.Run();
 
             Console.Read();
         }
     }
+
+
 }
