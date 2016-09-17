@@ -36,6 +36,43 @@ namespace CSharpPlay.Fundamentals
             sr.Close();
             ms.Close();
         }
+
+        public static void SerializeToFile()
+        {
+            Spell frostShock = new Spell()
+            {
+                cast = "Instance",
+                cooldown = "6 sec cooldown",
+                description = "Instantly shocks an enemy with frost...",
+                icon = "spell_frost_frostshock",
+                id = 8056,
+                name = "Frost Shock",
+                cost = "21% of base mana",
+                range = "25 yd range"
+            };
+
+            var js = new DataContractJsonSerializer(typeof(Spell));
+            FileStream fs = new FileStream("spell.json", FileMode.OpenOrCreate);
+            js.WriteObject(fs, frostShock);
+
+            fs.Position = 0;
+            StreamReader sr = new StreamReader(fs);
+            Console.WriteLine(sr.ReadToEnd());
+            sr.Close();
+            fs.Close();
+        }
+
+        public static void DeserializeFromFile()
+        {
+            var js = new DataContractJsonSerializer(typeof(Spell));
+            var fs = new FileStream("spell.json", FileMode.Open);
+
+            var frostStock = (Spell)js.ReadObject(fs);
+            fs.Close();
+
+            Console.WriteLine($"cast: {frostStock.cast}");
+            Console.WriteLine($"cooldown: { frostStock.cooldown}");
+        }
     }
 
     [DataContract]

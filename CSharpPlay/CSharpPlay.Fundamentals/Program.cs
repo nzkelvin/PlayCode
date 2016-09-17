@@ -25,7 +25,10 @@ namespace CSharpPlay.Fundamentals
 
             //GetConfigSettings.Run();
 
-            JsonSerialization.Run();
+            //JsonSerialization.Run();
+
+            //JsonSerialization.SerializeToFile();
+            JsonSerialization.DeserializeFromFile();
 
             Console.Read();
         }
