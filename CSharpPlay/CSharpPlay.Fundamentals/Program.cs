@@ -30,7 +30,7 @@ namespace CSharpPlay.Fundamentals
             //JsonSerialization.SerializeToFile();
             //JsonSerialization.DeserializeFromFile();
 
-            CallWebApi.GetLocationInfo();
+            CallWebApi.GetWeatherInfo();
 
             Console.Read();
         }

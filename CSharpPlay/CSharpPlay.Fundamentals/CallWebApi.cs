@@ -27,7 +27,7 @@ namespace CSharpPlay.Fundamentals
             }
         }
 
-        public static void GetLocationInfo()
+        public static void GetWeatherInfo()
         {
             using (var client = new HttpClient())
             {
@@ -38,20 +38,26 @@ namespace CSharpPlay.Fundamentals
                 if (response.IsSuccessStatusCode)
                 {
                     // Read as Stream doesn't work
-                    var result = response.Content.ReadAsStringAsync().Result;
-                    // StreamWriter.Write() doesn't work
-                    byte[] byteArray = Encoding.UTF8.GetBytes(result);
+                    var respContent = response.Content.ReadAsStringAsync().Result;
+                    byte[] byteArray = Encoding.UTF8.GetBytes(respContent);
                     var stream = new MemoryStream(byteArray);
+
+                    //// An alternative way to convert a string to stream.
+                    //var stream = new MemoryStream();
+                    //var sw = new StreamWriter(stream);
+                    //sw.Write(respContent);
+                    //sw.Flush(); //Don't forget!!!
+                    //stream.Position = 0;
 
                     //// Debugging code
                     //var sr = new StreamReader(stream);
                     //var output = sr.ReadToEnd();
                     //stream.Position = 0;
 
-                    var js = new DataContractJsonSerializer(typeof(RootObject[]));
-                    var location = (RootObject[])js.ReadObject(stream);
+                    var js = new DataContractJsonSerializer(typeof(Weather[]));
+                    var weather = (Weather[])js.ReadObject(stream);
 
-                    Console.WriteLine(location[0].Temperature.Metric.Value);
+                    Console.WriteLine(weather[0].Temperature.Metric.Value);
                 }
             }
         }
@@ -94,7 +100,7 @@ namespace CSharpPlay.Fundamentals
     }
 
     [DataContract]
-    public class RootObject
+    public class Weather
     {
         [DataMember]
         public string LocalObservationDateTime { get; set; }
