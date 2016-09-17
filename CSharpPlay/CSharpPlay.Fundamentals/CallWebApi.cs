@@ -27,6 +27,31 @@ namespace CSharpPlay.Fundamentals
             }
         }
 
+        public static void GetWeatherInfoSimple()
+        {
+            var uri = "http://apidev.accuweather.com/currentconditions/v1/349727.json?language=en&apikey=hoArfRosT1215";
+
+            using (var client = new HttpClient())
+            {
+                var response = client.GetAsync(uri).Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var stream = response.Content.ReadAsStreamAsync().Result;
+
+                    //// Test Code
+                    //var sr = new StreamReader(stream);
+                    //var output = sr.ReadToEnd();
+                    //stream.Position = 0;
+
+                    var js = new DataContractJsonSerializer(typeof(Weather[]));
+                    var weather = (Weather[])js.ReadObject(stream);
+
+                    Console.WriteLine(weather[0].Temperature.Metric.Value);
+                }
+            }
+        }
+
         public static void GetWeatherInfo()
         {
             using (var client = new HttpClient())

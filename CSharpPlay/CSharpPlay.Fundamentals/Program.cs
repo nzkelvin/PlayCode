@@ -31,6 +31,7 @@ namespace CSharpPlay.Fundamentals
             //JsonSerialization.DeserializeFromFile();
 
             CallWebApi.GetWeatherInfo();
+            CallWebApi.GetWeatherInfoSimple();
 
             Console.Read();
         }
