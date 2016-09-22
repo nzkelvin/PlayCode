@@ -37,6 +37,21 @@ namespace CSharpPlay.Fundamentals
             ms.Close();
         }
 
+        public static void SerializeDate()
+        {
+            string jsonStr = "{\"date\":\"2016-10-08T00:00:00\",\"amount\":12.0}";
+
+            var input = Encoding.UTF8.GetBytes(jsonStr);
+
+            var ser = new DataContractJsonSerializer(typeof(InitialPayment),
+                new DataContractJsonSerializerSettings
+                {
+                    //DateTimeFormat = new DateTimeFormat("o")
+                    DateTimeFormat = new DateTimeFormat("yyyy-MM-ddThh:mm:ss")
+                });
+            var output = (InitialPayment)ser.ReadObject(new MemoryStream(input));
+        }
+
         public static void SerializeToFile()
         {
             Spell frostShock = new Spell()
@@ -78,6 +93,17 @@ namespace CSharpPlay.Fundamentals
             Console.WriteLine($"cast: {frostStock.cast}");
             Console.WriteLine($"cooldown: { frostStock.cooldown}");
         }
+    }
+
+    [DataContract(Name = "initialPayment")]
+    public class InitialPayment
+    {
+
+        [DataMember]
+        public DateTime date;
+
+        [DataMember]
+        public decimal amount;
     }
 
     [DataContract]
