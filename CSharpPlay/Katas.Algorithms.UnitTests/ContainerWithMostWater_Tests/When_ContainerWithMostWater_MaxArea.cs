@@ -18,5 +18,18 @@ namespace Katas.Algorithms.UnitTests.ContainerWithMostWater_Tests
             // Assert
             Assert.AreEqual(4, actual);
         }
+
+        [TestMethod]
+        public void Given_186254837_Then_49()
+        {
+            // Arrange
+            var algo = new ContainerWithMostWater();
+
+            // Action
+            var actual = algo.MaxArea(new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 });
+
+            // Assert
+            Assert.AreEqual(49, actual);
+        }
     }
 }
