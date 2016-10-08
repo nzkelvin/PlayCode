@@ -55,6 +55,7 @@
     <Compile Include="ContainerWithMostWater_Tests\When_ContainerWithMostWater_MaxArea.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NextGreaterPermutation_Tests\When_NextGreaterPermutation_NextPermutation.cs" />
+    <Compile Include="SpiralMatrix_Tests\When_SpiralMatrix_Run.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Katas.Algorithms\Katas.Algorithms.csproj">
