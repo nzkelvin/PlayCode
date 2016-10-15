@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContainerWithMostWater.cs" />
+    <Compile Include="JumpGame.cs" />
     <Compile Include="NextGreaterPermutation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpiralMatrix.cs" />
