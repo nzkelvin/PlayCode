@@ -127,6 +127,9 @@
     <Content Include="bootstrap\js\npm.js" />
     <Content Include="Global.asax" />
     <Content Include="introduction.html" />
+    <Content Include="m3EverydayBootstrap\after\bootstrap-icons.html" />
+    <Content Include="m3EverydayBootstrap\after\everyday-buttons.html" />
+    <Content Include="m3EverydayBootstrap\before\everyday-buttons.html" />
     <Content Include="m4BootstrapComponents\after\bootstrap-navbar.html" />
     <Content Include="m4BootstrapComponents\after\bootstrap\css\bootstrap-responsive.css" />
     <Content Include="m4BootstrapComponents\after\bootstrap\css\bootstrap-responsive.min.css" />
