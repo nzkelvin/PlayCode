@@ -127,6 +127,59 @@
     <Content Include="bootstrap\js\npm.js" />
     <Content Include="Global.asax" />
     <Content Include="introduction.html" />
+    <Content Include="m3EverydayBootstrap\after\bootstrap-icons.html" />
+    <Content Include="m3EverydayBootstrap\after\everyday-buttons.html" />
+    <Content Include="m3EverydayBootstrap\before\everyday-buttons.html" />
+    <Content Include="m4BootstrapComponents\after\bootstrap-navbar.html" />
+    <Content Include="m4BootstrapComponents\after\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="m4BootstrapComponents\after\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="m4BootstrapComponents\after\bootstrap\css\bootstrap.css" />
+    <Content Include="m4BootstrapComponents\after\bootstrap\css\bootstrap.min.css" />
+    <Content Include="m4BootstrapComponents\after\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="m4BootstrapComponents\after\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="m4BootstrapComponents\after\bootstrap\js\bootstrap.js" />
+    <Content Include="m4BootstrapComponents\after\bootstrap\js\bootstrap.min.js" />
+    <Content Include="m4BootstrapComponents\after\images\lobster.jpg" />
+    <Content Include="m4BootstrapComponents\after\images\train.png" />
+    <Content Include="m4BootstrapComponents\after\scripts\jquery-1.7.1.min.js" />
+    <Content Include="m4BootstrapComponents\before\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="m4BootstrapComponents\before\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="m4BootstrapComponents\before\bootstrap\css\bootstrap.css" />
+    <Content Include="m4BootstrapComponents\before\bootstrap\css\bootstrap.min.css" />
+    <Content Include="m4BootstrapComponents\before\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="m4BootstrapComponents\before\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="m4BootstrapComponents\before\bootstrap\js\bootstrap.js" />
+    <Content Include="m4BootstrapComponents\before\bootstrap\js\bootstrap.min.js" />
+    <Content Include="m4BootstrapComponents\before\images\lobster.jpg" />
+    <Content Include="m4BootstrapComponents\before\images\train.png" />
+    <Content Include="m4BootstrapComponents\before\scripts\jquery-1.7.1.min.js" />
+    <Content Include="m3EverydayBootstrap\after\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="m3EverydayBootstrap\after\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="m3EverydayBootstrap\after\bootstrap\css\bootstrap.css" />
+    <Content Include="m3EverydayBootstrap\after\bootstrap\css\bootstrap.min.css" />
+    <Content Include="m3EverydayBootstrap\after\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="m3EverydayBootstrap\after\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="m3EverydayBootstrap\after\bootstrap\js\bootstrap.js" />
+    <Content Include="m3EverydayBootstrap\after\bootstrap\js\bootstrap.min.js" />
+    <Content Include="m3EverydayBootstrap\after\everyday-forms.html" />
+    <Content Include="m3EverydayBootstrap\after\everyday-tables.html" />
+    <Content Include="m3EverydayBootstrap\after\images\lobster.jpg" />
+    <Content Include="m3EverydayBootstrap\after\images\train.png" />
+    <Content Include="m3EverydayBootstrap\after\everyday-typography.html" />
+    <Content Include="m3EverydayBootstrap\after\introduction.html" />
+    <Content Include="m3EverydayBootstrap\after\scripts\jquery-1.7.1.min.js" />
+    <Content Include="m3EverydayBootstrap\before\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="m3EverydayBootstrap\before\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="m3EverydayBootstrap\before\bootstrap\css\bootstrap.css" />
+    <Content Include="m3EverydayBootstrap\before\bootstrap\css\bootstrap.min.css" />
+    <Content Include="m3EverydayBootstrap\before\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="m3EverydayBootstrap\before\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="m3EverydayBootstrap\before\bootstrap\js\bootstrap.js" />
+    <Content Include="m3EverydayBootstrap\before\bootstrap\js\bootstrap.min.js" />
+    <Content Include="m3EverydayBootstrap\before\images\lobster.jpg" />
+    <Content Include="m3EverydayBootstrap\before\images\train.png" />
+    <Content Include="m3EverydayBootstrap\before\introduction.html" />
+    <Content Include="m3EverydayBootstrap\before\scripts\jquery-1.7.1.min.js" />
     <Content Include="scripts\ai.0.22.19-build00125.js" />
     <Content Include="scripts\ai.0.22.19-build00125.min.js" />
     <Content Include="scripts\jquery-3.1.1.js" />
@@ -140,7 +193,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -153,6 +205,8 @@
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="m3EverydayBootstrap\after\bootstrap\img\Thumbs.db" />
+    <Content Include="m4BootstrapComponents\after\bootstrap\img\Thumbs.db" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -162,7 +216,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
