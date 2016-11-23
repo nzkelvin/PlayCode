@@ -180,6 +180,7 @@
     <Content Include="m3EverydayBootstrap\before\images\train.png" />
     <Content Include="m3EverydayBootstrap\before\introduction.html" />
     <Content Include="m3EverydayBootstrap\before\scripts\jquery-1.7.1.min.js" />
+    <Content Include="sandbox\css-positions.html" />
     <Content Include="scripts\ai.0.22.19-build00125.js" />
     <Content Include="scripts\ai.0.22.19-build00125.min.js" />
     <Content Include="scripts\jquery-3.1.1.js" />
