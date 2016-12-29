@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <style>
+        .row.is-flex {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .row.is-flex > [class*='col-'] {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row is-flex">
+            <div class="col-lg-6" style="background-color: grey;">Hello</div>
+            <div class="col-lg-6" style="background-color: red;">
+                <img src="http://www.mjpress.cn/uploads/151103/1-1511031I910440.jpg" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>
