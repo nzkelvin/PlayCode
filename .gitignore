@@ -175,3 +175,5 @@ FakesAssemblies/
 
 # Unity
 ShaderCache/
+/Web.OpenSource/Web.Umbraco/App_Data/TEMP
+/Web.OpenSource/Web.Umbraco/App_Data/NuGetBackup/20170101-125150
