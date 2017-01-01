@@ -11,7 +11,7 @@ namespace Web.Angular.Controllers
         // GET: Hello
         public ActionResult Index()
         {
-            return View();
+            return View("Index", "", "you");
         }
     }
 }
