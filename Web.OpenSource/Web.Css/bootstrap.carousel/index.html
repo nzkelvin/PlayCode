@@ -1,0 +1,96 @@
+<!-- reference: http://jsfiddle.net/talmand/JS6JV/ -->
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script data-require="jquery@2.2.4" data-semver="2.2.4" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link data-require="bootstrap@3.3.7" data-semver="3.3.7" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script data-require="bootstrap@3.3.7" data-semver="3.3.7" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <div id="carousel-example-generic" class="carousel silde" data-ride="carousel">
+      <!-- Indicator -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slice-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slice-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slice-to="2"></li>
+      </ol>
+      
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="http://placekitten.com/400/250" alt="" />
+        </div>
+        <div class="item">
+          <img src="http://baconmockup.com/400/250" alt="" />
+        </div>
+        <div class="item">
+          <img src="http://lorempixel.com/400/250" alt="" />
+        </div>
+      </div>
+      
+      <!-- Controls -->
+      <a class='left carousel-control' href='#carousel-example-generic' data-slide='prev'>
+          <span class='glyphicon glyphicon-chevron-left'></span>
+      </a>
+      <a class='right carousel-control' href='#carousel-example-generic' data-slide='next'>
+          <span class='glyphicon glyphicon-chevron-right'></span>
+      </a>      
+    </div>
+
+
+    <div id="carousel-example-custom" class="carousel silde" data-ride="carousel">   
+      <div class="carousel-outer">
+      <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="https://placehold.it/400x250&text=slide1" alt="" />
+          </div>
+          <div class="item">
+            <img src="https://placehold.it/400x250&text=slide2" alt="" />
+          </div>
+          <div class="item">
+            <img src="https://placehold.it/400x250&text=slide3" alt="" />
+          </div>
+          <div class="item">
+            <img src="https://placehold.it/400x250&text=slide4" alt="" />
+          </div>
+          <div class="item">
+            <img src="https://placehold.it/400x250&text=slide5" alt="" />
+          </div>
+        </div>
+        
+        <!-- Controls -->
+        <a class='left carousel-control' href='#carousel-example-custom' data-slide='prev'>
+            <span class='glyphicon glyphicon-chevron-left'></span>
+        </a>
+        <a class='right carousel-control' href='#carousel-example-custom' data-slide='next'>
+            <span class='glyphicon glyphicon-chevron-right'></span>
+        </a>     
+      </div>
+
+      <!-- Indicator -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-custom" data-slice-to="0" class="active">
+          <img src="https://placehold.it/100x50&text=slide1" alt="" />
+        </li>
+        <li data-target="#carousel-example-custom" data-slice-to="1">
+          <img src="https://placehold.it/100x50&text=slide2" alt="" />
+        </li>
+        <li data-target="#carousel-example-custom" data-slice-to="2">
+          <img src="https://placehold.it/100x50&text=slide3" alt="" />
+        </li>
+        <li data-target="#carousel-example-custom" data-slice-to="3">
+          <img src="https://placehold.it/100x50&text=slide4" alt="" />
+        </li>
+        <li data-target="#carousel-example-custom" data-slice-to="4">
+          <img src="https://placehold.it/100x50&text=slide5" alt="" />
+        </li>
+      </ol> 
+    </div>
+  </body>
+
+</html>

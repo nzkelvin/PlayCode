@@ -1,0 +1,43 @@
+/* Styles go here */
+#carousel-example-generic, #carousel-example-custom {
+  margin: 20px auto;
+  width: 400px;
+}
+
+#carousel-example-custom .carousel-outer{
+  position: relative;
+}
+
+#carousel-example-custom .carousel-indicators {
+  margin: 10px 0 0;
+  position: static;
+  white-space: nowrap;
+  overflow: auto;
+  width: 100%;
+}
+
+#carousel-example-custom .carousel-indicators li {
+  height: auto;
+  width: auto;
+  background-color: transparent;
+  display: inline-block;
+  margin: 0 !important;
+}
+
+#carousel-example-custom .carousel-indicators li:first-child {
+  border-left: 0; 
+}
+
+#carousel-example-custom .carousel-indicators li:last-child {
+  border-right: 0; 
+}
+
+#carousel-example-custom .carousel-indicators li img {
+  display: block;
+  opacity: 0.5;
+}
+
+#carousel-example-custom .carousel-indicators li.active img {
+  opacity: 0.75;
+}
+
